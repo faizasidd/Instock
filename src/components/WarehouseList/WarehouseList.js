@@ -1,0 +1,1 @@
+import "../WarehouseList/WarehouseList.scss";
