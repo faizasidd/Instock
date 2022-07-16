@@ -1,0 +1,10 @@
+@use '../../styles/partials/mixins.scss';
+@use '../../styles/partials/typekit.scss';
+@use '../../styles/partials/fonts.scss';
+@use '../../styles/partials/colors.scss' as *;
+
+.header {
+    &__wrapper {
+        background-color: $background-header;
+    }
+}

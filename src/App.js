@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Placeholder from './components/Placeholder/Placeholder';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <BrowserRouter>
-    {/* <Header /> */}
+    <Header />
     <Switch>
       <Route path="/" exact component={Placeholder} />
       {/* <Route path="/warehouses" component={Placeholder} /> */}
