@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./EditWarehousePage.scss";
-import arrowBack from "../assets/icons/arrow_back-24px.svg";
-import WarehouseForm from "../components/WarehouseForm/WarehouseForm";
-import useForm from "../utils/useForm";
+import "./EditWarehouse.scss";
+import arrowBack from "../../assets/icons/arrow_back-24px.svg";
+import WarehouseForm from "../WarehouseForm/WarehouseForm";
+import useForm from "../../utils/useForm";
 
-const EditWarehousePage = () => {
+const EditWarehouse = () => {
   // const [warehouse, setWarehouse] = useState({
   //   id: "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
   //   name: "Washington",
@@ -39,31 +39,33 @@ const EditWarehousePage = () => {
   };
 
   return (
-    <div className="outer-container">
-      <div className="inner-container">
+    <div className="edit-warehouse">
+      <div className="edit-warehouse__title-container">
         <img src={arrowBack} />
-        <h1 className="title">Edit Warehouse</h1>
+        <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
-      <WarehouseForm
-        handleInputChange={handleInputChange}
-        warehouse={warehouse}
-        setWarehouse={setWarehouse}
-        errors={errors}
-        handleSubmit={handleSubmit}
-      />
-      <div className="inner-container">
-      <button className="button">Cancel</button>
-      <button
-        onClick={(e) => handleSubmit(e, warehouse)}
-        type="submit"
-        value="submit"
-        className="button button--save"
-      >
-        Save
-      </button>
+      <div className="edit-warehouse__form-container">
+        <WarehouseForm
+          handleInputChange={handleInputChange}
+          warehouse={warehouse}
+          setWarehouse={setWarehouse}
+          errors={errors}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+      <div className="edit-warehouse__button-container">
+        <button className="edit-warehouse__button">Cancel</button>
+        <button
+          onClick={(e) => handleSubmit(e, warehouse)}
+          type="submit"
+          value="submit"
+          className="edit-warehouse__button--save"
+        >
+          Save
+        </button>
       </div>
     </div>
   );
 };
 
-export default EditWarehousePage;
+export default EditWarehouse;

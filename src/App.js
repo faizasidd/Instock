@@ -3,17 +3,18 @@ import "./App.scss";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Placeholder from "./components/Placeholder/Placeholder";
-import EditWarehousePage from "./pages/EditWarehousePage";
+import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 
 function App() {
   return (
     <BrowserRouter>
-      <EditWarehousePage/>
+      <EditWarehouse />
+
       <Switch>
         <Route path="/" exact component={Placeholder} />
         {/* <Route path="/warehouses" component={Placeholder} /> */}
         <Route path="/warehouse/:warehouseId" component={Placeholder} />
-        <Route path="/warehouse/edit/:warehouseId" component={EditWarehousePage} />
+        <Route path="/warehouse/edit/:warehouseId" component={Placeholder} />
         <Route path="/warehouse/add" component={Placeholder} />
         <Route path="/inventory" component={Placeholder} />
         <Route path="/inventory/:inventoryId" component={Placeholder} />

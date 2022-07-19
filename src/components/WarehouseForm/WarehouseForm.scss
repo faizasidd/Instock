@@ -1,15 +1,22 @@
 @use '../../styles/partials/colors';
+@use '../../styles/partials/mixins' as *;
+
 .form {
   display: flex;
   flex-direction: column;
-
-  margin: -1.2rem;
+  margin: 0 -1.2rem;
+  padding-bottom: 1rem;
 
   &__title {
     font-size: 1.25rem;
     padding: 1rem 1.2rem 1rem 1.2rem;
 
     border-top: 1px solid colors.$secondary-borders;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
   }
 
   &__label {
@@ -35,8 +42,31 @@
     padding: 0 1rem;
     color: colors.$supporting-error;
   }
+
   &__error-icon {
     width: 1rem;
     padding-right: 0.5rem;
+  }
+
+  @include tablet {
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-left:1rem;
+      gap:2.5rem;
+    }
+
+    &__title{
+        border-top:none;
+    }
+
+    // &__container{
+    //     border-left:1px solid colors.$secondary-borders;
+    //     padding-top:-1rem;
+    //     padding-left:1rem;
+    //     margin-bottom:-0.5rem;
+    // }
+
+    
   }
 }
