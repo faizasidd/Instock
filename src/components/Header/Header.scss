@@ -1,10 +1,61 @@
-@use '../../styles/partials/mixins.scss';
-@use '../../styles/partials/typekit.scss';
-@use '../../styles/partials/fonts.scss';
-@use '../../styles/partials/colors.scss' as *;
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins' as *;
+
 
 .header {
     &__wrapper {
-        background-color: $background-header;
+        background-color: colors.$background-header;
+        height: 9rem;
+        padding-bottom: 2rem;
     }
+
+    &__inventory {
+        color: colors.$secondary-borders;
+        text-decoration: none;
+        padding-left: 5rem;
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0 2rem 0;
+    }
+
+    &__link-wrapper {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    @include tablet {
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            height: 6rem;
+            padding-bottom: 0;
+            justify-content: space-between;
+        }
+
+        &__logo-wrapper {
+            padding-left: 2rem;
+        }
+        &__inventory {
+            padding-right: 2rem;
+            padding-left: 1rem;
+        }
+    }
+    @include desktop {
+        &__inventory {
+            padding-right: 6rem;
+        }
+    }
+}
+
+.active {
+    text-decoration: none;
+    color: white;
+    border: 0.5px solid #13182C;
+    border-radius: 20px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #13182C;
 }
