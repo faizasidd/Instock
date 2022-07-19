@@ -5,11 +5,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Placeholder from "./components/Placeholder/Placeholder";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import InventoryForm from "./components/InventoryForm/InventoryForm";
 
 function App() {
   return (
     <BrowserRouter>
-      <AddWarehouse/>
+      <InventoryForm/>
 
       <Switch>
         <Route path="/" exact component={Placeholder} />
