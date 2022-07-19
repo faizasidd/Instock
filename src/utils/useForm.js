@@ -72,7 +72,10 @@ const useForm = (callback) => {
     e.preventDefault();
 
     let existingErrors = {}; //object that holds all errors
-    Object.keys(warehouse).forEach((key) => {
+    // if (Object === null) {
+    //   return null;
+    // }
+    Object.keys(warehouse || {}).forEach((key) => {
       //looping through each key in the warehouse object
       //and validating its value
       //and returning an error object

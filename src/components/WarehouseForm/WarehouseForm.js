@@ -25,6 +25,7 @@ const WarehouseForm = (props) => {
             className="form__input-field"
             name="name"
             value={props.warehouse.name}
+            placeholder="Warehouse Name"
             onChange={props.handleInputChange}
           ></input>
           {props.errors.name && (
@@ -38,6 +39,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="address"
+            placeholder="Street Address"
             value={props.warehouse.address}
             onChange={props.handleInputChange}
           ></input>
@@ -53,6 +55,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="city"
+            placeholder="City"
             value={props.warehouse.city}
             onChange={props.handleInputChange}
           ></input>
@@ -68,6 +71,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="country"
+            placeholder="Country"
             value={props.warehouse.country}
             onChange={props.handleInputChange}
           ></input>
@@ -85,6 +89,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="contactName"
+            placeholder="Contact Name"
             value={props.warehouse.contactName}
             onChange={props.handleInputChange}
           ></input>
@@ -100,6 +105,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="contactPosition"
+            placeholder="Position"
             value={props.warehouse.contactPosition}
             onChange={props.handleInputChange}
           ></input>
@@ -115,6 +121,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="contactPhone"
+            placeholder="Phone Number"
             value={props.warehouse.contactPhone}
             onChange={props.handleInputChange}
           />
@@ -130,6 +137,7 @@ const WarehouseForm = (props) => {
             type="text"
             className="form__input-field"
             name="contactEmail"
+            placeholder="Email"
             value={props.warehouse.contactEmail}
             onChange={props.handleInputChange}
           ></input>
