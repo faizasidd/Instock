@@ -8,25 +8,27 @@ const useForm = (callback) => {
 
   const validate = (event, name, value) => {
     //this validates each input
+    //all keys need to be in default object
 
     switch (name) {
-      case "phone":
+      case "contactPhone":
         if (
           !new RegExp(
-            /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+            /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
           ).test(value)
         ) {
           //we don't want to use setErrors here
           //we just want to build and return the error object
+
           return {
             ...errors,
-            phone: "Enter a valid phone number",
+            contactPhone: "Enter a valid phone number",
           };
         } else {
-          return { ...errors, phone: "" };
+          return { ...errors, contactPhone: "" }; //this gets rid of the error message in the error object
         }
         break;
-      case "email":
+      case "contactEmail":
         if (
           !new RegExp(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -34,10 +36,10 @@ const useForm = (callback) => {
         ) {
           return {
             ...errors,
-            email: "Enter a valid email address",
+            contactEmail: "Enter a valid email address",
           };
         } else {
-          return { ...errors, email: "" };
+          return { ...errors, contactEmail: "" };
         }
         break;
       default:
