@@ -1,8 +1,9 @@
+@use '../styles/partials/colors';
 .outer-container {
   margin: 1.2rem;
 }
 
-.title-container {
+.inner-container {
   display: flex;
   flex-direction: row;
   padding-bottom: 1.2rem;
@@ -11,4 +12,20 @@
 .title {
   font-size: 1.5rem;
   padding-left: 0.5rem;
+}
+
+.button {
+  width: 8rem;
+  padding: 0.5rem, 3.1875rem;
+  margin: 1.5rem 0.5rem;
+  background-color: colors.$primary-white;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid colors.$secondary-borders;
+  font-family:inherit;
+
+  &--save{
+      background-color: colors.$primary-interactive;
+      color: colors.$primary-white;
+  }
 }

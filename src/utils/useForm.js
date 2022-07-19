@@ -48,7 +48,7 @@ const useForm = (callback) => {
           console.log(errors);
           return {
             ...errors,
-            [name]: "This is a required field",
+            [name]: "This field is required",
           };
         } else {
           return { ...errors, [name]: "" }; //whatever is on the right will overwrite the left

@@ -24,9 +24,9 @@ const EditWarehousePage = () => {
     name: "Washington",
     address: "33 Pearl Street SW",
     city: "Washington",
-    country: "",
+    country: "USA",
     contactName: "Greame Lyon", //I flattened the contact part - this will have to be adjusted in the backend
-    contactPosition: "",
+    contactPosition: "Manager",
     contactPhone: "+1 (646) 123-1234",
     contactEmail: "glyon@instock.com",
   });
@@ -40,7 +40,7 @@ const EditWarehousePage = () => {
 
   return (
     <div className="outer-container">
-      <div className="title-container">
+      <div className="inner-container">
         <img src={arrowBack} />
         <h1 className="title">Edit Warehouse</h1>
       </div>
@@ -51,14 +51,17 @@ const EditWarehousePage = () => {
         errors={errors}
         handleSubmit={handleSubmit}
       />
+      <div className="inner-container">
+      <button className="button">Cancel</button>
       <button
         onClick={(e) => handleSubmit(e, warehouse)}
         type="submit"
         value="submit"
-        className="button-submit"
+        className="button button--save"
       >
-        Submit
+        Save
       </button>
+      </div>
     </div>
   );
 };

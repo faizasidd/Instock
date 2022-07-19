@@ -1,10 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import "./WarehouseForm.scss";
+import errorIcon from "../../assets/icons/error-24px.svg";
 
 const WarehouseForm = (props) => {
-
-
   //   const updateWarehouse = (id, updatedWarehouse) => {
   //     setWarehouses(
   //       warehouses.map((warehouse) =>
@@ -28,17 +26,26 @@ const WarehouseForm = (props) => {
           value={props.warehouse.name}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.name}</h3>
+        {props.errors.name && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.name}</p>
+          </div>
+        )}
         <label className="form__label">Street Address</label>
         <input
           type="text"
           className="form__input-field"
           name="address"
-          placeholder="33 Pearl Street SW"
           value={props.warehouse.address}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.address}</h3>
+        {props.errors.address && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.address}</p>
+          </div>
+        )}
 
         <label className="form__label">City</label>
         <input
@@ -48,7 +55,12 @@ const WarehouseForm = (props) => {
           value={props.warehouse.city}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.city}</h3>
+        {props.errors.city && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.city}</p>
+          </div>
+        )}
 
         <label className="form__label">Country</label>
         <input
@@ -58,7 +70,12 @@ const WarehouseForm = (props) => {
           value={props.warehouse.country}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.country}</h3>
+        {props.errors.country && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.country}</p>
+          </div>
+        )}
 
         <h2 className="form__title">Contact Details</h2>
 
@@ -70,7 +87,13 @@ const WarehouseForm = (props) => {
           value={props.warehouse.contactName}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.contactName}</h3>
+        {props.errors.contactName && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.contactName}</p>
+          </div>
+        )}
+
         <label className="form__label">Position</label>
         <input
           type="text"
@@ -79,7 +102,12 @@ const WarehouseForm = (props) => {
           value={props.warehouse.contactPosition}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.contactPosition}</h3>
+        {props.errors.contactPosition && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.contactPosition}</p>
+          </div>
+        )}
 
         <label className="form__label">Phone Number</label>
         <input
@@ -89,7 +117,13 @@ const WarehouseForm = (props) => {
           value={props.warehouse.contactPhone}
           onChange={props.handleInputChange}
         />
-        <h3>{props.errors.contactPhone}</h3>
+        {props.errors.contactPhone && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.contactPhone}</p>
+          </div>
+        )}
+
         <label className="form__label">Email</label>
         <input
           type="text"
@@ -98,7 +132,12 @@ const WarehouseForm = (props) => {
           value={props.warehouse.contactEmail}
           onChange={props.handleInputChange}
         ></input>
-        <h3>{props.errors.contactEmail}</h3>
+        {props.errors.contactEmail && (
+          <div className="form__error">
+            <img src={errorIcon} className="form__error-icon" />
+            <p>{props.errors.contactEmail}</p>
+          </div>
+        )}
       </form>
     </div>
   );
