@@ -3,6 +3,8 @@ import "./App.scss";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Placeholder from "./components/Placeholder/Placeholder";
+import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
