@@ -6,6 +6,8 @@ import Placeholder from "./components/Placeholder/Placeholder";
 import Header from "./components/Header/Header";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
+// import WarehouseList from "./components/WarehouseList/WarehouseList"
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
       <Header />
       {/* <Header /> */}
       <Switch>
-        <Route path="/" exact component={Placeholder} />
-        {/* <Route path="/warehouses" component={Placeholder} /> */}
+        {/* <Route path="/" exact component={Placeholder} /> */}
+        <Route path="/warehouses" component={WarehouseForm} />
         <Route path="/warehouse/:warehouseId" component={Placeholder} />
         <Route path="/warehouse/edit/:warehouseId" component={Placeholder} />
         <Route path="/warehouse/add" component={Placeholder} />

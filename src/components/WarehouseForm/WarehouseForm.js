@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./WarehouseForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
+import axios from "axios";
 
-const WarehouseForm = (props) => {
+const WarehouseForm = () => {
+
+  const [warehouses, setWarehouses] = useState('')
+
+  useEffect(() => {
+    getAllWarehouses()
+  }, [])
+
+  const getAllWarehouses = () => {
+     axios
+        .get('http://localhost:8080/warehouses')
+        .then(response => {
+            setWarehouses(response.data)
+            console.log(response.data)
+          })
+        .catch(error => console.log(error))
+  }
+
+ 
   //   const updateWarehouse = (id, updatedWarehouse) => {
   //     setWarehouses(
   //       warehouses.map((warehouse) =>
@@ -15,11 +34,11 @@ const WarehouseForm = (props) => {
     <div className="form">
       <form
         className="form__content"
-        onSubmit={(e) => props.handleSubmit(e, props.warehouse)}
+        // onSubmit={(e) => props.handleSubmit(e, props.warehouse)}
       >
         <div className="form__container">
           <h2 className="form__title">Warehouse Details</h2>
-          <label className="form__label">Warehouse Name</label>
+          {/* <label className="form__label">Warehouse Name</label>
           <input
             type="text"
             className="form__input-field"
@@ -33,8 +52,8 @@ const WarehouseForm = (props) => {
               <img src={errorIcon} className="form__error-icon" />
               <p>{props.errors.name}</p>
             </div>
-          )}
-          <label className="form__label">Street Address</label>
+          )} */}
+          {/* <label className="form__label">Street Address</label>
           <input
             type="text"
             className="form__input-field"
@@ -146,8 +165,8 @@ const WarehouseForm = (props) => {
               <img src={errorIcon} className="form__error-icon" />
               <p>{props.errors.contactEmail}</p>
             </div>
-          )}
-        </div>
+          )}*/}
+        </div> 
       </form>
     </div>
   );
