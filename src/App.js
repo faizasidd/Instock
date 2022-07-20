@@ -9,8 +9,7 @@ import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 function App() {
   return (
     <BrowserRouter>
-      <AddWarehouse/>
-
+      {/* <Header /> */}
       <Switch>
         <Route path="/" exact component={Placeholder} />
         {/* <Route path="/warehouses" component={Placeholder} /> */}
