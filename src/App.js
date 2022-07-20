@@ -6,11 +6,12 @@ import Placeholder from "./components/Placeholder/Placeholder";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import InventoryForm from "./components/InventoryForm/InventoryForm";
+import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 
 function App() {
   return (
     <BrowserRouter>
-      <InventoryForm/>
+      <AddInventoryItem />
 
       <Switch>
         <Route path="/" exact component={Placeholder} />

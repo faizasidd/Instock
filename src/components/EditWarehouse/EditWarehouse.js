@@ -38,6 +38,8 @@ const EditWarehouse = () => {
     setWarehouse({ ...warehouse, [e.target.name]: e.target.value });
   };
 
+  const isEnabled = errors.length === 0;
+
   return (
     <div className="edit-warehouse">
       <div className="edit-warehouse__title-container">
@@ -56,6 +58,7 @@ const EditWarehouse = () => {
       <div className="edit-warehouse__button-container">
         <button className="edit-warehouse__button">Cancel</button>
         <button
+          // disabled={!isEnabled}
           onClick={(e) => handleSubmit(e, warehouse)}
           type="submit"
           value="submit"

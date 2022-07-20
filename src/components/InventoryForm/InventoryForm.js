@@ -2,15 +2,24 @@ import React from "react";
 import "./InventoryForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
 
-const InventoryForm = () => {
+const InventoryForm = (props) => {
   return (
     <div>
-      <form className="form__content">
+      <form
+        className="form__content"
+        onSubmit={(e) => props.handleSubmit(e, props.inventory)}
+      >
         <div className="form__container">
           <h2>Item Details</h2>
           <label>Item Name</label>
-          <input type="text" placeholder="Item Name"></input>
-          <label>Description</label>
+          <input
+            type="text"
+            name="itemName"
+            value={props.inventory.itemName}
+            placeholder="Item Name"
+            onChange={props.handleInputChange}
+          ></input>
+          {/* <label>Description</label>
           <textarea
             className="form__textfield"
             placeholder="Please enter a brief item description"
@@ -33,7 +42,7 @@ const InventoryForm = () => {
               type="radio"
               name="select"
               value="In Stock"
-            //   disabled={true}
+              //   disabled={true}
             />
             <span>In Stock</span>
           </div>
@@ -45,14 +54,14 @@ const InventoryForm = () => {
           <label>Warehouse</label>
           <select>
             <option>Please select</option>
-            <option>Manhattan</option>
-            <option>Washington</option>
-            <option>Jersey</option>
-            <option>San Fran</option>
-            <option>Santa Monica</option>
-            <option>Seattle</option>
-            <option>Miami</option>
-          </select>
+            <option value="Manhattan">Manhattan</option>
+            <option value="Washington">Washington</option>
+            <option value="Jersey">Jersey</option>
+            <option value="San Fran">San Fran</option>
+            <option value="Santa Monica">Santa Monica</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Miami">Miami</option>
+          </select> */}
         </div>
       </form>
     </div>

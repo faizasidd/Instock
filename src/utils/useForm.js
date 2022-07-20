@@ -42,6 +42,17 @@ const useForm = (callback) => {
           return { ...errors, contactEmail: "" };
         }
         break;
+
+      case "contactName":
+        if (value.length === 0) {
+          return {
+            ...errors,
+            contactName: "This field is required",
+          };
+        } else {
+          return { ...errors, contactName: "" };
+        }
+        break;
       default:
         if (value.length === 0) {
           console.log("setting error", name, value);
@@ -66,20 +77,20 @@ const useForm = (callback) => {
     setErrors(errors);
   };
 
-  const handleSubmit = (e, warehouse) => {
-    //passing entire warehouse object
-    console.log("submitting", warehouse);
+  const handleSubmit = (e, object) => {
+    //passing entire warehouse/inventory object
+    console.log("submitting", object);
     e.preventDefault();
 
     let existingErrors = {}; //object that holds all errors
     // if (Object === null) {
     //   return null;
     // }
-    Object.keys(warehouse || {}).forEach((key) => {
-      //looping through each key in the warehouse object
+    Object.keys(object || {}).forEach((key) => {
+      //looping through each key in the warehouse/inventory object
       //and validating its value
       //and returning an error object
-      const newError = validate(e, key, warehouse[key]);
+      const newError = validate(e, key, object[key]);
 
       //merging the new error object to existingErrors object synchronously in memory
       existingErrors = { ...existingErrors, ...newError };
