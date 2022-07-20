@@ -40,7 +40,7 @@ h4 {
   }
 
 //Body 
-p1 {
+.p1 {
     @include textRegular(.9375rem, 1.625rem);
     @include tablet {
       font-size: 1rem;
@@ -48,7 +48,7 @@ p1 {
     }
   }
 
-p2 {
+.p2 {
     @include textRegular(.8125rem, 1.25rem);
     @include tablet {
       font-size: .875rem;
@@ -56,7 +56,7 @@ p2 {
     }
   }
 
-p3 {
+.p3 {
     @include textRegular(.6875rem, 1rem);
     @include tablet {
       font-size: .75rem;
