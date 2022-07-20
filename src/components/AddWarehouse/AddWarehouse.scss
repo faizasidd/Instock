@@ -1,7 +1,7 @@
 @use '../../styles/partials/colors';
 @use '../../styles/partials/mixins' as *;
 
-.edit-warehouse {
+.add-warehouse {
   margin: 1.2rem;
 
   &__title-container {
@@ -57,8 +57,8 @@
     &__button {
       width: 5rem;
 
-      &--save{
-          width:5rem;
+      &--save {
+        width: 8rem;
       }
     }
   }
