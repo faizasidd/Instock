@@ -15,11 +15,11 @@ function Header() {
             </div>
             <div className='header__link-wrapper'>
                 <NavLink className="header__warehouses" to="/">
-                <p1>Warehouses</p1>
+                <div className="p1">Warehouses</div>
                 </NavLink>
 
                 <NavLink className="header__inventory" to="/inventory">
-                <p1>Inventory</p1>
+                <div className="p1">Inventory</div>
                 </NavLink>
             </div>
         </div>
