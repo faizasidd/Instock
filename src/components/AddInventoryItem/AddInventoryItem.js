@@ -28,25 +28,27 @@ const AddInventoryItem = () => {
 
   const submitAddedItem = (e) => {
     e.preventDefault();
-    handleSubmit(e, inventory);
-    axios
-      .post(
-        "http://localhost:8080/inventories",
-        {
-          warehouseName: inventory.warehouseName,
-          itemName: inventory.itemName,
-          description: inventory.description,
-          category: inventory.category,
-          status: inventory.status,
-          quantity: inventory.quantity,
-        },
-        {
-          "Content-Type": "application/json",
-        }
-      )
-      .then((response) => {
-        console.log(response);
-      });
+    if (handleSubmit(e, inventory)) {
+      axios
+        .post(
+          "http://localhost:8080/inventories",
+          {
+            warehouseName: inventory.warehouseName,
+            // warehouseID: inventory.warehouseID,
+            itemName: inventory.itemName,
+            description: inventory.description,
+            category: inventory.category,
+            status: inventory.status,
+            quantity: inventory.quantity,
+          },
+          {
+            "Content-Type": "application/json",
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    }
   };
 
   return (

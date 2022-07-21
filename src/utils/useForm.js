@@ -94,6 +94,10 @@ const useForm = (callback) => {
       existingErrors = { ...existingErrors, ...newError };
     });
     setErrors(existingErrors); //this makes the async call just once on the new error object
+    const noErrorsExist = Object.values(existingErrors).every((value) => {
+      return value === "";
+    });
+    return noErrorsExist;
   };
   return {
     handleChange,

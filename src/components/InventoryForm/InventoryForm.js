@@ -6,6 +6,7 @@ import dropdownIcon from "../../assets/icons/arrow_drop_down-24px.svg";
 const InventoryForm = (props) => {
   const [hidden, setHidden] = useState(false);
   const [disabled, setDisabled] = useState(false);
+
   return (
     <div>
       <form
@@ -111,6 +112,7 @@ const InventoryForm = (props) => {
             className="inventory-form__dropdown"
           >
             <option>Please select</option>
+
             <option value="Manhattan">Manhattan</option>
             <option value="Washington">Washington</option>
             <option value="Jersey">Jersey</option>
