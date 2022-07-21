@@ -38,7 +38,7 @@ const WarehouseForm = () => {
       >
         <div className="form__container">
           <h2 className="form__title">Warehouse Details</h2>
-          {/* <label className="form__label">Warehouse Name</label>
+          <label className="form__label">Warehouse Name</label>
           <input
             type="text"
             className="form__input-field"
@@ -52,7 +52,7 @@ const WarehouseForm = () => {
               <img src={errorIcon} className="form__error-icon" />
               <p>{props.errors.name}</p>
             </div>
-          )} */}
+          )}
           {/* <label className="form__label">Street Address</label>
           <input
             type="text"
