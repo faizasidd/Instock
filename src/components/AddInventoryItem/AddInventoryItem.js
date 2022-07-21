@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import useForm from "../../utils/useForm";
+import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 
 import "./AddInventoryItem.scss";
 import InventoryForm from "../InventoryForm/InventoryForm";
@@ -16,7 +17,7 @@ const AddInventoryItem = () => {
     quantity: "",
   });
 
-  const { handleChange, values, errors, handleSubmit } = useForm();
+  const { handleChange, errors, handleSubmit } = useForm();
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -51,7 +52,7 @@ const AddInventoryItem = () => {
   return (
     <div className="edit-warehouse">
       <div className="edit-warehouse__title-container">
-        {/* <img src={arrowBack} /> */}
+        <img src={arrowBack} />
         <h1 className="edit-warehouse__title">Add Inventory</h1>
       </div>
       <div className="edit-warehouse__form-container">
@@ -68,8 +69,6 @@ const AddInventoryItem = () => {
       <div className="edit-warehouse__button-container">
         <button className="edit-warehouse__button">Cancel</button>
         <button
-          // disabled={!isEnabled}
-          // onClick={(e) => submitAddedItem(e)}
           onClick={submitAddedItem}
           type="submit"
           value="submit"

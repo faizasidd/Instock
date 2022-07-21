@@ -1,35 +1,54 @@
 import React, { useState } from "react";
 import "./InventoryForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
+import dropdownIcon from "../../assets/icons/arrow_drop_down-24px.svg";
 
 const InventoryForm = (props) => {
   const [hidden, setHidden] = useState(false);
   return (
     <div>
       <form
-        className="form__content"
+        className="inventory-form__content"
         onSubmit={(e) => props.handleSubmit(e, props.inventory)}
       >
-        <div className="form__container">
+        <div className="inventory-form__container">
           <h2>Item Details</h2>
-          <label>Item Name</label>
+          <label className="inventory-form__label">Item Name</label>
           <input
             type="text"
             name="itemName"
+            className="inventory-form__input-field"
             value={props.inventory.itemName}
             placeholder="Item Name"
             onChange={props.handleInputChange}
           ></input>
-          <label>Description</label>
+          {props.errors.itemName && (
+            <div className="inventory-form__error">
+              <img src={errorIcon} className="inventory-form__error-icon" />
+              <p>{props.errors.itemName}</p>
+            </div>
+          )}
+          <label className="inventory-form__label">Description</label>
           <textarea
-            className="form__textfield"
+            className="inventory-form__textfield"
             name="description"
             value={props.inventory.description}
-            placeholder="Please enter a brief item description"
+            placeholder="Please enter a brief item description..."
             onChange={props.handleInputChange}
           ></textarea>
-          <label>Category</label>
-          <select onChange={props.handleInputChange} name="category">
+          {props.errors.description && (
+            <div className="form__error">
+              <img src={errorIcon} className="form__error-icon" />
+              <p>{props.errors.description}</p>
+            </div>
+          )}
+
+          <label className="inventory-form__label">Category</label>
+          <select
+            onChange={props.handleInputChange}
+            name="category"
+            className="inventory-form__dropdown"
+          >
             <option>Please select</option>
             <option value="Electronics">Electronics</option>
             <option value="Gears">Gears</option>
@@ -40,7 +59,7 @@ const InventoryForm = (props) => {
         </div>
         <div className="form__container">
           <h2>Item Availability</h2>
-          <label>Status</label>
+          <label className="inventory-form__label">Status</label>
           <div onClick={() => setHidden(false)}>
             <input
               type="radio"
@@ -48,7 +67,8 @@ const InventoryForm = (props) => {
               value="In Stock"
               onChange={props.handleInputChange}
             />
-            <span>In Stock</span>
+
+            <span>In stock</span>
           </div>
           <div onClick={() => setHidden(true)}>
             <input
@@ -57,22 +77,33 @@ const InventoryForm = (props) => {
               value="Out of Stock"
               onChange={props.handleInputChange}
             />
-            <span>Out of Stock</span>
+            <span>Out of stock</span>
           </div>
           {!hidden ? (
             <div>
-              <label>Quantity</label>
+              <label className="inventory-form__label">Quantity</label>
               <input
                 type="number"
                 value={props.inventory.quantity}
                 name="quantity"
+                className="inventory-form__input-field"
                 onChange={props.handleInputChange}
               ></input>
+              {props.errors.quantity && (
+                <div className="form__error">
+                  <img src={errorIcon} className="form__error-icon" />
+                  <p>{props.errors.quantity}</p>
+                </div>
+              )}
             </div>
           ) : null}
 
-          <label>Warehouse</label>
-          <select onChange={props.handleInputChange} name="warehouseName">
+          <label className="inventory-form__label">Warehouse</label>
+          <select
+            onChange={props.handleInputChange}
+            name="warehouseName"
+            className="inventory-form__dropdown"
+          >
             <option>Please select</option>
             <option value="Manhattan">Manhattan</option>
             <option value="Washington">Washington</option>
