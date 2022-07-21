@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 class WarehouseList extends React.Component {
-  render() {
+  
+    const [warehouses, setWarehouses] = useState('')
+
+    useEffect(() => {
+      getAllWarehouses()
+    }, [])
+  
+    const getAllWarehouses = () => {
+       axios
+          .get('http://localhost:8080/warehouses')
+          .then(response => {
+              setWarehouses(response.data)
+              console.log(response.data)
+            })
+          .catch(error => console.log(error))
+    }
+  
+    render() {
+
+
+
 
     return (
       <>

@@ -1,27 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./WarehouseForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
-import axios from "axios";
 
-const WarehouseForm = () => {
-
-  const [warehouses, setWarehouses] = useState('')
-
-  useEffect(() => {
-    getAllWarehouses()
-  }, [])
-
-  const getAllWarehouses = () => {
-     axios
-        .get('http://localhost:8080/warehouses')
-        .then(response => {
-            setWarehouses(response.data)
-            console.log(response.data)
-          })
-        .catch(error => console.log(error))
-  }
-
- 
+const WarehouseForm = (props) => {
   //   const updateWarehouse = (id, updatedWarehouse) => {
   //     setWarehouses(
   //       warehouses.map((warehouse) =>
@@ -34,7 +15,7 @@ const WarehouseForm = () => {
     <div className="form">
       <form
         className="form__content"
-        // onSubmit={(e) => props.handleSubmit(e, props.warehouse)}
+        onSubmit={(e) => props.handleSubmit(e, props.warehouse)}
       >
         <div className="form__container">
           <h2 className="form__title">Warehouse Details</h2>
@@ -53,7 +34,7 @@ const WarehouseForm = () => {
               <p>{props.errors.name}</p>
             </div>
           )}
-          {/* <label className="form__label">Street Address</label>
+          <label className="form__label">Street Address</label>
           <input
             type="text"
             className="form__input-field"
@@ -165,8 +146,8 @@ const WarehouseForm = () => {
               <img src={errorIcon} className="form__error-icon" />
               <p>{props.errors.contactEmail}</p>
             </div>
-          )}*/}
-        </div> 
+          )}
+        </div>
       </form>
     </div>
   );
