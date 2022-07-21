@@ -5,6 +5,7 @@ import dropdownIcon from "../../assets/icons/arrow_drop_down-24px.svg";
 
 const InventoryForm = (props) => {
   const [hidden, setHidden] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   return (
     <div>
       <form
@@ -12,7 +13,7 @@ const InventoryForm = (props) => {
         onSubmit={(e) => props.handleSubmit(e, props.inventory)}
       >
         <div className="inventory-form__container">
-          <h2>Item Details</h2>
+          <h2 className="inventory-form__title">Item Details</h2>
           <label className="inventory-form__label">Item Name</label>
           <input
             type="text"
@@ -37,8 +38,8 @@ const InventoryForm = (props) => {
             onChange={props.handleInputChange}
           ></textarea>
           {props.errors.description && (
-            <div className="form__error">
-              <img src={errorIcon} className="form__error-icon" />
+            <div className="inventory-form__error">
+              <img src={errorIcon} className="inventory-form__error-icon" />
               <p>{props.errors.description}</p>
             </div>
           )}
@@ -58,26 +59,31 @@ const InventoryForm = (props) => {
           </select>
         </div>
         <div className="form__container">
-          <h2>Item Availability</h2>
-          <label className="inventory-form__label">Status</label>
-          <div onClick={() => setHidden(false)}>
-            <input
-              type="radio"
-              name="status"
-              value="In Stock"
-              onChange={props.handleInputChange}
-            />
+          <h2 className="inventory-form__title">Item Availability</h2>
 
-            <span>In stock</span>
-          </div>
-          <div onClick={() => setHidden(true)}>
-            <input
-              type="radio"
-              name="status"
-              value="Out of Stock"
-              onChange={props.handleInputChange}
-            />
-            <span>Out of stock</span>
+          <label className="inventory-form__label">Status</label>
+          <div className="inventory-form__radio-button-container">
+            <div onClick={() => setHidden(false)}>
+              <input
+                type="radio"
+                name="status"
+                value="In Stock"
+                onChange={props.handleInputChange}
+              />
+
+              <span className="inventory-form__label--unbolded">In stock</span>
+            </div>
+            <div onClick={() => setHidden(true)}>
+              <input
+                type="radio"
+                name="status"
+                value="Out of Stock"
+                onChange={props.handleInputChange}
+              />
+              <span className="inventory-form__label--unbolded">
+                Out of stock
+              </span>
+            </div>
           </div>
           {!hidden ? (
             <div>
@@ -90,8 +96,8 @@ const InventoryForm = (props) => {
                 onChange={props.handleInputChange}
               ></input>
               {props.errors.quantity && (
-                <div className="form__error">
-                  <img src={errorIcon} className="form__error-icon" />
+                <div className="inventory-form__error">
+                  <img src={errorIcon} className="inventory-form__error-icon" />
                   <p>{props.errors.quantity}</p>
                 </div>
               )}

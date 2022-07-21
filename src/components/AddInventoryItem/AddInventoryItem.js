@@ -53,7 +53,7 @@ const AddInventoryItem = () => {
     <div className="edit-warehouse">
       <div className="edit-warehouse__title-container">
         <img src={arrowBack} />
-        <h1 className="edit-warehouse__title">Add Inventory</h1>
+        <h1 className="edit-warehouse__title">Add New Inventory Item</h1>
       </div>
       <div className="edit-warehouse__form-container">
         <div>
