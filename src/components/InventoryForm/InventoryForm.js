@@ -19,13 +19,16 @@ const InventoryForm = (props) => {
             placeholder="Item Name"
             onChange={props.handleInputChange}
           ></input>
-          {/* <label>Description</label>
+          <label>Description</label>
           <textarea
             className="form__textfield"
+            name="description"
+            value={props.inventory.description}
             placeholder="Please enter a brief item description"
+            onChange={props.handleInputChange}
           ></textarea>
           <label>Category</label>
-          <select>
+          <select onChange={props.handleInputChange} name="category">
             <option>Please select</option>
             <option value="Electronics">Electronics</option>
             <option value="Gears">Gears</option>
@@ -42,7 +45,6 @@ const InventoryForm = (props) => {
               type="radio"
               name="select"
               value="In Stock"
-              //   disabled={true}
             />
             <span>In Stock</span>
           </div>
@@ -61,7 +63,7 @@ const InventoryForm = (props) => {
             <option value="Santa Monica">Santa Monica</option>
             <option value="Seattle">Seattle</option>
             <option value="Miami">Miami</option>
-          </select> */}
+          </select>
         </div>
       </form>
     </div>

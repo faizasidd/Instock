@@ -5,15 +5,17 @@ import useForm from "../../utils/useForm";
 
 import "./AddInventoryItem.scss";
 import InventoryForm from "../InventoryForm/InventoryForm";
-// import InventoryForm from "../InventoryForm/InventoryForm";
 
 const AddInventoryItem = () => {
   const [inventory, setInventory] = useState({
     itemName: "",
+    description: "",
+    category: "",
   });
 
   const { handleChange, values, errors, handleSubmit } = useForm();
 
+ 
   const handleInputChange = (e) => {
     e.preventDefault();
     handleChange(e);
@@ -21,22 +23,16 @@ const AddInventoryItem = () => {
     console.log(inventory);
   };
 
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   // const newInventoryData = { ...inventory };
-  //   // newInventoryData = e.target.value;
-  //   // setInventory(newInventoryData);
-  //   // console.log(newInventoryData);
-  //   setInventory({ ...inventory, [e.target.name]: e.target.value });
-  //   console.log(inventory)
-  // };
   const submitAddedItem = (e) => {
     e.preventDefault();
+    handleSubmit(e, inventory);
     axios
       .post(
         "http://localhost:8080/inventories",
         {
           itemName: inventory.itemName,
+          description: inventory.description,
+          category: inventory.category,
         },
         {
           "Content-Type": "application/json",
@@ -69,7 +65,7 @@ const AddInventoryItem = () => {
         <button
           // disabled={!isEnabled}
           // onClick={(e) => submitAddedItem(e)}
-          onClick={(e) => handleSubmit(e, inventory)}
+          onClick={submitAddedItem}
           type="submit"
           value="submit"
           className="edit-warehouse__button--save"
