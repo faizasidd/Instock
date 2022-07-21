@@ -58,7 +58,7 @@ const InventoryForm = (props) => {
             <option value="Health">Health</option>
           </select>
         </div>
-        <div className="form__container">
+        <div className="inventory-form__container">
           <h2 className="inventory-form__title">Item Availability</h2>
 
           <label className="inventory-form__label">Status</label>

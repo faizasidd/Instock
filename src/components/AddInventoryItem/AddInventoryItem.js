@@ -50,12 +50,12 @@ const AddInventoryItem = () => {
   };
 
   return (
-    <div className="edit-warehouse">
-      <div className="edit-warehouse__title-container">
+    <div className="add-inventory">
+      <div className="add-inventory__title-container">
         <img src={arrowBack} />
-        <h1 className="edit-warehouse__title">Add New Inventory Item</h1>
+        <h1 className="add-inventory__title">Add New Inventory Item</h1>
       </div>
-      <div className="edit-warehouse__form-container">
+      <div className="add-inventory__form-container">
         <div>
           <InventoryForm
             handleInputChange={handleInputChange}
@@ -66,15 +66,15 @@ const AddInventoryItem = () => {
           />
         </div>
       </div>
-      <div className="edit-warehouse__button-container">
-        <button className="edit-warehouse__button">Cancel</button>
+      <div className="add-inventory__button-container">
+        <button className="add-inventory__button">Cancel</button>
         <button
           onClick={submitAddedItem}
           type="submit"
           value="submit"
-          className="edit-warehouse__button--save"
+          className="add-inventory__button--save"
         >
-          Save
+          + Add Item
         </button>
       </div>
     </div>
