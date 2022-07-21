@@ -8,6 +8,12 @@
     right: 1.25rem;
     bottom: 1.25rem;
     background-color: $background-page;
+    
+        @include tablet {
+            height: 6.25rem;
+            width: 15.625rem;
+        }
+    
   }
 
   .overlay {
