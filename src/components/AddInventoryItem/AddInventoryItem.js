@@ -23,6 +23,8 @@ const AddInventoryItem = () => {
     console.log(inventory);
   };
 
+ 
+
   const submitAddedItem = (e) => {
     e.preventDefault();
     handleSubmit(e, inventory);

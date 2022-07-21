@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./InventoryForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
 
 const InventoryForm = (props) => {
+  const [hidden, setHidden] = useState(false);
   return (
     <div>
       <form
@@ -40,19 +41,21 @@ const InventoryForm = (props) => {
         <div className="form__container">
           <h2>Item Availability</h2>
           <label>Status</label>
-          <div>
-            <input
-              type="radio"
-              name="select"
-              value="In Stock"
-            />
+          <div onClick={() => setHidden(false)}>
+            <input type="radio" name="select" value="In Stock" />
             <span>In Stock</span>
           </div>
-          <div>
+          <div onClick={() => setHidden(true)}>
             <input type="radio" name="select" value="Out of Stock" />
             <span>Out of Stock</span>
           </div>
-          <input type="number" value="0"></input>
+          {!hidden ? (
+            <div>
+              <label>Quantity</label>
+              <input type="number" value="0"></input>
+            </div>
+          ) : null}
+
           <label>Warehouse</label>
           <select>
             <option>Please select</option>
