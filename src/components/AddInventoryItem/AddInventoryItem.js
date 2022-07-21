@@ -8,22 +8,22 @@ import InventoryForm from "../InventoryForm/InventoryForm";
 
 const AddInventoryItem = () => {
   const [inventory, setInventory] = useState({
+    warehouseName: "",
     itemName: "",
     description: "",
     category: "",
+    status: "",
+    quantity: "",
   });
 
   const { handleChange, values, errors, handleSubmit } = useForm();
 
- 
   const handleInputChange = (e) => {
     e.preventDefault();
     handleChange(e);
     setInventory({ ...inventory, [e.target.name]: e.target.value });
     console.log(inventory);
   };
-
- 
 
   const submitAddedItem = (e) => {
     e.preventDefault();
@@ -32,9 +32,12 @@ const AddInventoryItem = () => {
       .post(
         "http://localhost:8080/inventories",
         {
+          warehouseName: inventory.warehouseName,
           itemName: inventory.itemName,
           description: inventory.description,
           category: inventory.category,
+          status: inventory.status,
+          quantity: inventory.quantity,
         },
         {
           "Content-Type": "application/json",

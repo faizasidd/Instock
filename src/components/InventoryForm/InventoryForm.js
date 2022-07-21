@@ -42,22 +42,37 @@ const InventoryForm = (props) => {
           <h2>Item Availability</h2>
           <label>Status</label>
           <div onClick={() => setHidden(false)}>
-            <input type="radio" name="select" value="In Stock" />
+            <input
+              type="radio"
+              name="status"
+              value="In Stock"
+              onChange={props.handleInputChange}
+            />
             <span>In Stock</span>
           </div>
           <div onClick={() => setHidden(true)}>
-            <input type="radio" name="select" value="Out of Stock" />
+            <input
+              type="radio"
+              name="status"
+              value="Out of Stock"
+              onChange={props.handleInputChange}
+            />
             <span>Out of Stock</span>
           </div>
           {!hidden ? (
             <div>
               <label>Quantity</label>
-              <input type="number" value="0"></input>
+              <input
+                type="number"
+                value={props.inventory.quantity}
+                name="quantity"
+                onChange={props.handleInputChange}
+              ></input>
             </div>
           ) : null}
 
           <label>Warehouse</label>
-          <select>
+          <select onChange={props.handleInputChange} name="warehouseName">
             <option>Please select</option>
             <option value="Manhattan">Manhattan</option>
             <option value="Washington">Washington</option>
