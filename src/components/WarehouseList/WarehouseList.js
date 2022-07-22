@@ -1,65 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MagnifyingGlassIcon from "../../assets/icons/search-24px.svg";
 import SortIcon from "../../assets/icons/sort-24px.svg";
 import RightIcon from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
+import crossButton from '../../assets/icons/close-24px.svg'
 import WarehouseData from "../../data/warehouses.json";
 import { NavLink } from "react-router-dom";
 
-class WarehouseList extends React.Component {
-    constructor(props) {
-        super(props);
+// import './WarehouseList.scss'
+import Modal from 'react-modal'
 
-        this.state = {
-            details: [],
-            loaded: false
-        };
+const WarehouseList = () => {
+    const [warehouses, setWarehouses] = useState('')
+
+    useEffect(() => {
+      getAllWarehouses()
+    }, [])
+  
+    const getAllWarehouses = () => {
+       axios
+          .get('http://localhost:8080/warehouses')
+          .then(response => {
+              setWarehouses(response.data)
+              console.log(response.data)
+              
+            })
+          .catch(error => console.log(error))
     }
 
-    componentDidMount() {
-        this.setState({
-            details: WarehouseData,
-            loaded: true
-        });
-    }
-
-    /*
-    componentDidUpdate(prevProps) {
-
-        if (prevProps.match.params.id !== this.props.match.params.id) {
-       
-            let VideoId;
-            axios
-                .get(`https://project-2-api.herokuapp.com/videos/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                .then((response) => {
-                    VideoId = this.props.match.params.id;
-                    const filteredVideosArray = response.data.filter((video) => VideoId !== video.id);
-            
-                    this.setState({
-                        videos: response.data,
-                        filteredVideosArray: filteredVideosArray,
-                    });
-
-                    axios
-                        .get(`https://project-2-api.herokuapp.com/videos/${VideoId}/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                        .then((responseTwo) => {
-                        
-                            this.setState({
-                                details: responseTwo.data,
-                                loaded: true,
-                            });
-                        })
-                        .catch((error) => { console.error(error.responseTwo); });
-                })
-                .catch((error) => { console.error(error.responseTwo); });
-        }
-    }
-    */
-
-    render() {
-        if (this.state.loaded) {
+    console.log(warehouses)
+        if (warehouses !== '') {
             return (
                 <>
                     <article className="warehouse-list__title-flex-container">
@@ -160,7 +132,7 @@ class WarehouseList extends React.Component {
                         </div>
                     </section>
                         
-                    {this.state.details.map((detail) => {
+                    {warehouses.map((detail) => {
                         const { name: warehouse, address, city, country, id } = detail;
                         const { name, phone, email } = detail.contact;
 
@@ -256,8 +228,9 @@ class WarehouseList extends React.Component {
                     })}
                 </>
             );
-        }   return <h1>Loading...</h1>;
+        } else {
+            return <h1>Loading...</h1>;
+        } 
     }
-}
 
 export default WarehouseList;
