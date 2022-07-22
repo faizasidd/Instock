@@ -10,6 +10,7 @@ import WarehouseList from "./components/WarehouseList/WarehouseList";
 // import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 // import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 
 function App() {

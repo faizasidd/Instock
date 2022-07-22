@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import "../WarehouseList/WarehouseList.scss";
-=======
-import React from "react";
-=======
 import React, { useState, useEffect } from "react";
->>>>>>> develop
 import axios from "axios";
 import MagnifyingGlassIcon from "../../assets/icons/search-24px.svg";
 import SortIcon from "../../assets/icons/sort-24px.svg";
@@ -15,9 +8,7 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import crossButton from '../../assets/icons/close-24px.svg'
 import WarehouseData from "../../data/warehouses.json";
 import { NavLink } from "react-router-dom";
-
-
-// import './WarehouseList.scss'
+import './WarehouseList.scss'
 import Modal from 'react-modal'
 Modal.setAppElement('#root');
 
@@ -276,4 +267,3 @@ const WarehouseList = () => {
     }
 
 export default WarehouseList;
->>>>>>> develop
