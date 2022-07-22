@@ -23,6 +23,9 @@ const WarehouseList = () => {
           .catch(error => console.log(error))
     }
     
+
+
+    
     // Modal code
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
