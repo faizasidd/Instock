@@ -3,19 +3,28 @@ import "./AddWarehouse.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import useForm from "../../utils/useForm";
+import axios from 'axios';
 
 const AddWarehouse = (props) => {
   const [warehouse, setWarehouse] = useState({
-    id: "",
-    name: "",
-    address: "",
-    city: "",
-    country: "",
-    contactName: "", //I flattened the contact part - this will have to be adjusted in the backend
-    contactPosition: "",
-    contactPhone: "",
-    contactEmail: "",
   });
+
+  const addWarehouse = (e) => {
+    e.preventDefault();
+    if (handleSubmit(e, warehouse)) {
+      axios
+        .post(
+          'http://localhost:8080/warehouses/',
+          warehouse,
+          {
+            "Content-Type": "application/json",
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    }
+  };
   const { handleChange, values, errors, handleSubmit } = useForm();
   const handleInputChange = (e) => {
     handleChange(e);
@@ -40,7 +49,7 @@ const AddWarehouse = (props) => {
       <div className="add-warehouse__button-container">
         <button className="add-warehouse__button">Cancel</button>
         <button
-          onClick={(e) => handleSubmit(e, warehouse)}
+          onClick={addWarehouse}
           type="submit"
           value="submit"
           className="add-warehouse__button--save"

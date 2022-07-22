@@ -11,18 +11,16 @@ import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 function App() {
   return (
     <BrowserRouter>
-      <AddInventoryItem />
-
       <Switch>
         <Route path="/" exact component={Placeholder} />
         {/* <Route path="/warehouses" component={Placeholder} /> */}
+        <Route path="/warehouse/edit/:warehouseId" component={EditWarehouse} />
+        <Route path="/warehouse/add" component={AddWarehouse} />
         <Route path="/warehouse/:warehouseId" component={Placeholder} />
-        <Route path="/warehouse/edit/:warehouseId" component={Placeholder} />
-        <Route path="/warehouse/add" component={Placeholder} />
-        <Route path="/inventory" component={Placeholder} />
-        <Route path="/inventory/:inventoryId" component={Placeholder} />
         <Route path="/inventory/edit/:inventoryId" component={Placeholder} />
-        <Route path="/inventory/add" component={Placeholder} />
+        <Route path="/inventory/add" component={AddInventoryItem} />
+        <Route path="/inventory/:inventoryId" component={Placeholder} />
+        <Route path="/inventory" component={Placeholder} />
       </Switch>
     </BrowserRouter>
   );
