@@ -1,0 +1,179 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typekit' as *;
+
+.warehouse-details__title-flex-container{
+
+    .warehouse-details__title-container{
+
+        .title-container__icon-container{
+
+            .title-container__icon{
+
+            }
+        }
+
+        .warehouse-details__title{
+
+        }
+    }
+
+    .warehouse-details__button-link{
+
+        .button-link__icon-container{
+
+            .button-link__icon{
+
+            }
+        }
+
+        .button-link__text-container{
+
+            .button-link__text{
+
+            }
+        }
+    }
+}
+
+.warehouse-details__contact-flex-container{
+
+    .contact__address-container{
+
+        .address__title{
+
+        }
+
+        .address__text{
+
+        }
+    }
+
+    .contact__info-container{
+
+        .info__name-position{
+
+            .info__title{
+
+            }
+
+            .name-position__text{
+
+            }
+        }
+
+        .info__phone-email{
+
+            .info__title{
+
+            }
+
+            .phone-email__text{
+
+            }
+        }
+    }
+}
+
+.warehouse-details__title-bar{
+
+    .title-bar__title-sort-container{
+
+        .title-bar__title{
+
+        }
+
+        .sort-button__icon-container{
+
+            .sort-button__icon{
+
+            }
+        }
+    }
+}
+
+.warehouse-details__info-flex-container{
+
+    .info-flex__details-container{
+
+        .details-container1__item-category-container{
+
+            .item-container__title-search{
+
+                .item-container__title{
+
+                }
+
+                .item-container__search-link{
+
+                    .search-link__text-container{
+
+                        .search-link__text{
+
+                        }
+                    }
+
+                    .search-link__icon-container{
+
+                        .search-link__icon{
+                            
+                        }
+                    }
+                }
+            }
+
+            .item-container__category-container{
+
+                .category__title{
+
+                }
+
+                .category__text{
+
+                }
+            }
+        }
+
+        .details-container2__status-qty-container{
+
+            .details-container2__status-container{
+
+                .status__title{
+
+                }
+
+                .status__text-container{
+
+                    .status__text{
+
+                    }
+                }
+            }
+
+            .details-container2__qty-container{
+
+                .qty__title{
+
+                }
+
+                .qty__text{
+
+                }
+            }
+        }
+    }
+
+    .info-flex__actions{
+
+        .actions__link{
+
+            .actions-link__icon-container{
+
+                .actions-link__icon{
+
+                }
+            }
+        }
+    }
+}
