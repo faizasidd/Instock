@@ -31,7 +31,7 @@ const WarehouseList = () => {
     }
 
     // Modal code
-    // let subtitle;
+    
     const [modalIsOpen, setIsOpen] = React.useState(false);
     
     function openModal () {
@@ -39,9 +39,6 @@ const WarehouseList = () => {
         console.log("Working")
     }
 
-    // function afterOpenModal () {
-    //     subtitle.color = '#f00';
-    // }
 
     function closeModal () {
         setIsOpen(false);
@@ -231,20 +228,27 @@ const WarehouseList = () => {
                                     <button onClick={openModal}>DELETE</button>
                                             <Modal
                                                 isOpen={modalIsOpen}
-                                                // onAfterOpen={afterOpenModal}
                                                 onRequestClose={closeModal}
                                                 className="modal"
                                                 overlayClassName="overlay"
                                                 contentLabel="Delete Modal"
                                                 ariaHideApp={false}
-
                                                 >
+                                                <div className="cross-wrapper">
+                                                    <button onClick={closeModal} className="cross">
+                                                        <img 
+                                                            className="cross__button"
+                                                            src={crossButton}
+                                                        />
+                                                    </button>
+                                                </div>
                                                 <h2>Delete Washington warehouse?</h2>
-                                                <button onClick={closeModal}>close</button>
-                                                <div>Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
-                                                <button>Cancel</button>
-                                                <button>Delete</button>
-
+                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <div className="twoBtnContainer">
+                                                    <button onClick={closeModal} className="cancel-warehouse__button">Cancel</button>
+                                                    <button className="delete-warehouse__button">Delete</button>
+                                                </div>
+                                                
                                             </Modal>
                                     <NavLink to="/editItem" className="container2__link">
                                         <div className="link__button-container">
