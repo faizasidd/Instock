@@ -1,5 +1,9 @@
 @use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typekit' as *;
+
+
 
 .modal {
     position: absolute;
@@ -8,12 +12,6 @@
     right: 1.25rem;
     bottom: 1.25rem;
     background-color: $background-page;
-    
-        @include tablet {
-            height: 6.25rem;
-            width: 15.625rem;
-        }
-    
   }
 
   .overlay {
@@ -63,4 +61,190 @@
 
   }
 
- 
+// .warehouse-list__title-flex-container{
+
+//     .warehouse-list__title{
+
+//     }
+
+//     .warehouse-list__search-add-container{
+
+//         .container1__search-bar{
+
+//             .container1__search{
+
+//             }
+
+//             .container1__image-container{
+
+//                 .container1__image{
+
+//                 }
+//             }
+//         }
+
+//         .container2__add-button{
+
+//             .button__link{
+
+//                 .button__text-container{
+
+//                     .button__text{
+
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .warehouse-list__section-titles{
+
+//     .section-titles__warehouse{
+
+//         .warehouse__text{
+
+//         }
+
+//         .warehouse__sort-button{
+
+//             .button__image{
+
+//             }
+//         }
+//     }
+
+//     .section-titles__address{
+
+//         .address__text{
+
+//         }
+
+//         .address__sort-button{
+
+//             .button__image{
+
+//             }
+//         }
+//     }
+
+//     .section-titles__contact-name{
+
+//         .contact-name__text{
+
+//         }
+
+//         .contact-name__sort-button{
+
+//             .button__image{
+
+//             }
+//         }
+//     }
+
+//     .section-titles__contact-information{
+
+//         .contact-information__text{
+
+//         }
+
+//         .contact-information__button{
+
+//             .button__image{
+
+//             }
+//         }
+//     }
+
+//     .section-titles__actions{
+
+//         .actions__text{
+
+//         }
+//     }
+// }
+
+// .warehouse-list{
+
+//     .warehouse-list__container1{
+
+//         .container1__flex1{
+
+//             .flex1__warehouse{
+
+//                 .warehouse__title{
+
+//                 }
+
+//                 .warehouse__link{
+
+//                     .link__container{
+
+//                         .link__text{
+
+//                         }
+//                     }
+
+//                     .link__image-container{
+
+//                         .link__image{
+
+//                         }
+//                     }
+//                 }
+//             }
+
+//             .flex1__address{
+
+//                 .address__title{
+
+//                 }
+
+//                 .flex1__address-text{
+
+//                 }
+//             }
+//         }
+
+//         .container1__flex2{
+
+//             .flex2__contact-name{
+
+//                 .contact-name__title{
+
+//                 }
+
+//                 .flex2__contact-name-text{
+
+//                 }
+//             }
+
+//             .flex2__contact-information{
+
+//                 .contact-information__title{
+
+//                 }
+
+//                 .contact-information__container{
+
+//                     .flex2__contact-information-text{
+
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     .warehouse-list__container2{
+
+//         .container2__link{
+
+//             .link__button-container{
+
+//                 .button__image{
+                    
+//                 }
+//             }
+//         }
+//     }
+// }
