@@ -1,0 +1,79 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typekit' as *;
+
+.inventory-list__title-flex-container{
+
+    .inventory-list__title{
+
+    }
+
+    .inventory-list__search-add-container{
+
+        .search-add-container__search-bar{
+
+            .search-bar__input{
+
+            }
+
+            .search-bar__icon-container{
+
+                .search-bar__icon{
+
+                }
+            }
+        }
+
+        .search-add-container__add-button{
+
+            .add-button__link{
+
+                .link__text-container{
+
+                    .link__text{
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.inventory-list__title-bar{
+
+    .title-bar__title-sort-container{
+
+        .title-bar__title{
+
+        }
+
+        .sort-button__icon-container{
+
+            .sort-button__icon{
+
+            }
+        }
+    }
+}
+
+.inventory-list__item-details{
+
+    .item-details__flex-container{
+
+
+    }
+
+    .item-details__actions{
+
+        .actions__link{
+
+            .actions-link__icon-container{
+
+                .actions-link__icon{
+                    
+                }
+            }
+        }
+    }
+}

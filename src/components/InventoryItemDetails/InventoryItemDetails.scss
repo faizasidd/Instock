@@ -1,0 +1,111 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typekit' as *;
+
+.item-details__title-flex-container{
+
+    .container1__title-icon-container{
+
+        .container1__back-link{
+
+            .container1__icon-container{
+
+                .container1__icon{
+
+                }
+            }
+        }
+
+        .container1__title{
+
+        }
+    }
+
+    .container2__button-link{
+
+        .button-link__image-container{
+
+            .button-link__image{
+
+            }
+        }
+
+        .button-link__text-container{
+
+            .button-link__text{
+
+            }
+        }
+    }
+}
+
+.item-details__information-container{
+
+    .information-container__flex-container1{
+
+        .flex-container1__description{
+
+            .description__title{
+
+            }
+
+            .description__text{
+
+            }
+        }
+
+        .flex-container1__category{
+
+            .category__title{
+
+            }
+
+            .category__text{
+
+            }
+        }
+    }
+
+    .information-container__flex-container2{
+
+        .flex-container2__status-warehouse{
+
+            .flex-container2__status{
+
+                .status__title{
+
+                }
+
+                .status__text-container{
+
+                    .status__text{
+
+                    }
+                }
+            }
+
+            .flex-container2__warehouse{
+
+                .warehouse__title{
+
+                }
+
+                .warehouse__text{
+                    
+                }
+            }
+        }
+
+        .flex-container2__quantity{
+
+            .quantity__title{
+
+            }
+
+            .quantity__text{
+
+            }
+        }
+    }
+}

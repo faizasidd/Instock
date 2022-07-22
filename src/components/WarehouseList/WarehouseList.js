@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+import "../WarehouseList/WarehouseList.scss";
+=======
+import React from "react";
+=======
 import React, { useState, useEffect } from "react";
+>>>>>>> develop
 import axios from "axios";
 import MagnifyingGlassIcon from "../../assets/icons/search-24px.svg";
 import SortIcon from "../../assets/icons/sort-24px.svg";
@@ -269,3 +276,4 @@ const WarehouseList = () => {
     }
 
 export default WarehouseList;
+>>>>>>> develop
