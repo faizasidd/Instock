@@ -13,19 +13,19 @@ import Modal from 'react-modal'
 import crossButton from '../../assets/icons/close-24px.svg'
 Modal.setAppElement('#root');
 
-const InventoryList = () => {
-    const [inventories, setInventories] = useState('')
+const InventoryList = (props) => {
+    const [inventories, setInventories] = useState([])
     useEffect(() => {
       getAllInventories()
     }, [])
 
     const getAllInventories = () => {
         axios
-            .get('http://localhost:8080/warehouses')
+            .get(`http://localhost:8080/inventories/?warehouseId=${props.match.params.warehouseId}/`)
             .then(response => {
                 setInventories(response.data)
                 console.log(response.data)
-              
+
             })
             .catch(error => console.log(error))
     }
