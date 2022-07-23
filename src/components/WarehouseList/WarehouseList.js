@@ -28,11 +28,11 @@ const WarehouseList = () => {
             .catch(error => console.log(error))
     }
 
-    const deleteWarehouse = (e, warehouse) => {
+    const deleteWarehouse = (e, warehouseId) => {
         axios
             .delete(
-                `http://localhost:8080/warehouses/warehouseId`,
-                warehouse,
+                `http://localhost:8080/warehouses/${warehouseId}`,
+                
             )
             .then((response) => {
                 setWarehouses(response.data)
@@ -259,7 +259,7 @@ const WarehouseList = () => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={() => deleteWarehouse(warehouse.id)} 
+                                                        onClick={(e) => deleteWarehouse(e, warehouse.id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 

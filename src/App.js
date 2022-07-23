@@ -23,11 +23,12 @@ function App() {
         <Route path="/" exact component={WarehouseList} />
         <Route path="/warehouse/edit/:warehouseId" component={EditWarehouse} />
         <Route path="/warehouse/add" component={AddWarehouse} />
+        <Route path="/warehouse/:warehouseId/inventory" component={InventoryList} />
         <Route path="/warehouse/:warehouseId" component={WarehouseInventoryList} />
         <Route path="/inventory/edit/:inventoryId" component={Placeholder} />
         <Route path="/inventory/add" component={AddInventoryItem} />
         <Route path="/inventory/:inventoryId" component={Placeholder} />
-        <Route path="/inventory" component={Placeholder} />
+        
       </Switch>
       <Footer />
     </BrowserRouter>
