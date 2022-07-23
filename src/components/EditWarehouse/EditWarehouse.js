@@ -1,35 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./EditWarehouse.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import useForm from "../../utils/useForm";
+import axios from "axios";
 
-const EditWarehouse = () => {
-  // const [warehouse, setWarehouse] = useState({
-  //   id: "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
-  //   name: "Washington",
-  //   address: "33 Pearl Street SW",
-  //   city: "Washington",
-  //   country: "USA",
-  //   contact: {
-  //     name: "Greame Lyon",
-  //     position: "Warehouse Manager",
-  //     phone: "+1 (646) 123-1234",
-  //     email: "glyon@instock.com",
-  //   },
-  // });
+const EditWarehouse = (props) => {
+  const [warehouse, setWarehouse] = useState({});
 
-  const [warehouse, setWarehouse] = useState({
-    id: "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
-    name: "Washington",
-    address: "33 Pearl Street SW",
-    city: "Washington",
-    country: "USA",
-    contactName: "Greame Lyon", //I flattened the contact part - this will have to be adjusted in the backend
-    contactPosition: "Manager",
-    contactPhone: "+1 (646) 123-1234",
-    contactEmail: "glyon@instock.com",
-  });
+  const fetchWarehouse = () => {
+    // axios.get(`http://localhost:8080/warehouses/${props.match.params.warehouseId}`)
+
+    axios.get("http://localhost:8080/warehouses").then((response) => {
+      setWarehouse(response.data[0]);
+    });
+  };
+
+  useEffect(() => {
+    fetchWarehouse();
+  }, []);
+
+  const updateFetchedWarehouse = (e) => {
+    e.preventDefault();
+    if (handleSubmit(e, warehouse)) {
+      axios
+        .put(
+          `http://localhost:8080/warehouses/${props.match.params.warehouseId}/edit`,
+          warehouse,
+          {
+            "Content-Type": "application/json",
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    }
+  };
 
   const { handleChange, values, errors, handleSubmit } = useForm();
 
@@ -56,7 +62,7 @@ const EditWarehouse = () => {
       <div className="edit-warehouse__button-container">
         <button className="edit-warehouse__button">Cancel</button>
         <button
-          onClick={(e) => handleSubmit(e, warehouse)}
+          onClick={updateFetchedWarehouse}
           type="submit"
           value="submit"
           className="edit-warehouse__button--save"
