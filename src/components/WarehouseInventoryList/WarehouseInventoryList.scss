@@ -18,7 +18,7 @@
         }
         &__link {
             text-decoration: none;
-            color: white;
+            color: black;
             font-family: inherit;
             font-weight: bold;
         }
@@ -26,8 +26,18 @@
         &__image {
             height: 18px;
             width: 18px;
+            padding-bottom: 0.4rem;
         }
     }
+}
+
+.address-text {
+    color: black;
+    font-family: inherit;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    padding-right: 9.1rem;
 }
 .warehouse-list {
     border-top: solid 1px colors.$secondary-borders;
@@ -40,9 +50,32 @@
         padding: 30px 0 30px 0;
     }
 
+    &__container1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        color: black;
+        font-family: inherit;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        padding-right: 6.3rem;
+    }
+
+    &__title {
+        padding-right: 3rem;
+        font-family: "TitilliumWeb";
+        font-weight: bold;
+        font-size: 1.8rem;
+        padding-bottom: 0.5rem;
+    }
+
     @include tablet{
         &__title-container {
             display: flex;
+            padding: 0;
         }
 
         &__button {
@@ -74,7 +107,9 @@
         justify-content: center;
     }
 }
-
+.link__image {
+    padding-bottom: 0.7rem;
+}
 .link__text {
     color: colors.$primary-interactive;
     text-decoration: none;
@@ -87,25 +122,30 @@
     border-radius: 20px;
     height: 36px;
     width: auto;
-    background-color: black;
-    border: 0.5px;
+    background-color: white;
+    border: 0.5px black solid;
 
     @include tablet {
         height: 38px;
         width: 81px;
-        margin-left: 40rem;
+        margin-left: 22rem;
     }
 }
 
+.contact-name {
+    padding-left: 4rem;
+}
+.address-container {
+    @include tablet {
+        border-right: solid 1px colors.$secondary-borders;
+        margin: 1rem 0 1rem 1rem;
+    }
+}
 .warehouse-text {
     color: colors.$secondary-header-placeholder;
     font-family: inherit;
     font-size: 11px;
-    
 
-    &__contact {
-        padding-right: 3rem;
-    }
 
     &__container {
         display: flex;
@@ -115,13 +155,12 @@
     &__address {
         display: flex;
         justify-content: center;
-        padding-right: 8rem;
+        padding-right: 11rem;
     }
     @include tablet {
         margin-top: 1rem;
         &__address {
-            padding: 0 8rem 2rem 1rem;
-            border-right: solid 1px colors.$secondary-borders;
+            
         }
 
         &__contact{ 
@@ -203,17 +242,24 @@
 }
 
 .flex1__warehouse {
-    padding-right: 8rem;
+    padding-right: 10rem;
 
     @include tablet {
         padding: 0;
     }
 }
 
-.flex2__contact-name {
-    padding-right: 10rem;
+.flex2 {
+&__contact-name {
+    padding-right: 8rem;
 }
-
+&__contact-information {
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+}
 .warehouse__link {
     text-decoration: none;
 }
@@ -225,6 +271,7 @@
 .button__image {
     padding-top: 0.3rem;
 }
+
 
 .warehouse__text-mobile {
     @include tablet {
