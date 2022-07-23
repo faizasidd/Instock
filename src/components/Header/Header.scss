@@ -1,16 +1,16 @@
-@use '../../styles/partials/colors' ;
-@use '../../styles/partials/mixins' as *;
+@use './../../styles/partials/colors' as * ;
+@use './../../styles/partials/mixins' as *;
 
 
 .header {
     &__wrapper {
-        background-color: colors.$background-header;
+        background-color: $background-header;
         height: 9rem;
         padding-bottom: 2rem;
     }
 
     &__inventory {
-        color: colors.$secondary-borders;
+        color: $secondary-borders;
         text-decoration: none;
         padding-left: 5rem;
     }

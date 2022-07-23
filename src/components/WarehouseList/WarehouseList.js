@@ -9,7 +9,7 @@ import crossButton from '../../assets/icons/close-24px.svg'
 import WarehouseData from "../../data/warehouses.json";
 import { NavLink } from "react-router-dom";
 import './WarehouseList.scss'
-import Modal from 'react-modal'
+// import Modal from 'react-modal'
 
 const WarehouseList = () => {
     const [warehouses, setWarehouses] = useState('')
