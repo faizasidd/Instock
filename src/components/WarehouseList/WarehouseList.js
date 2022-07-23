@@ -13,7 +13,6 @@ Modal.setAppElement('#root');
 
 const WarehouseList = () => {
     const [warehouses, setWarehouses] = useState('')
-
     useEffect(() => {
       getAllWarehouses()
     }, [])

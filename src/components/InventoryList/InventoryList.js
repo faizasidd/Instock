@@ -8,6 +8,9 @@ import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import InventoryData from "../../data/inventories.json";
 import { NavLink } from "react-router-dom";
+import Modal from 'react-modal'
+import crossButton from '../../assets/icons/close-24px.svg'
+Modal.setAppElement('#root');
 
 class InventoryList extends React.Component {
     constructor(props) {
@@ -25,8 +28,33 @@ class InventoryList extends React.Component {
             loaded: true
         });
     }
+ // Modal code
+    
+ const [modalIsOpen, setIsOpen] = React.useState(false);
+    
+ function openModal () {
+     setIsOpen(true);
+     console.log("Working")
+ }
+ function closeModal () {
+     setIsOpen(false);
+ }
+    componentDidUpdate = () => {
+        const deleteInventory = (e, inventory) => {
+        axios
+            .delete(
+                `http://localhost:8080/inventories/${match.params.inventoryId}`,
+                inventory,
+            )
+            .then((response) => {
+                this.setState(response.data)
+                console.log(response);
+            })
+            .catch(error => console.log(error))
+    }
+      };
 
-  
+    
 
     render() {
         if (this.state.loaded) {
@@ -220,7 +248,7 @@ class InventoryList extends React.Component {
                                 </section>
                                     
                                 <section className="item-details__actions">
-                                {/* <button 
+                                <button 
                                         onClick={openModal}
                                         className="deleteIcon">
                                         <div className="link__button-container">
@@ -258,7 +286,7 @@ class InventoryList extends React.Component {
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
-                                            </Modal> */}
+                                            </Modal>
 
                                     <NavLink to="/edit-item" className="actions__link">
                                         <div className="actions-link__icon-container">
