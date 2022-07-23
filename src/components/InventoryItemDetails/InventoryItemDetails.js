@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./InventoryItemDetails.scss";
 import ArrowBackIcon from "../../assets/icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import InventoryData from "../../data/inventories.json";
