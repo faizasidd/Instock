@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import InventoryList from "./components/InventoryList/InventoryList";
-// import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
@@ -19,7 +19,7 @@ function App() {
       <Header />
       {/* <Header /> */}
       <Switch>
-        <Route path="/" exact component={WarehouseList} />
+        <Route path="/" exact component={InventoryItemDetails} />
         {/* <Route path="/warehouses" component={Placeholder} /> */}
         <Route path="/warehouse/edit/:warehouseId" component={EditWarehouse} />
         <Route path="/warehouse/add" component={AddWarehouse} />

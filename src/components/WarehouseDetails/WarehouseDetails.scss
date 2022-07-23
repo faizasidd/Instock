@@ -34,8 +34,8 @@
 
         .button-link__icon-container{
             border: 7px solid $primary-interactive;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1.75rem;
+            height: 1.75rem;
             border-radius: 50%;
             margin-top: 2.25rem;
 
@@ -44,6 +44,7 @@
                 border-top-left-radius: 50%;
                 border-bottom-left-radius: 50%;
                 border-width: 8px;
+                height: 1.5rem;
             }
 
             .button-link__icon{
@@ -204,10 +205,6 @@
     .title-bar__title-sort-container{
         @include tablet{
             display: flex;
-        }
-
-        .title-bar__title{
-            
         }
 
         .sort-button__icon-container{
