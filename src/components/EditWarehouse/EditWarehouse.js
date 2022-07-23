@@ -9,11 +9,11 @@ const EditWarehouse = (props) => {
   const [warehouse, setWarehouse] = useState({});
 
   const fetchWarehouse = () => {
-    // axios.get(`http://localhost:8080/warehouses/${props.match.params.warehouseId}`)
-
-    axios.get("http://localhost:8080/warehouses").then((response) => {
-      setWarehouse(response.data[0]);
-    });
+    axios
+      .get(`http://localhost:8080/warehouses/${props.match.params.warehouseId}`)
+      .then((response) => {
+        setWarehouse(response.data.warehouse);
+      });
   };
 
   useEffect(() => {
