@@ -62,9 +62,9 @@ const InventoryList = (props) => {
                     <article className="inventory-list__title-flex-container">
                         <h1 className="inventory-list__title">Inventory</h1>
 
-                        <section className="inventory-list__search-add-container">
-                            <div className="search-add-container__search-bar">
-                                <input
+//                         <section className="inventory-list__search-add-container">
+//                             <div className="search-add-container__search-bar">
+//                                 <input
                                     className="search-bar__input"
                                     type="text"
                                     name="search-bar__input"
@@ -246,8 +246,8 @@ const InventoryList = (props) => {
                                     </section>
                                 </section>
                                     
-                                <section className="item-details__actions">
-                                <button 
+//                                 <section className="item-details__actions">
+//                                 <button 
                                         onClick={openModal}
                                         className="deleteIcon">
                                         <div className="link__button-container">
@@ -281,7 +281,7 @@ const InventoryList = (props) => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={() => deleteInventory(inventories.id)} 
+                                                        onClick={() => deleteInventory(inventory.id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
