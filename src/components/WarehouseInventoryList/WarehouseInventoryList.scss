@@ -1,0 +1,234 @@
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins' as *;
+.button{
+    &__text{
+    display: none;
+    }
+    &__text-edit {
+        display: none;
+    }
+    @include tablet {
+        &__text {
+            display: flex;
+        }
+
+        &__text-edit {
+            padding-left: 0.3rem;
+            display: flex;
+        }
+        &__link {
+            text-decoration: none;
+            color: white;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        &__image {
+            height: 18px;
+            width: 18px;
+        }
+    }
+}
+.warehouse-list {
+    border-top: solid 1px colors.$secondary-borders;
+
+    &__title-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: solid 1px colors.$secondary-borders;
+        padding: 30px 0 30px 0;
+    }
+
+    @include tablet{
+        &__title-container {
+            display: flex;
+        }
+
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__contact {
+            display: flex;
+        }
+        
+        &__section-titles {
+            background-color: rgba(247, 248, 249, 0.7);
+            display: flex;
+            justify-content: space-evenly;
+            color: colors.$secondary-header-placeholder;
+        }
+    }
+
+    &__container2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__inventory-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.link__text {
+    color: colors.$primary-interactive;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+
+.container2__add-button {
+    border-radius: 20px;
+    height: 36px;
+    width: auto;
+    background-color: black;
+    border: 0.5px;
+
+    @include tablet {
+        height: 38px;
+        width: 81px;
+        margin-left: 40rem;
+    }
+}
+
+.warehouse-text {
+    color: colors.$secondary-header-placeholder;
+    font-family: inherit;
+    font-size: 11px;
+    
+
+    &__contact {
+        padding-right: 3rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__address {
+        display: flex;
+        justify-content: center;
+        padding-right: 8rem;
+    }
+    @include tablet {
+        margin-top: 1rem;
+        &__address {
+            padding: 0 8rem 2rem 1rem;
+            border-right: solid 1px colors.$secondary-borders;
+        }
+
+        &__contact{ 
+            padding-left: 3rem;
+            padding-right: 8rem;
+        }
+    }
+}
+
+.section-titles {
+    &__warehouse {
+        display: none;
+    }
+    &__category {
+        display: none;
+    }
+
+    &__status {
+        display: none;
+    }
+
+    &__qty {
+        display: none;
+    }
+
+    &__actions {
+        display: none;
+    }
+
+    @include tablet {
+       
+        &__warehouse {
+            display: flex;
+            align-items: center;
+        }
+        &__category {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__status {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__qty {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__actions {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.container1{
+    &__flex1 {
+    display: flex;
+    justify-content: center;
+    color: colors.$secondary-header-placeholder;
+    font-family: inherit;
+    font-size: 11px;
+    }
+
+    &__flex2 {
+        display: flex;
+        justify-content: center;
+        color: colors.$secondary-header-placeholder;
+        font-family: inherit;
+        font-size: 11px;
+    }
+    @include tablet {
+        &__flex1 {
+            flex-direction: column;
+        }
+    }
+}
+
+.flex1__warehouse {
+    padding-right: 8rem;
+
+    @include tablet {
+        padding: 0;
+    }
+}
+
+.flex2__contact-name {
+    padding-right: 10rem;
+}
+
+.warehouse__link {
+    text-decoration: none;
+}
+
+.button__image-edit {
+    padding-left: 15rem;
+}
+
+.button__image {
+    padding-top: 0.3rem;
+}
+
+.warehouse__text-mobile {
+    @include tablet {
+        display: none;
+    }
+}
+

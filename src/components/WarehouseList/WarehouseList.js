@@ -58,7 +58,7 @@ const WarehouseList = () => {
             return (
                 <>
                     <article className="warehouse-list__title-flex-container">
-                        <h1 className="warehouse-list__title">Warehouses</h1>
+                        <h1 className="warehouse-list__title">Warehouse</h1>
 
                         <section className="warehouse-list__search-add-container">
                             <div className="container1__search-bar">
