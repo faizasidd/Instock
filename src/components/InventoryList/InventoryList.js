@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./InventoryList.scss";
+import '../WarehouseList/WarehouseList.scss'
 import SortIcon from "../../assets/icons/sort-24px.svg";
 import MagnifyingGlassIcon from "../../assets/icons/search-24px.svg";
 import RightIcon from "../../assets/icons/chevron_right-24px.svg";
@@ -12,53 +13,51 @@ import Modal from 'react-modal'
 import crossButton from '../../assets/icons/close-24px.svg'
 Modal.setAppElement('#root');
 
-class InventoryList extends React.Component {
-    constructor(props) {
-        super(props);
+const InventoryList = () => {
+    const [inventories, setInventories] = useState('')
+    useEffect(() => {
+      getAllInventories()
+    }, [])
 
-        this.state = {
-            inventory: [],
-            loaded: false
-        };
+    const getAllInventories = () => {
+        axios
+            .get('http://localhost:8080/warehouses')
+            .then(response => {
+                setInventories(response.data)
+                console.log(response.data)
+              
+            })
+            .catch(error => console.log(error))
     }
-
-    componentDidMount() {
-        this.setState({
-            inventory: InventoryData,
-            loaded: true
-        });
-    }
- // Modal code
-    
- const [modalIsOpen, setIsOpen] = React.useState(false);
-    
- function openModal () {
-     setIsOpen(true);
-     console.log("Working")
- }
- function closeModal () {
-     setIsOpen(false);
- }
-    componentDidUpdate = () => {
-        const deleteInventory = (e, inventory) => {
+    const deleteInventory = (e, inventories) => {
         axios
             .delete(
-                `http://localhost:8080/inventories/${match.params.inventoryId}`,
-                inventory,
+                `http://localhost:8080/inventories/inventoryId`,
+                inventories,
             )
             .then((response) => {
-                this.setState(response.data)
+                setInventories(response.data)
                 console.log(response);
             })
             .catch(error => console.log(error))
     }
-      };
 
+ // Modal code
     
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+        
+    function openModal () {
+        setIsOpen(true);
+        console.log("Working")
+    }
+    function closeModal () {
+        setIsOpen(false);
+    }
+ 
 
-    render() {
-        if (this.state.loaded) {
-            return (
+    if (inventories !== '') {
+        return (
+
                 <>
                     <article className="inventory-list__title-flex-container">
                         <h1 className="inventory-list__title">Inventory</h1>
@@ -172,7 +171,7 @@ class InventoryList extends React.Component {
                         </div>
                     </section>
 
-                    {this.state.inventory.map((item) => {
+                    {inventories.map((item) => {
                         const { id, warehouseName, itemName, category, status, quantity } = item;
 
                         return (
@@ -282,7 +281,7 @@ class InventoryList extends React.Component {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={() => deleteInventory(inventory.id)} 
+                                                        onClick={() => deleteInventory(inventories.id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
@@ -305,6 +304,6 @@ class InventoryList extends React.Component {
             );
         }   return <h1>Loading...</h1>;
     }
-}
+
 
 export default InventoryList;

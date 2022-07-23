@@ -28,7 +28,7 @@ function App() {
         <Route path="/inventory/edit/:inventoryId" component={Placeholder} />
         <Route path="/inventory/add" component={AddInventoryItem} />
         <Route path="/inventory/:inventoryId" component={Placeholder} />
-        <Route path="/inventory" component={Placeholder} />
+        <Route path="/inventory" component={InventoryList} />
       </Switch>
     </BrowserRouter>
   );
