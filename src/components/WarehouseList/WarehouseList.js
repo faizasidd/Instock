@@ -6,7 +6,8 @@ import RightIcon from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import crossButton from '../../assets/icons/close-24px.svg'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+
 import './WarehouseList.scss'
 import Modal from 'react-modal'
 Modal.setAppElement('#root');
@@ -31,7 +32,7 @@ const WarehouseList = () => {
     const deleteWarehouse = (e, warehouseId) => {
         axios
             .delete(
-                `http://localhost:8080/warehouses/${warehouseId}`,
+                `http://localhost:8080/warehouses/${warehouseId}/delete`,
                 
             )
             .then((response) => {
@@ -81,7 +82,9 @@ const WarehouseList = () => {
                             <button className="container2__add-button">
                                 <NavLink to="/warehouse/add" className="button__link">
                                     <div className="button__text-container">
-                                        <p className="button__text">
+                                        <p 
+                                                
+                                            className="button__text">
                                             + Add New Warehouse
                                         </p>
                                     </div>
@@ -167,7 +170,7 @@ const WarehouseList = () => {
                                                 WAREHOUSE
                                             </p>
                                             {/* to={`/${id}`} */}
-                                            <NavLink to="" className="warehouse__link">
+                                            <NavLink to={`/warehouse/${id}`} className="warehouse__link">
                                                 <div className="link__container">
                                                     <p className="link__text">
                                                         {warehouse}
@@ -259,12 +262,12 @@ const WarehouseList = () => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={(e) => deleteWarehouse(e, warehouse.id)} 
+                                                        onClick={(e) => deleteWarehouse(e, id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
                                             </Modal>
-                                    <NavLink to="/editItem" className="container2__link">
+                                    <NavLink to={`/warehouse/edit/${id}`} className="container2__link">
                                         <div className="link__button-container">
                                             <img
                                                 className="button__image"
