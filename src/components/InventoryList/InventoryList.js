@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./InventoryList.scss";
 import SortIcon from "../../assets/icons/sort-24px.svg";
 import MagnifyingGlassIcon from "../../assets/icons/search-24px.svg";
 import RightIcon from "../../assets/icons/chevron_right-24px.svg";

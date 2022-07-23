@@ -20,13 +20,13 @@ const WarehouseList = () => {
   
     const getAllWarehouses = () => {
        axios
-          .get('http://localhost:8080/warehouses')
-          .then(response => {
-              setWarehouses(response.data)
-              console.log(response.data)
+            .get('http://localhost:8080/warehouses')
+            .then(response => {
+                setWarehouses(response.data)
+                console.log(response.data)
               
             })
-          .catch(error => console.log(error))
+            .catch(error => console.log(error))
     }
 
     // Modal code
@@ -78,12 +78,12 @@ const WarehouseList = () => {
                     </article>
                         
                     <section className="warehouse-list__section-titles">
-                        <div className="section-titles__warehouse">
-                            <p className="warehouse__text">
+                        <div className="section-titles">
+                            <p className="section-titles__text">
                                 WAREHOUSE
                             </p>
                             
-                            <div className="warehouse__sort-button">
+                            <div className="section-titles__sort-button">
                                 <img
                                     className="button__image"
                                     src={SortIcon}
@@ -92,12 +92,12 @@ const WarehouseList = () => {
                             </div>
                         </div>
                             
-                        <div className="section-titles__address">
-                            <p className="address__text">
+                        <div className="section-titles">
+                            <p className="section-titles__text">
                                 ADDRESS
                             </p>
-
-                            <div className="address__sort-button">
+                            
+                            <div className="section-titles__sort-button">
                                 <img
                                     className="button__image"
                                     src={SortIcon}
@@ -106,12 +106,12 @@ const WarehouseList = () => {
                             </div>
                         </div>
                             
-                        <div className="section-titles__contact-name">
-                            <p className="contact-name__text">
+                        <div className="section-titles">
+                            <p className="section-titles__text">
                                 CONTACT NAME
                             </p>
-
-                            <div className="contact-name__sort-button">
+                            
+                            <div className="section-titles__sort-button">
                                 <img
                                     className="button__image"
                                     src={SortIcon}
@@ -120,12 +120,12 @@ const WarehouseList = () => {
                             </div>
                         </div>
                             
-                        <div className="section-titles__contact-information">
-                            <p className="contact-information__text">
+                        <div className="section-titles">
+                            <p className="section-titles__text">
                                 CONTACT INFORMATION
                             </p>
-
-                            <div className="contact-information__button">
+                            
+                            <div className="section-titles__sort-button">
                                 <img
                                     className="button__image"
                                     src={SortIcon}
@@ -134,8 +134,8 @@ const WarehouseList = () => {
                             </div>
                         </div>
                             
-                        <div className="section-titles__actions">
-                            <p className="actions__text">
+                        <div className="section-titles">
+                            <p className="section-titles__text">
                                 ACTIONS
                             </p>
                         </div>
@@ -199,11 +199,11 @@ const WarehouseList = () => {
                                             </p>
                                                 
                                             <div className="contact-information__container">
-                                                <p className="flex2__contact-information-text">
+                                                <p className="flex2__contact-information-phone">
                                                     {phone}
                                                 </p>
                                                 
-                                                <p className="flex2__contact-information-text">
+                                                <p className="flex2__contact-information-email">
                                                     {email}
                                                 </p>
                                             </div>

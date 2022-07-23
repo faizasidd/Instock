@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./WarehouseDetails.scss";
 import SortIcon from "../../assets/icons/sort-24px.svg";
 import RightIcon from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -102,9 +103,9 @@ class WarehouseDetails extends React.Component {
                             </p>
                                 
                             <p className="address__text">
-                                {this.state.details[0].address},
-                                {this.state.details[0].city},
-                                {this.state.details[0].country}
+                                {this.state.details[0].address}, 
+                                {" " + this.state.details[0].city}, 
+                                {" " + this.state.details[0].country}
                             </p>
                         </section>
                             
@@ -184,7 +185,7 @@ class WarehouseDetails extends React.Component {
                             
                         <div className="title-bar__title-sort-container">
                             <p className="title-bar__title">
-                                QTY
+                                QUANTITY
                             </p>
 
                             <div className="sort-button__icon-container">
