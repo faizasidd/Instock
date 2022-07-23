@@ -1,152 +1,368 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/typekit' as *;
 
 .warehouse-details__title-flex-container{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5vw;
 
     .warehouse-details__title-container{
+        display: flex;
+        padding: 2rem 4vw 0 5vw;
 
         .title-container__icon-container{
 
             .title-container__icon{
-
+                width: 2rem;
+                margin-top: 0.85rem;
             }
         }
 
         .warehouse-details__title{
-
+            font-size: 2.25rem;
+            margin: 0;
+            padding-left: 0.5rem;
         }
     }
 
     .warehouse-details__button-link{
+        @include tablet{
+            display: flex;
+            text-decoration: none;
+        }
 
         .button-link__icon-container{
+            border: 7px solid $primary-interactive;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            margin-top: 2.25rem;
+
+            @include tablet{
+                border-radius: 0;
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+                border-width: 8px;
+            }
 
             .button-link__icon{
+                height: 100%;
+                width: 100%;
 
+                @include tablet{
+                    margin-left: 0.1rem;
+                }
             }
         }
 
         .button-link__text-container{
+            display: none;
+
+            @include tablet{
+                display: block;
+                width: 2rem;
+                height: 1.6rem;
+                margin-top: 2.25rem;
+                border: 7px solid $primary-interactive;
+                border-top-right-radius: 50%;
+                border-bottom-right-radius: 50%;
+                background-color: $primary-interactive;
+            }
 
             .button-link__text{
-
+                @include tablet{
+                    color: $primary-white;
+                    font-size: 0.85rem;
+                    margin: 0.15rem 0;
+                }
             }
         }
     }
 }
 
 .warehouse-details__contact-flex-container{
+    padding: 0.25rem 6vw 1rem 6vw;
+    border-bottom: 2px solid $secondary-borders;
+    border-top: 2px solid $secondary-borders;
+    margin-top: 1.75rem;
+
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 4rem;
+    }
+
+    @include desktop{
+        width: 88.8%;
+    }
 
     .contact__address-container{
 
         .address__title{
+            color: $secondary-header-placeholder;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0rem;
 
+            @include tablet{
+                font-size: 0.75rem;
+            }
         }
 
         .address__text{
+            margin: 0.5rem 0;
 
+            @include tablet{
+                font-size: 0.85rem;
+                width: 10rem;
+            }
         }
     }
 
     .contact__info-container{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1rem;
+
+        @include tablet{
+            border-left: 2px solid $secondary-borders;
+            padding-left: 2.5rem;
+            width: 18rem;
+            height: 4.5rem;
+            margin-top: 0.75rem;
+        }
+
+        @include desktop{
+            width: 35%;
+            padding-right: 13.5vw;
+        }
 
         .info__name-position{
 
             .info__title{
+                color: $secondary-header-placeholder;
+                font-weight: 600;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
 
+                @include tablet{
+                    font-size: 0.75rem;
+                    margin-top: 0;
+                }
             }
 
             .name-position__text{
+                margin: 0.25rem 0;
 
+                @include tablet{
+                    font-size: 0.85rem;
+                }
             }
         }
 
         .info__phone-email{
 
             .info__title{
+                color: $secondary-header-placeholder;
+                font-weight: 600;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
 
+                @include tablet{
+                    margin-top: 0;
+                    font-size: 0.75rem;
+                }
             }
 
             .phone-email__text{
+                margin: 0.25rem 0;
 
+                @include tablet{
+                    font-size: 0.85rem;
+                }
             }
         }
     }
 }
 
 .warehouse-details__title-bar{
+    display: none;
+
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $background-page;
+        color: $secondary-header-placeholder;
+        font-weight: 600;
+        font-size: 0.75rem;
+        height: 2.5rem;
+        padding: 0 5vw 0 6vw;
+    }
 
     .title-bar__title-sort-container{
+        @include tablet{
+            display: flex;
+        }
 
         .title-bar__title{
-
+            
         }
 
         .sort-button__icon-container{
 
             .sort-button__icon{
-
+                @include tablet{
+                    height: 1rem;
+                    margin: 0.75rem 0 0 0.25rem;
+                }
             }
         }
     }
 }
 
 .warehouse-details__info-flex-container{
+    width: 93.5%;
+    padding-left: 6vw;
+    border-bottom: 2px solid $secondary-borders;
+    padding-top: 0.9rem;
+
+    @include tablet{
+        display: flex;
+        width: 95.5%;
+        padding-left: 4vw;
+        position: relative;
+    }
 
     .info-flex__details-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
 
         .details-container1__item-category-container{
 
             .item-container__title-search{
+                @include tablet{
+                    margin-left: 2vw;
+                }
 
                 .item-container__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .item-container__search-link{
+                    display: flex;
+                    text-decoration: none;
+
+                    @include tablet{
+                        margin-top: 0;
+                        margin-bottom: 1rem;
+                    }
 
                     .search-link__text-container{
 
                         .search-link__text{
+                            color: $primary-interactive;
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                            margin: 0;
 
+                            @include tablet{
+                                font-size: 0.9rem;
+                            }
                         }
                     }
 
                     .search-link__icon-container{
+                        padding-top: 0.15rem;
+                        padding-left: 0.5rem;
 
                         .search-link__icon{
-                            
+                            @include tablet{
+                                height: 1.25rem;
+                                padding-left: 0;
+                            }
                         }
                     }
                 }
             }
 
             .item-container__category-container{
+                @include tablet{
+                    position: absolute;
+                    left: 30.5%;
+                    top: 1.5rem;
+                }
+
+                @include laptop{
+                    left: 30%;
+                }
 
                 .category__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .category__text{
+                    margin-top: 0;
 
+                    @include tablet{
+                        margin-top: -0.5rem;
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
 
         .details-container2__status-qty-container{
+            margin-right: 5.75rem;
 
             .details-container2__status-container{
 
                 .status__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .status__text-container{
+                    background-color: rgba($color: $supporting-instock, $alpha: 0.1);
+                    padding: 0 0.75rem;
+                    border-radius: 1rem;
+
+                    @include tablet{
+                        position: absolute;
+                        left: 50%;
+                        margin-top: 0.2rem;
+                    }
 
                     .status__text{
+                        font-weight: 600;
+                        color: $supporting-instock;
 
+                        @include tablet{
+                            margin: 0;
+                            font-size: 0.85rem;
+                        }
                     }
                 }
             }
@@ -154,24 +370,62 @@
             .details-container2__qty-container{
 
                 .qty__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .qty__text{
+                    @include tablet{
+                        position: absolute;
+                        top: 0;
+                        left: 70%;
+                        font-size: 0.9rem;
+                    }
 
+                    @include laptop{
+                        left: 71%;
+                    }
                 }
             }
         }
     }
 
     .info-flex__actions{
+        display: flex;
+        justify-content: space-between;
+        width: 88%;
+        margin-bottom: 2rem;
+
+        @include tablet{
+            width: 4rem;
+            height: 2rem;
+            margin-left: 0;
+            position: absolute;
+            right: 3vw;
+        }
+
+        @include laptop{
+            right: 4vw;
+        }
 
         .actions__link{
+            height: 2rem;
 
             .actions-link__icon-container{
+                height: 100%;
 
                 .actions-link__icon{
+                    height: 100%;
 
+                    @include tablet{
+                        height: 1.5rem;
+                    }
                 }
             }
         }
