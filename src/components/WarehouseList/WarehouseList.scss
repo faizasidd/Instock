@@ -1,38 +1,120 @@
 @use '../../styles/partials/colors' as *;
-@use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/typekit' as *;
 
 .warehouse-list__title-flex-container{
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid $secondary-borders;
+
+    @include tablet{
+        display: flex;
+        height: 4.5rem;
+        justify-content: space-between;
+        width: 99.75%;
+        border: none;
+    }
 
     .warehouse-list__title{
+        margin-left: 6vw;
+        font-size: 2.25rem;
 
+        @include tablet{
+            margin-left: 4vw;
+        }
     }
 
     .warehouse-list__search-add-container{
+        width: 94%;
+
+        @include tablet{
+            display: flex;
+            margin-top: 2.25rem;
+            margin-right: 4vw;
+            width: 23rem;
+            height: 2.25rem;
+        }
+
+        @include desktop{
+            width: 27rem;
+        }
 
         .container1__search-bar{
+            width: 100%;
+            display: flex;
+            margin-bottom: 1.25rem;
+
+            @include tablet{
+                width: 20rem;
+            }
 
             .container1__search{
+                border: 2px solid $secondary-borders;
+                margin-left: 6vw;
+                width: 90%;
+                border-top-left-radius: 1.5rem;
+                border-bottom-left-radius: 1.5rem;
+                border-right: none;
+                padding: 0.5rem 0 0.5rem 1rem;
 
+                @include tablet{
+                    margin-left: 0;
+                    height: 100%;
+                    padding-top: 0.6rem;
+                    padding-bottom: 0.4rem;
+                }
             }
 
             .container1__image-container{
+                border: 2px solid $secondary-borders;
+                border-top-right-radius: 1.5rem;
+                border-bottom-right-radius: 1.5rem;
+                border-left: none;
+                padding: 0.5rem 1.5rem 0.5rem 0;
+
+                @include tablet{
+                    height: 1.5rem;
+                    padding: 0.25rem 0.75rem;
+                }
 
                 .container1__image{
+                    height: 100%;
 
+                    @include tablet{
+                        height: 1.5rem;
+                    }
                 }
             }
         }
 
         .container2__add-button{
+            border: none;
+            background-color: $primary-interactive;
+            width: 93%;
+            border-radius: 1.5rem;
+            margin-left: 6vw;
+
+            @include tablet{
+                width: 18rem;
+                margin-left: 1rem;
+            }
+
+            @include desktop{
+                width: 12rem;
+            }
 
             .button__link{
+                text-decoration: none;
 
                 .button__text-container{
 
                     .button__text{
+                        color: $primary-white;
+                        font-size: 1rem;
 
+                        @include tablet{
+                            font-size: 0.8rem;
+                            margin-top: 0.65rem;
+                        }
                     }
                 }
             }
@@ -41,136 +123,258 @@
 }
 
 .warehouse-list__section-titles{
+    display: none;
 
-    .section-titles__warehouse{
-
-        .warehouse__text{
-
-        }
-
-        .warehouse__sort-button{
-
-            .button__image{
-
-            }
-        }
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $background-page;
+        color: $secondary-header-placeholder;
+        font-weight: 600;
+        font-size: 0.75rem;
+        height: 2.5rem;
+        padding: 0 5vw 0 4vw;
     }
 
-    .section-titles__address{
-
-        .address__text{
-
+    .section-titles{
+        @include tablet{
+            display: flex;
         }
 
-        .address__sort-button{
-
-            .button__image{
-
+        &__text{
+            @include tablet{
+                margin: 0;
             }
         }
-    }
 
-    .section-titles__contact-name{
-
-        .contact-name__text{
-
-        }
-
-        .contact-name__sort-button{
+        &__sort-button{
 
             .button__image{
-
+                @include tablet{
+                    height: 1rem;
+                    margin: 0.1rem 0 0 0.25rem;
+                }
             }
-        }
-    }
-
-    .section-titles__contact-information{
-
-        .contact-information__text{
-
-        }
-
-        .contact-information__button{
-
-            .button__image{
-
-            }
-        }
-    }
-
-    .section-titles__actions{
-
-        .actions__text{
-
         }
     }
 }
 
 .warehouse-list{
+    width: 98%;
+    padding-left: 2vw;
+    border-bottom: 2px solid $secondary-borders;
+
+    @include tablet{
+        display: flex;
+        width: 95.5%;
+        padding-left: 4vw;
+        position: relative;
+    }
 
     .warehouse-list__container1{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 12vw;
+
+        @include tablet{
+            padding-right: 0;
+        }
 
         .container1__flex1{
+            margin-left: 6vw;
+
+            @include tablet{
+                display: flex;
+                justify-content: space-between;
+                margin-left: 0;
+            }
 
             .flex1__warehouse{
+                @include tablet{
+                    width: 7rem;
+                    margin-top: 1rem;
+                }
 
                 .warehouse__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .warehouse__link{
+                    display: flex;
+                    height: 4rem;
+                    text-decoration: none;
 
                     .link__container{
 
                         .link__text{
+                            color: $primary-interactive;
+                            font-weight: 600;
+                            margin-top: 0.25rem;
 
+                            @include tablet{
+                                font-size: 0.85rem;
+                            }
                         }
                     }
 
                     .link__image-container{
+                        padding-top: 0.25rem;
 
                         .link__image{
-
+                            @include tablet{
+                                height: 1.25rem;
+                            }
                         }
                     }
                 }
             }
 
             .flex1__address{
+                @include tablet{
+                    margin: 0;
+                    width: 13vw;
+                }
 
                 .address__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin: 0;
+                    margin-top: -1.2rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .flex1__address-text{
+                    width: 75%;
+                    margin-top: 0.5rem;
 
+                    @include tablet{
+                        font-size: 0.85rem;
+                        width: 6.25rem;
+                        margin-top: 0.25rem;
+                        position: absolute;
+                        left: 23%;
+                    }
+
+                    @include desktop{
+                        left: 24%;
+                    }
                 }
             }
         }
 
         .container1__flex2{
 
+            @include tablet{
+                display: flex;
+                width: 35vw;
+            }
+
             .flex2__contact-name{
+                @include tablet{
+                    width: 100%;
+                }
 
                 .contact-name__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .flex2__contact-name-text{
+                    font-size: 1.05rem;
+                    margin-top: 0.25rem;
 
+                    @include tablet{
+                        font-size: 0.85rem;
+                        width: 7rem;
+                        margin-top: 1rem;
+                        position: absolute;
+                        right: 45%;
+                    }
+
+                    @include laptop{
+                        right: 46%;
+                    }
                 }
             }
 
             .flex2__contact-information{
 
                 .contact-information__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0rem;
+                    margin-top: -0.1rem;
 
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .contact-information__container{
+                    @include tablet{
+                        width: 100%;
+                    }
 
-                    .flex2__contact-information-text{
+                    .flex2__contact-information-phone{
+                        margin-top: 0.25rem;
+                        margin-bottom: 0rem;
+                        font-size: 1.05rem;
 
+                        @include tablet{
+                            font-size: 0.85rem;
+                            position: absolute;
+                            right: 17%;
+                            width: 10rem;
+                        }
+
+                        @include laptop{
+                            right: 19%;
+                        }
+
+                        @include desktop{
+                            right: 20%;
+                        }
+                    }
+
+                    .flex2__contact-information-email{
+                        margin-top: 0.25rem;
+                        margin-bottom: 0rem;
+                        font-size: 1.05rem;
+
+                        @include tablet{
+                            font-size: 0.85rem;
+                            position: absolute;
+                            right: 17%;
+                            top: 1.5rem;
+                            width: 10rem;
+                        }
+
+                        @include laptop{
+                            right: 19%;
+                        }
+
+                        @include desktop{
+                            right: 20%;
+                        }
                     }
                 }
             }
@@ -178,13 +382,37 @@
     }
 
     .warehouse-list__container2{
+        display: flex;
+        justify-content: space-between;
+        width: 86%;
+        margin-left: 6vw;
+        margin-bottom: 2rem;
+
+        @include tablet{
+            width: 4rem;
+            height: 2rem;
+            margin-left: 0;
+            margin-top: 0.75rem;
+            position: absolute;
+            right: 3vw;
+        }
+
+        @include laptop{
+            right: 4vw;
+        }
 
         .container2__link{
+            height: 1.75rem;
 
             .link__button-container{
+                height: 100%;
 
                 .button__image{
-                    
+                    height: 100%;
+
+                    @include tablet{
+                        height: 1.5rem;
+                    }
                 }
             }
         }
