@@ -20,7 +20,7 @@ function App() {
       <Header />
       {/* <Header /> */}
       <Switch>
-        <Route path="/" exact component={InventoryItemDetails} />
+        <Route path="/" exact component={WarehouseList} />
         {/* <Route path="/warehouses" component={Placeholder} /> */}
         <Route path="/warehouse/edit/:warehouseId" component={EditWarehouse} />
         <Route path="/warehouse/add" component={AddWarehouse} />

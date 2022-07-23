@@ -1,5 +1,116 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/mixins' as *;
+// @use '../../styles/partials/typekit' as *;
+
+// Modal styling
+
+.deleteIcon {
+  background-color: $background-page;
+  border: none;
+}
+
+.modal {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    background-color: $background-page;
+    @include tablet {
+      top: 20%;
+      height: 16rem;
+      width: 43.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background-page;
+    @include tablet {
+      // position: absolute;
+      // background-color: none;
+    }
+}
+
+.ReactModal__Overlay--after-open {
+    @include tablet {
+      background-color: $primary-text;
+      opacity: 0.7;
+    }
+    
+  }
+
+  .twoBtnContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 18.75rem;
+    @include tablet {
+      margin-top: 1rem;
+      justify-content: flex-end;
+
+    }
+    
+  }
+  .cancel-warehouse__button {
+    width: 8rem;
+    padding: 0.5rem, 3.1875rem;
+    margin: 1.5rem 0.5rem;
+    background-color: $primary-white;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-borders;
+    @include tablet {
+      width: 5rem;
+    }
+  }
+  
+  .delete-warehouse__button {
+    width: 8rem;
+    padding: 0.5rem, 3.1875rem;
+    margin: 1.5rem 0.5rem;
+    background-color: $supporting-error;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-borders;
+    @include tablet {
+      width: 5rem;
+      margin-right: 4rem;
+    }
+  }
+
+  h2 {
+    @include tablet {
+      padding-left: 3rem;
+    }
+    
+  }
+  .p1 {
+    @include tablet {
+      width: 80%;
+      padding-left: 3rem;
+    }
+
+  }
+
+  .cross-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    
+  }
+  .cross {
+    background-color: $background-page;
+    border: none;
+    padding-right: 1rem;
+    @include tablet {
+      padding-right: 0.5rem;
+    }
+  }
+
 
 .warehouse-list__title-flex-container{
     width: 100%;
@@ -13,6 +124,7 @@
         width: 99.75%;
         border: none;
     }
+}
 
     .warehouse-list__title{
         margin-left: 6vw;
@@ -25,7 +137,6 @@
 
     .warehouse-list__search-add-container{
         width: 94%;
-
         @include tablet{
             display: flex;
             margin-top: 2.25rem;
@@ -105,8 +216,6 @@
             .button__link{
                 text-decoration: none;
 
-                .button__text-container{
-
                     .button__text{
                         color: $primary-white;
                         font-size: 1rem;
@@ -117,10 +226,10 @@
                         }
                     }
                 }
-            }
+            
         }
     }
-}
+
 
 .warehouse-list__section-titles{
     display: none;
@@ -212,8 +321,6 @@
                     height: 4rem;
                     text-decoration: none;
 
-                    .link__container{
-
                         .link__text{
                             color: $primary-interactive;
                             font-weight: 600;
@@ -274,7 +381,6 @@
             }
         }
 
-        .container1__flex2{
 
             @include tablet{
                 display: flex;
@@ -314,8 +420,6 @@
                     }
                 }
             }
-
-            .flex2__contact-information{
 
                 .contact-information__title{
                     color: $secondary-header-placeholder;
@@ -377,9 +481,9 @@
                         }
                     }
                 }
-            }
+            
         }
-    }
+    
 
     .warehouse-list__container2{
         display: flex;
@@ -417,4 +521,3 @@
             }
         }
     }
-}
