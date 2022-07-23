@@ -6,7 +6,7 @@ import Placeholder from "./components/Placeholder/Placeholder";
 import Header from "./components/Header/Header";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
-// import InventoryList from "./components/InventoryList/InventoryList";
+import InventoryList from "./components/InventoryList/InventoryList";
 // import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
