@@ -1,0 +1,69 @@
+@use './../../styles/partials/colors' as *;
+@use './../../styles/partials/mixins' as *;
+
+.add-inventory {
+  margin: 1.2rem;
+
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    width: 15rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.2rem;
+    margin: 0 -1.2rem;
+    background-color: #F7F8F9;
+  }
+
+  &__button {
+    width: 8rem;
+    padding: 0.5rem, 3.1875rem;
+    margin: 1.5rem 0.5rem;
+    background-color: $primary-white;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-borders;
+    font-family: inherit;
+
+    &--save {
+      background-color: $primary-interactive;
+      color: $primary-white;
+      width: 8rem;
+      padding: 0.5rem, 3.1875rem;
+      margin: 1.5rem 0.5rem;
+      height: 2.25rem;
+      border-radius: 1.25rem;
+      border: 1px solid $secondary-borders;
+      font-family: inherit;
+    }
+  }
+
+  @include tablet {
+    &__title-container {
+      border-bottom: 1px solid $secondary-borders;
+      width: 100%;
+      padding: 0 1.2rem;
+      margin: 0 -1.2rem;
+    }
+
+    &__button-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__button {
+      width: 5rem;
+
+      &--save {
+        width: 6rem;
+      }
+    }
+  }
+}
