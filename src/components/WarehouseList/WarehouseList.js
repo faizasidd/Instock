@@ -6,7 +6,6 @@ import RightIcon from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import crossButton from '../../assets/icons/close-24px.svg'
-import WarehouseData from "../../data/warehouses.json";
 import { NavLink } from "react-router-dom";
 import './WarehouseList.scss'
 import Modal from 'react-modal'
@@ -38,12 +37,9 @@ const WarehouseList = () => {
         setIsOpen(true);
         console.log("Working")
     }
-
-
     function closeModal () {
         setIsOpen(false);
     }
-
         if (warehouses !== '') {
             return (
                 <>
@@ -216,7 +212,9 @@ const WarehouseList = () => {
                                 </section>
                                     
                                 <section className="warehouse-list__container2">
-                                    {/* <NavLink to="/deleteItem" className="container2__link"> */}
+                                    <button 
+                                        onClick={openModal}
+                                        className="deleteIcon">
                                         <div className="link__button-container">
                                             <img
                                                 className="button__image"
@@ -224,8 +222,7 @@ const WarehouseList = () => {
                                                 alt="Delete Icon"
                                             />
                                         </div>
-                                    {/* </NavLink> */}
-                                    <button onClick={openModal}>DELETE</button>
+                                    </button>
                                             <Modal
                                                 isOpen={modalIsOpen}
                                                 onRequestClose={closeModal}
@@ -245,8 +242,12 @@ const WarehouseList = () => {
                                                 <h2>Delete Washington warehouse?</h2>
                                                 <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
-                                                    <button onClick={closeModal} className="cancel-warehouse__button">Cancel</button>
-                                                    <button className="delete-warehouse__button">Delete</button>
+                                                    <button 
+                                                        onClick={closeModal} 
+                                                        className="cancel-warehouse__button">Cancel</button>
+                                                    <button 
+                                                        onClick={() => deleteWarehouse(warehouse.id)} 
+                                                        className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
                                             </Modal>

@@ -2,6 +2,10 @@
 @use '../../styles/partials/mixins' as *;
 
 
+.deleteIcon {
+  background-color: $background-page;
+  border: none;
+}
 
 .modal {
     position: absolute;
