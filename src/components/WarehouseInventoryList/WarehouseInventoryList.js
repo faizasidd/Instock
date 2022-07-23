@@ -38,21 +38,21 @@ const WarehouseInventoryList = (props) => {
                 <div className="warehouse-list__title-container">
                    
                     <Link to="/" className="button__link">
-                            <div>
+                            <div className="">
                                 <img
                                     className="button__image"
                                     src={BackIcon}
                                     alt="Edit Icon"
                                 />
-                                <p>{warehouse.name}</p>
                             </div>
                         </Link>
+                        <p className="warehouse-list__title">{warehouse.name}</p>
                     
                             <button className="container2__add-button">
                                 <Link to="/edit-warehouse" className="button__link">
                                     <div className="warehouse-list__button">
                                         <img
-                                                className="button__image"
+                                                className="button__image edit-icon"
                                                 src={EditIcon}
                                                 alt="Edit Icon"
                                         />
@@ -64,15 +64,21 @@ const WarehouseInventoryList = (props) => {
                             </button>
                 </div>
                         <section className="warehouse-list__contact">
+                            <div className="address-container">
                                 <h3 className="warehouse-text warehouse-text__address">WAREHOUSE ADDRESS:</h3>
-                                <p>{warehouse.address} {warehouse.city} {warehouse.country}</p>
+                                <p className="address-text">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                            </div>
                             <div className="warehouse-text__container">
-                                <h3 className="warehouse-text warehouse-text__contact">CONTACT NAME:</h3>
-                                <p>{warehouse.contact.name}</p>
-                                <p>{warehouse.contact.position}</p>
+                                <div className="contact-name">
+                                <h3 className="warehouse-text  warehouse-text__contact">CONTACT NAME:</h3>
+                                <p className="warehouse-list__text">{warehouse.contact.name}</p>
+                                <p className="warehouse-list__text">{warehouse.contact.position}</p>
+                                </div>
+                                <div>
                                 <h3 className="warehouse-text">CONTACT INFORMATION:</h3>
-                                <p>{warehouse.contact.phone}</p>
-                                <p>{warehouse.contact.email}</p>
+                                <p className="warehouse-list__text">{warehouse.contact.phone}</p>
+                                <p className="warehouse-list__text">{warehouse.contact.email}</p>
+                                </div>
                             </div>
                         </section>
                     <section className="warehouse-list__section-titles">
@@ -151,13 +157,13 @@ const WarehouseInventoryList = (props) => {
                                     <section className="container1__flex1">
                                         
                                         <div className="flex1__warehouse">
-                                        <p className="warehouse__text-mobile">
+                                        <p className="warehouse__text-mobile inventory-title">
                                         INVENTORY ITEM
                                         </p>
                                             <Link to="" className="warehouse__link">
                                             <div className="warehouse-list__inventory-container">
                                                 <div className="link__container">
-                                                    <p className="link__text">
+                                                    <p className="link__text " >
                                                         {itemName}
                                                     </p>
                                                 </div>
@@ -189,7 +195,7 @@ const WarehouseInventoryList = (props) => {
                                             <p className="warehouse__text-mobile">
                                             CATEGORY
                                             </p> 
-                                            <p className="flex2__contact-name-text">
+                                            <p className="category-text">
                                                 {category}
                                             </p>
                                         </div>

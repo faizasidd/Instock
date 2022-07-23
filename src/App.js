@@ -13,15 +13,14 @@ import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 // import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 import WarehouseInventoryList from "./components/WarehouseInventoryList/WarehouseInventoryList";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      {/* <Header /> */}
       <Switch>
         <Route path="/" exact component={WarehouseList} />
-        {/* <Route path="/warehouses" component={Placeholder} /> */}
         <Route path="/warehouse/edit/:warehouseId" component={EditWarehouse} />
         <Route path="/warehouse/add" component={AddWarehouse} />
         <Route path="/warehouse/:warehouseId" component={WarehouseInventoryList} />
@@ -30,6 +29,7 @@ function App() {
         <Route path="/inventory/:inventoryId" component={Placeholder} />
         <Route path="/inventory" component={Placeholder} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
