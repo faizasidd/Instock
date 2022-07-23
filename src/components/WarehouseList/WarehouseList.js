@@ -19,7 +19,7 @@ const WarehouseList = () => {
     }, [])
   
     const getAllWarehouses = () => {
-       axios
+        axios
             .get('http://localhost:8080/warehouses')
             .then(response => {
                 setWarehouses(response.data)
@@ -28,6 +28,20 @@ const WarehouseList = () => {
             })
             .catch(error => console.log(error))
     }
+
+    const deleteWarehouse = (e, warehouse) => {
+        axios
+            .delete(
+                `http://localhost:8080/warehouses/warehouseId`,
+                warehouse,
+            )
+            .then((response) => {
+                setWarehouses(response.data)
+                console.log(response);
+            })
+            .catch(error => console.log(error))
+    }
+
 
     // Modal code
     

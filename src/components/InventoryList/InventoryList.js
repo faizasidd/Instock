@@ -26,38 +26,7 @@ class InventoryList extends React.Component {
         });
     }
 
-    /*
-    componentDidUpdate(prevProps) {
-
-        if (prevProps.match.params.id !== this.props.match.params.id) {
-       
-            let VideoId;
-            axios
-                .get(`https://project-2-api.herokuapp.com/videos/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                .then((response) => {
-                    VideoId = this.props.match.params.id;
-                    const filteredVideosArray = response.data.filter((video) => VideoId !== video.id);
-            
-                    this.setState({
-                        videos: response.data,
-                        filteredVideosArray: filteredVideosArray,
-                    });
-
-                    axios
-                        .get(`https://project-2-api.herokuapp.com/videos/${VideoId}/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                        .then((responseTwo) => {
-                        
-                            this.setState({
-                                details: responseTwo.data,
-                                loaded: true,
-                            });
-                        })
-                        .catch((error) => { console.error(error.responseTwo); });
-                })
-                .catch((error) => { console.error(error.responseTwo); });
-        }
-    }
-    */
+  
 
     render() {
         if (this.state.loaded) {
@@ -251,15 +220,45 @@ class InventoryList extends React.Component {
                                 </section>
                                     
                                 <section className="item-details__actions">
-                                    <NavLink to="/delete-item" className="actions__link">
-                                        <div className="actions-link__icon-container">
+                                {/* <button 
+                                        onClick={openModal}
+                                        className="deleteIcon">
+                                        <div className="link__button-container">
                                             <img
-                                                className="actions-link__icon"
+                                                className="button__image"
                                                 src={DeleteIcon}
                                                 alt="Delete Icon"
                                             />
                                         </div>
-                                    </NavLink>
+                                    </button>
+                                            <Modal
+                                                isOpen={modalIsOpen}
+                                                onRequestClose={closeModal}
+                                                className="modal"
+                                                overlayClassName="overlay"
+                                                contentLabel="Delete Modal"
+                                                ariaHideApp={false}
+                                                >
+                                                <div className="cross-wrapper">
+                                                    <button onClick={closeModal} className="cross">
+                                                        <img 
+                                                            className="cross__button"
+                                                            src={crossButton}
+                                                        />
+                                                    </button>
+                                                </div>
+                                                <h2>Delete inventory?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <div className="twoBtnContainer">
+                                                    <button 
+                                                        onClick={closeModal} 
+                                                        className="cancel-warehouse__button">Cancel</button>
+                                                    <button 
+                                                        onClick={() => deleteInventory(inventory.id)} 
+                                                        className="delete-warehouse__button">Delete</button>
+                                                </div>
+                                                
+                                            </Modal> */}
 
                                     <NavLink to="/edit-item" className="actions__link">
                                         <div className="actions-link__icon-container">
