@@ -7,7 +7,6 @@ import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import WarehouseData from "../../data/warehouses.json";
 import { NavLink } from "react-router-dom";
-
 import './WarehouseList.scss'
 import Modal from 'react-modal'
 
