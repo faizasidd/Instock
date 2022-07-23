@@ -11,8 +11,9 @@ import { NavLink, Link } from "react-router-dom";
 import './WarehouseInventoryList.scss';
 import Modal from 'react-modal';
 
-const WarehouseInventoryList = () => {
-    const [warehouses, setWarehouses] = useState('')
+const WarehouseInventoryList = (props) => {
+    const [warehouse, setWarehouse] = useState({})
+    const [inventories, setInventories] = useState([])
 
     useEffect(() => {
       getAllWarehouseInventory()
@@ -20,17 +21,18 @@ const WarehouseInventoryList = () => {
   
     const getAllWarehouseInventory = () => {
        axios
-          .get('http://localhost:8080/warehouses')
+          .get(`http://localhost:8080/warehouses/${props.match.params.warehouseId}`)
           .then(response => {
-              setWarehouses(response.data)
-              console.log(response.data)
-              
+              setWarehouse(response.data.warehouse)
+              console.log(response.data.warehouse)
+              setInventories(response.data.inventory)
+              console.log(response.data.inventory)
             })
           .catch(error => console.log(error))
     }
 
-    console.log(warehouses)
-        if (warehouses !== '') {
+    // console.log(warehouse)
+        if (warehouse && warehouse.contact) {
             return (
                 <>
                 <div className="warehouse-list__title-container">
@@ -42,6 +44,7 @@ const WarehouseInventoryList = () => {
                                     src={BackIcon}
                                     alt="Edit Icon"
                                 />
+                                <p>{warehouse.name}</p>
                             </div>
                         </Link>
                     
@@ -62,9 +65,14 @@ const WarehouseInventoryList = () => {
                 </div>
                         <section className="warehouse-list__contact">
                                 <h3 className="warehouse-text warehouse-text__address">WAREHOUSE ADDRESS:</h3>
+                                <p>{warehouse.address} {warehouse.city} {warehouse.country}</p>
                             <div className="warehouse-text__container">
                                 <h3 className="warehouse-text warehouse-text__contact">CONTACT NAME:</h3>
+                                <p>{warehouse.contact.name}</p>
+                                <p>{warehouse.contact.position}</p>
                                 <h3 className="warehouse-text">CONTACT INFORMATION:</h3>
+                                <p>{warehouse.contact.phone}</p>
+                                <p>{warehouse.contact.email}</p>
                             </div>
                         </section>
                     <section className="warehouse-list__section-titles">
@@ -131,26 +139,26 @@ const WarehouseInventoryList = () => {
                         </div>
                     </section>
                         
-                    {warehouses.map((detail) => {
-                        const { name: warehouse, address, city, country, id } = detail;
-                        const { name, phone, email } = detail.contact;
+                    {inventories.map((detail) => {
+                        const { name, address, city, country, id } = warehouse;
+                        const {category, description, itemName, quantity, status, warehouseName} = detail;
+
 
                         return (
-                            <article className="warehouse-list" key={id}>
+                            <article className="warehouse-list">
                         
-                                <section className="warehouse-list__container1">
+                                <section className="warehouse-list__container1" key={inventories.id}>
                                     <section className="container1__flex1">
                                         
                                         <div className="flex1__warehouse">
                                         <p className="warehouse__text-mobile">
                                         INVENTORY ITEM
                                         </p>
-                                            {/* to={`/${id}`} */}
                                             <Link to="" className="warehouse__link">
                                             <div className="warehouse-list__inventory-container">
                                                 <div className="link__container">
                                                     <p className="link__text">
-                                                        {warehouse}
+                                                        {itemName}
                                                     </p>
                                                 </div>
                                                     
@@ -170,7 +178,7 @@ const WarehouseInventoryList = () => {
                                         STATUS
                                         </p>  
                                         <p className="flex1__address-text">
-                                                Placeholder
+                                                {status}
                                         </p>
                                         </div>
                                     </section>
@@ -182,7 +190,7 @@ const WarehouseInventoryList = () => {
                                             CATEGORY
                                             </p> 
                                             <p className="flex2__contact-name-text">
-                                                Placeholder
+                                                {category}
                                             </p>
                                         </div>
                                            
@@ -192,7 +200,7 @@ const WarehouseInventoryList = () => {
                                             </p>  
                                             <div className="contact-information__container">
                                                 <p className="flex2__contact-information-text">
-                                                    Placeholder
+                                                    {quantity}
                                                 </p>
 
                                             </div>
@@ -223,7 +231,7 @@ const WarehouseInventoryList = () => {
                                 </section>
                             </article>
                         );
-                    })}
+                     })}
                 </>
             );
         } else {
