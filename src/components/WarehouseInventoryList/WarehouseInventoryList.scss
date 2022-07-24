@@ -147,6 +147,7 @@
     &__item-status-container {
         display: flex;
         justify-content: center;
+        padding-top: 1rem;
     }
 
     &__category-quantity-container {
@@ -161,9 +162,26 @@
     &__edit-delete-container {
         display: flex;
         justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
     }
     &__delete-button {
-        padding-right: 14rem;
+        padding-right: 16rem;
+    }
+
+    &__category-text-tablet {
+        display: none;
+    }
+    &__link-text-tablet {
+        display: none;
+    }
+
+    &__status-text-tablet {
+        display: none;
+    }
+
+    &__right-icon-tablet {
+        display: none;
     }
 
     @include tablet {
@@ -175,6 +193,13 @@
 
         &__edit-text {
             display: flex;
+        }
+
+        &__item-status-container {
+            display: flex;
+            width: 14.5rem;
+            padding-left: 2.3rem;
+            justify-content: flex-start;
         }
 
         &__button-container {
@@ -213,6 +238,7 @@
             font-weight: 600;
             color: colors.$secondary-header-placeholder;
             font-size: 0.8rem;
+            background-color: #F7F8F9;
         }
 
         &__title-header {
@@ -249,8 +275,8 @@
         }
 
         &__inventory-container {
-            padding-left: 2.5rem;
-            padding-right: 7rem;
+            padding-left: 0rem;
+            padding-right: 0;
         }
         &__category-container {
             padding-right: 0;
@@ -262,14 +288,67 @@
         }
 
         &__category-text-tablet {
-            margin-right: 5rem;
+            display: flex;
+            align-items: center;
+            width: 12rem;
+        }
+        &__link-text-tablet {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__status-text-tablet {
+            display: flex;
+            align-items: center;
+            padding-top: 1rem;
+            width: 9rem;
+        }
+    
+        &__right-icon-tablet {
+            display: flex;
+            align-items: center;
         }
 
         &__edit-button {
             padding-top: 1rem;
+            padding-left: 1rem;
         }
-        &__list {
+
+        &__edit-delete-container {
+            padding-right: 1.5rem;
+        }
+        &__list-section {
             display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    @include desktop {
+        &__edit {
+            margin-left: 60rem;
+        }
+
+        &__address-container {
+            padding-right: 20rem;
+            padding-left: 4rem;
+        }
+
+        &__contact {
+            padding-right: 10rem;
+            padding-left: 5rem;
+        }
+
+        &__item-status-container {
+            padding-left: 5.5rem;
+            width: 19rem;
+        }
+
+        &__category-text-tablet {
+            width: 18rem;
+        }
+
+        &__status-text-tablet {
+            width: 16rem;
         }
     }
 }

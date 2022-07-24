@@ -194,11 +194,12 @@ const WarehouseInventoryList = (props) => {
                                         <p className="warehouse-inventory__status-text">
                                                 {status}
                                         </p>
-                                        <p className="warehouse-inventory__category-text-tablet">
-                                                {category}
-                                        </p>
+                                        
                                         </div>
                                     </section>
+                                    <p className="warehouse-inventory__category-text-tablet">
+                                                {category}
+                                    </p>
                                          
                                     <section className="warehouse-inventory__category-quantity-container">
                                        
@@ -222,16 +223,15 @@ const WarehouseInventoryList = (props) => {
                                                 <p  className="warehouse-inventory__category-text">
                                                     {quantity}
                                                 </p>
-                                                <p  className="warehouse-inventory__category-text-tablet">
-                                                    {quantity}
-                                                </p>
+                                                
 
                                             </div>
                                         </div>
                                     </section>
-                                </section>
-                                    
-                                <section className="warehouse-inventory__edit-delete-container">
+                                    <p  className="warehouse-inventory__category-text-tablet">
+                                                    {quantity}
+                                    </p>
+                                    <section className="warehouse-inventory__edit-delete-container">
                                     <Link to="/deleteItem" className="warehouse-inventory__delete-button">
                                         <div className="warehouse-inventory__delete-button-container">
                                             <img
@@ -252,6 +252,9 @@ const WarehouseInventoryList = (props) => {
                                         </div>
                                     </Link>
                                 </section>
+                                </section>
+                                    
+                                
                             </article>
                         );
                      })}
