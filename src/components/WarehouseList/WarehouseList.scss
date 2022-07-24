@@ -5,7 +5,7 @@
 // Modal styling
 
 .deleteIcon {
-  background-color: $background-page;
+  background-color: white;
   border: none;
 }
 
@@ -124,7 +124,6 @@
         width: 99.75%;
         border: none;
     }
-}
 
     .warehouse-list__title{
         margin-left: 6vw;
@@ -216,19 +215,21 @@
             .button__link{
                 text-decoration: none;
 
-                    .button__text{
-                        color: $primary-white;
-                        font-size: 1rem;
+                .button__text{
+                    color: $primary-white;
+                    font-size: 1rem;
 
-                        @include tablet{
-                            font-size: 0.8rem;
-                            margin-top: 0.65rem;
-                        }
+                    @include tablet{
+                        font-size: 0.8rem;
+                        margin-top: 0.65rem;
+                        padding-left: 0.75rem;
+                        font-weight: 400;
                     }
                 }
-            
+            }
         }
     }
+}
 
 
 .warehouse-list__section-titles{
@@ -243,7 +244,7 @@
         font-weight: 600;
         font-size: 0.75rem;
         height: 2.5rem;
-        padding: 0 5vw 0 4vw;
+        padding: 0.5rem 5vw 0 4vw;
     }
 
     .section-titles{
@@ -253,7 +254,7 @@
 
         &__text{
             @include tablet{
-                margin: 0;
+                padding-bottom: 0.5rem;
             }
         }
 
@@ -262,7 +263,7 @@
             .button__image{
                 @include tablet{
                     height: 1rem;
-                    margin: 0.1rem 0 0 0.25rem;
+                    margin: 0.5rem 0 0 0.25rem;
                 }
             }
         }
@@ -272,7 +273,7 @@
 .warehouse-list{
     width: 98%;
     padding-left: 2vw;
-    border-bottom: 2px solid $secondary-borders;
+    border-top: 2px solid $secondary-borders;
 
     @include tablet{
         display: flex;
@@ -283,6 +284,7 @@
 
     .warehouse-list__container1{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         padding-right: 12vw;
 
@@ -292,6 +294,9 @@
 
         .container1__flex1{
             margin-left: 6vw;
+            width: 12rem;
+            display: flex;
+            flex-direction: column;
 
             @include tablet{
                 display: flex;
@@ -300,6 +305,8 @@
             }
 
             .flex1__warehouse{
+                padding-right: 0;
+
                 @include tablet{
                     width: 7rem;
                     margin-top: 1rem;
@@ -321,9 +328,12 @@
                     height: 4rem;
                     text-decoration: none;
 
+                    .link__container{
+
                         .link__text{
                             color: $primary-interactive;
                             font-weight: 600;
+                            font-size: 1rem;
                             margin-top: 0.25rem;
 
                             @include tablet{
@@ -365,12 +375,16 @@
                 .flex1__address-text{
                     width: 75%;
                     margin-top: 0.5rem;
+                    font-size: 1rem;
+                    color: $primary-text;
+                    margin-right: 0;
 
                     @include tablet{
                         font-size: 0.85rem;
                         width: 6.25rem;
                         margin-top: 0.25rem;
                         position: absolute;
+                        top: 0.5rem;
                         left: 23%;
                     }
 
@@ -381,6 +395,9 @@
             }
         }
 
+        .container1__flex2{
+            display: flex;
+            flex-direction: column;
 
             @include tablet{
                 display: flex;
@@ -388,6 +405,8 @@
             }
 
             .flex2__contact-name{
+                padding-right: 0;
+
                 @include tablet{
                     width: 100%;
                 }
@@ -406,12 +425,14 @@
                 .flex2__contact-name-text{
                     font-size: 1.05rem;
                     margin-top: 0.25rem;
+                    color: $primary-text;
 
                     @include tablet{
                         font-size: 0.85rem;
                         width: 7rem;
                         margin-top: 1rem;
                         position: absolute;
+                        top: 0.5rem;
                         right: 45%;
                     }
 
@@ -420,6 +441,9 @@
                     }
                 }
             }
+
+            .flex2__contact-information{
+                padding-left: 0;
 
                 .contact-information__title{
                     color: $secondary-header-placeholder;
@@ -441,12 +465,14 @@
                     .flex2__contact-information-phone{
                         margin-top: 0.25rem;
                         margin-bottom: 0rem;
-                        font-size: 1.05rem;
+                        font-size: 1rem;
+                        color: $primary-text;
 
                         @include tablet{
                             font-size: 0.85rem;
                             position: absolute;
                             right: 17%;
+                            top: 0.5rem;
                             width: 10rem;
                         }
 
@@ -460,9 +486,10 @@
                     }
 
                     .flex2__contact-information-email{
-                        margin-top: 0.25rem;
+                        margin-top: -0.1rem;
                         margin-bottom: 0rem;
-                        font-size: 1.05rem;
+                        font-size: 1rem;
+                        color: $primary-text;
 
                         @include tablet{
                             font-size: 0.85rem;
@@ -470,6 +497,7 @@
                             right: 17%;
                             top: 1.5rem;
                             width: 10rem;
+                            margin-top: 0.5rem;
                         }
 
                         @include laptop{
@@ -481,9 +509,9 @@
                         }
                     }
                 }
-            
+            }
         }
-    
+    }
 
     .warehouse-list__container2{
         display: flex;
@@ -521,3 +549,4 @@
             }
         }
     }
+}
