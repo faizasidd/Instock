@@ -1,281 +1,275 @@
 @use '../../styles/partials/colors';
 @use '../../styles/partials/mixins' as *;
-.button{
-    &__text{
-    display: none;
+
+.warehouse-inventory {
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid colors.$secondary-borders;
     }
-    &__text-edit {
+
+    &__link {
+        text-decoration: none;
+        color: colors.$primary-interactive;
+        font-weight: 600;
+    }
+
+    &__edit {
+        margin-left: 7.5rem;
+        border-radius: 20px;
+        height: 36px;
+        width: 36px;
+    }
+
+    &__back {
+        padding-top: 0.3rem;
+    }
+    &__title {
+        font-family: "TitilliumWeb";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    &__edit-text {
         display: none;
     }
-    @include tablet {
-        &__text {
-            display: flex;
-        }
 
-        &__text-edit {
-            padding-left: 0.3rem;
-            display: flex;
-        }
-        &__link {
-            text-decoration: none;
-            color: black;
-            font-family: inherit;
-            font-weight: bold;
-        }
-
-        &__image {
-            height: 18px;
-            width: 18px;
-            padding-bottom: 0.4rem;
-        }
+    &__right-icon {
+        padding-top: 0.5rem;
     }
-}
 
-.address-text {
-    color: black;
-    font-family: inherit;
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
-    padding-right: 9.1rem;
-}
-.warehouse-list {
-    border-top: solid 1px colors.$secondary-borders;
-
-    &__title-container {
+    &__contact-container {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-bottom: solid 1px colors.$secondary-borders;
-        padding: 30px 0 30px 0;
+        justify-content: center;
+        padding-right: 2.5rem;
+        padding-bottom: 1rem;
     }
 
-    &__container1 {
+    &__address-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding-right: 7rem;
     }
 
-    &__text {
-        color: black;
-        font-family: inherit;
-        font-size: 11px;
+    &__address-header {
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-bottom: 0rem;
+        padding-right: 2rem;
+    }
+
+    &__address {
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+    }
+
+    &__contact {
         display: flex;
-        justify-content: center;
-        padding-right: 6.3rem;
+        flex-direction: column;
+        align-items: center;
     }
 
-    &__title {
-        padding-right: 3rem;
-        font-family: "TitilliumWeb";
-        font-weight: bold;
-        font-size: 1.8rem;
-        padding-bottom: 0.5rem;
-    }
-
-    @include tablet{
-        &__title-container {
-            display: flex;
-            padding: 0;
-        }
-
-        &__button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &__contact {
-            display: flex;
-        }
-        
-        &__section-titles {
-            background-color: rgba(247, 248, 249, 0.7);
-            display: flex;
-            justify-content: space-evenly;
-            color: colors.$secondary-header-placeholder;
-        }
-    }
-
-    &__container2 {
+    &__contact2 {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 1rem;
+    }
+
+    &__contact-header {
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-bottom: 0rem;
+    }
+
+    &__contact-name {
+        padding-right: 1.2rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    &__contact-position {
+        padding-left: 1.5rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    &__contact-phone {
+        font-size: 0.8rem;
+        padding-right: 1.6rem;
+        margin: 0;
+    }
+    &__contact-email {
+        font-size: 0.8rem;
+        padding-right: 1.6rem;
+        margin: 0;
+    }
+
+    &__section-titles {
+        display: none;
+    }
+
+    &__list {
+        border-top: 1px solid colors.$secondary-borders;
     }
 
     &__inventory-container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        padding-right: 25vh;
     }
-}
-.link__image {
-    padding-bottom: 0.7rem;
-}
-.link__text {
-    color: colors.$primary-interactive;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    padding-bottom: 0.3rem;
-}
 
-.container2__add-button {
-    border-radius: 20px;
-    height: 36px;
-    width: auto;
-    background-color: white;
-    border: 0.5px black solid;
-
-    @include tablet {
-        height: 38px;
-        width: 81px;
-        margin-left: 22rem;
+    &__link-text {
+        margin: 0;
+        font-size: 0.8rem;
     }
-}
 
-.contact-name {
-    padding-left: 4rem;
-}
-.address-container {
-    @include tablet {
-        border-right: solid 1px colors.$secondary-borders;
-        margin: 1rem 0 1rem 1rem;
+    &__status-text {
+        margin: 0;
+        font-size: 0.8rem;
     }
-}
-.warehouse-text {
-    color: colors.$secondary-header-placeholder;
-    font-family: inherit;
-    font-size: 11px;
 
+    &__category-text {
+        margin: 0;
+        font-size: 0.8rem;
+    }
 
-    &__container {
+    &__mobile-header {
+        margin: 0;
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    &__item-status-container {
         display: flex;
         justify-content: center;
     }
 
-    &__address {
+    &__category-quantity-container {
         display: flex;
         justify-content: center;
-        padding-right: 11rem;
-    }
-    @include tablet {
-        margin-top: 1rem;
-        &__address {
-            
-        }
-
-        &__contact{ 
-            padding-left: 3rem;
-            padding-right: 8rem;
-        }
-    }
-}
-
-.section-titles {
-    &__warehouse {
-        display: none;
-    }
-    &__category {
-        display: none;
     }
 
-    &__status {
-        display: none;
+    &__category-container {
+        padding-right: 25vh;
     }
 
-    &__qty {
-        display: none;
-    }
-
-    &__actions {
-        display: none;
-    }
-
-    @include tablet {
-       
-        &__warehouse {
-            display: flex;
-            align-items: center;
-        }
-        &__category {
-            display: flex;
-            align-items: center;
-        }
-    
-        &__status {
-            display: flex;
-            align-items: center;
-        }
-    
-        &__qty {
-            display: flex;
-            align-items: center;
-        }
-    
-        &__actions {
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-.container1{
-    &__flex1 {
-    display: flex;
-    justify-content: center;
-    color: colors.$secondary-header-placeholder;
-    font-family: inherit;
-    font-size: 11px;
-    }
-
-    &__flex2 {
+    &__edit-delete-container {
         display: flex;
         justify-content: center;
-        color: colors.$secondary-header-placeholder;
-        font-family: inherit;
-        font-size: 11px;
     }
+    &__delete-button {
+        padding-right: 14rem;
+    }
+
     @include tablet {
-        &__flex1 {
-            flex-direction: column;
+        &__edit {
+            margin-left: 33rem;
+            width: 81px;
+            height: 38px;
+        }
+
+        &__edit-text {
+            display: flex;
+        }
+
+        &__button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__button {
+            text-decoration: none;
+            color: colors.$primary-interactive
+        }
+
+        &__contact-section {
+            display: flex;
+        }
+
+        &__address-container {
+            border-right: 1px solid colors.$secondary-borders;
+            margin: 1rem 0 1rem 1rem;
+        }
+
+        &__contact-container {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        &__contact {
+            padding-right: 2rem;
+        }
+
+        &__section-titles {
+            display: flex;
+            justify-content: space-around;
+            font-family: "TitilliumWeb";
+            font-weight: 600;
+            color: colors.$secondary-header-placeholder;
+            font-size: 0.8rem;
+        }
+
+        &__title-header {
+            display: flex;
+            align-items: center;
+        }
+
+        &__mobile-header {
+            display: none;
+        }
+
+        &__link-text {
+            display: none;
+        }
+
+        &__right-icon {
+            display: none;
+        }
+
+        &__right-icon-tablet {
+            padding-top: 0.5rem;
+        }
+
+        &__status-text {
+            display: none;
+        }
+
+        &__category-text {
+            display: none;
+        }
+
+        &__list-section {
+            display: flex;
+        }
+
+        &__inventory-container {
+            padding-left: 2.5rem;
+            padding-right: 7rem;
+        }
+        &__category-container {
+            padding-right: 0;
+        }
+
+        &__delete-button {
+            padding-right:0;
+            padding-top: 1rem;
+        }
+
+        &__category-text-tablet {
+            margin-right: 5rem;
+        }
+
+        &__edit-button {
+            padding-top: 1rem;
+        }
+        &__list {
+            display: flex;
         }
     }
 }
-
-.flex1__warehouse {
-    padding-right: 10rem;
-
-    @include tablet {
-        padding: 0;
-    }
-}
-
-.flex2 {
-&__contact-name {
-    padding-right: 8rem;
-}
-&__contact-information {
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-}
-.warehouse__link {
-    text-decoration: none;
-}
-
-.button__image-edit {
-    padding-left: 15rem;
-}
-
-.button__image {
-    padding-top: 0.3rem;
-}
-
-
-.warehouse__text-mobile {
-    @include tablet {
-        display: none;
-    }
-}
-
