@@ -31,115 +31,121 @@ const WarehouseInventoryList = (props) => {
           .catch(error => console.log(error))
     }
 
-    // console.log(warehouse)
+    
+
+   
         if (warehouse && warehouse.contact) {
+
+        
             return (
+
+                
                 <>
-                <div className="warehouse-list__title-container">
+                <div className="warehouse-inventory__links">
                    
-                    <Link to="/" className="button__link">
-                            <div className="">
+                    <Link to="/" className="warehous-inventory__button">
+                            <div>
                                 <img
-                                    className="button__image"
+                                    className="warehouse-inventory__back"
                                     src={BackIcon}
                                     alt="Edit Icon"
                                 />
                             </div>
                         </Link>
-                        <p className="warehouse-list__title">{warehouse.name}</p>
+                        <p className="warehouse-inventory__title">{warehouse.name}</p>
                     
-                            <button className="container2__add-button">
-                                <Link to={`/warehouse/${warehouse.id}/inventory`} className="button__link">
-                                    <div className="warehouse-list__button">
+                            <button className="warehouse-inventory__edit">
+                                <Link to={`/warehouse/${warehouse.id}/inventory`} className="warehouse-inventory__button">
+                                    <div className="warehouse-inventory__button-container">
                                         <img
-                                                className="button__image edit-icon"
+                                                className="warehouse-inventory__edit-icon"
                                                 src={EditIcon}
                                                 alt="Edit Icon"
                                         />
-                                        <p className="button__text-edit">
+                                        <p className="warehouse-inventory__edit-text">
                                             Edit
                                         </p>
                                     </div>
                                 </Link>
                             </button>
                 </div>
-                        <section className="warehouse-list__contact">
-                            <div className="address-container">
-                                <h3 className="warehouse-text warehouse-text__address">WAREHOUSE ADDRESS:</h3>
-                                <p className="address-text">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
+                        <section className="warehouse-inventory__contact-section">
+                            <div className="warehouse-inventory__address-container">
+                                <h3 className="warehouse-inventory__address-header">WAREHOUSE ADDRESS:</h3>
+                                <p className="warehouse-inventory__address">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                             </div>
-                            <div className="warehouse-text__container">
-                                <div className="contact-name">
-                                <h3 className="warehouse-text  warehouse-text__contact">CONTACT NAME:</h3>
-                                <p className="warehouse-list__text">{warehouse.contact.name}</p>
-                                <p className="warehouse-list__text">{warehouse.contact.position}</p>
+                            <div className="warehouse-inventory__contact-container">
+                                <div className="warehouse-inventory__contact">
+                                    <h3 className="warehouse-inventory__contact-header">CONTACT NAME:</h3>
+                                    <p className="warehouse-inventory__contact-name">{warehouse.contact.name}</p>
+                                    <p className="warehouse-inventory__contact-position">{warehouse.contact.position}</p>
                                 </div>
-                                <div>
-                                <h3 className="warehouse-text">CONTACT INFORMATION:</h3>
-                                <p className="warehouse-list__text">{warehouse.contact.phone}</p>
-                                <p className="warehouse-list__text">{warehouse.contact.email}</p>
+                                <div className="warehouse-inventory__contact2">
+                                    <h3 className="warehouse-inventory__contact-header">CONTACT INFORMATION:</h3>
+                                    <p className="warehouse-inventory__contact-phone">{warehouse.contact.phone}</p>
+                                    <p className="warehouse-inventory__contact-email">{warehouse.contact.email}</p>
                                 </div>
                             </div>
                         </section>
-                    <section className="warehouse-list__section-titles">
-                        <div className="section-titles__warehouse">
-                            <p className="warehouse__text">
+                    <section className="warehouse-inventory__section-titles">
+                        <div className="warehouse-inventory__title-header">
+                            <p className="warehouse-inventory__inventory">
                                 INVENTORY ITEM
                             </p>
                             
-                            <div className="warehouse__sort-button">
+                            <div className="warehouse-inventory__sort-container">
                                 <img
-                                    className="button__image"
+                                    className="warehouse-inventory__sort-icon"
                                     src={SortIcon}
                                     alt="Sort Icon"
                                 />
                             </div>
                         </div>
                             
-                        <div className="section-titles__category">
-                            <p className="address__text">
+                        <div className="warehouse-inventory__title-header">
+                            <p className="warehouse-inventory__category">
                                 CATEGORY
                             </p>
 
-                            <div className="address__sort-button">
+                            <div className="warehouse-inventory__sort-container">
                                 <img
-                                    className="button__image"
+                                    className="warehouse-inventory__sort-icon"
                                     src={SortIcon}
                                     alt="Sort Icon"
                                 />
                             </div>
                         </div>
                             
-                        <div className="section-titles__status">
-                            <p className="contact-name__text">
+                        <div className="warehouse-inventory__title-header">
+                            <p className="warehouse-inventory__status">
                                 STATUS
                             </p>
 
-                            <div className="contact-name__sort-button">
+                            <div className="warehouse-inventory__sort-container">
                                 <img
-                                    className="button__image"
+                                    className="warehouse-inventory__sort-icon"
                                     src={SortIcon}
                                     alt="Sort Icon"
                                 />
                             </div>
                         </div>
                             
-                        <div className="section-titles__qty">
-                            <p className="contact-information__text">
-                                QTY
+                        <div className="warehouse-inventory__title-header">
+                            <p className="warehouse-inventory__qty">
+                                QUANTITY
                             </p>
 
-                            <div className="contact-information__button">
+                            <div className="warehouse-inventory__sort-container">
                                 <img
-                                    className="button__image"
+                                    className="warehouse-inventory__sort-icon"
                                     src={SortIcon}
                                     alt="Sort Icon"
                                 />
                             </div>
                         </div>
                             
-                        <div className="section-titles__actions">
-                            <p className="actions__text">
+                        <div className="warehouse-inventory__title-header">
+                            <p className="warehouse-inventory__actions">
                                 ACTIONS
                             </p>
                         </div>
@@ -151,26 +157,34 @@ const WarehouseInventoryList = (props) => {
 
 
                         return (
-                            <article className="warehouse-list">
+                            <article className="warehouse-inventory__list">
                         
-                                <section className="warehouse-list__container1" key={inventories.id}>
-                                    <section className="container1__flex1">
+                                <section className="warehouse-inventory__list-section" key={inventories.id}>
+                                    <section className="warehouse-inventory__item-status-container">
                                         
-                                        <div className="flex1__warehouse">
-                                        <p className="warehouse__text-mobile inventory-title">
+                                        <div className="warehouse-inventory__container">
+                                        <p className="warehouse-inventory__mobile-header">
                                         INVENTORY ITEM
                                         </p>
-                                            <Link to="" className="warehouse__link">
-                                            <div className="warehouse-list__inventory-container">
-                                                <div className="link__container">
-                                                    <p className="link__text " >
+                                            <Link to="" className="warehouse-inventory__link">
+                                            <div className="warehouse-inventory__inventory-container">
+                                                <div className="warehouse-inventory__item-container">
+                                                    <p className="warehouse-inventory__link-text" >
+                                                        {itemName}
+                                                    </p>
+                                                    <p className="warehouse-inventory__link-text-tablet" >
                                                         {itemName}
                                                     </p>
                                                 </div>
                                                     
-                                                <div className="link__image-container">
+                                                <div className="warehouse-inventory__right-icon-container">
                                                     <img
-                                                        className="link__image"
+                                                        className="warehouse-inventory__right-icon"
+                                                        src={RightIcon}
+                                                        alt="Right Icon"
+                                                    />
+                                                    <img
+                                                        className="warehouse-inventory__right-icon-tablet"
                                                         src={RightIcon}
                                                         alt="Right Icon"
                                                     />
@@ -179,62 +193,74 @@ const WarehouseInventoryList = (props) => {
                                             </Link>
                                         </div>
                                           
-                                        <div className="flex1__address">
-                                        <p className="warehouse__text-mobile">
+                                        <div className="warehouse-inventory__status-container">
+                                        <p className="warehouse-inventory__mobile-header">
                                         STATUS
                                         </p>  
-                                        <p className="flex1__address-text">
-                                                {status}
+                                        <p className={status === "In Stock" ? "warehouse-inventory__status-text--active" : "warehouse-inventory__status-text--inactive"}>
+                                            {status? status.toUpperCase(): "loading ..."}
                                         </p>
+                                        
                                         </div>
                                     </section>
+                                    <p className="warehouse-inventory__category-text-tablet">
+                                                {category}
+                                    </p>
                                          
-                                    <section className="container1__flex2">
+                                    <section className="warehouse-inventory__category-quantity-container">
                                        
-                                        <div className="flex2__contact-name">
-                                            <p className="warehouse__text-mobile">
+                                        <div className="warehouse-inventory__category-container">
+                                            <p className="warehouse-inventory__mobile-header">
                                             CATEGORY
                                             </p> 
-                                            <p className="category-text">
+                                            <p className="warehouse-inventory__category-text">
                                                 {category}
+                                            </p>
+                                            <p className={status === "In Stock" ? "warehouse-inventory__status-text-tablet--active" : "warehouse-inventory__status-text-tablet--inactive"}>
+                                                {status? status.toUpperCase(): "loading ..."}
                                             </p>
                                         </div>
                                            
-                                        <div className="flex2__contact-information">   
-                                            <p className="warehouse__text-mobile">
+                                        <div className="warehouse-inventory__quantity-container">   
+                                            <p className="warehouse-inventory__mobile-header">
                                             QUANTITY
                                             </p>  
-                                            <div className="contact-information__container">
-                                                <p className="flex2__contact-information-text">
+                                            <div className="warehouse-inventory__quantity-text-container">
+                                                <p  className="warehouse-inventory__category-text">
                                                     {quantity}
                                                 </p>
+                                                
 
                                             </div>
                                         </div>
                                     </section>
-                                </section>
-                                    
-                                <section className="warehouse-list__container2">
-                                    <Link to="/deleteItem" className="container2__link">
-                                        <div className="link__button-container">
+                                    <p  className="warehouse-inventory__quantity-text-tablet">
+                                                    {quantity}
+                                    </p>
+                                    <section className="warehouse-inventory__edit-delete-container">
+                                    <Link to="/deleteItem" className="warehouse-inventory__delete-button">
+                                        <div className="warehouse-inventory__delete-button-container">
                                             <img
-                                                className="button__image"
+                                                className="warehouse-inventory__delete-icon"
                                                 src={DeleteIcon}
                                                 alt="Delete Icon"
                                             />
                                         </div>
                                     </Link>
 
-                                    <Link to="/editItem" className="container2__link">
-                                        <div className="link__button-container">
+                                    <Link to="/editItem" className="warehouse-inventory__edit-button">
+                                        <div className="warehouse-inventory__edit-button-container">
                                             <img
-                                                className="button__image-edit"
+                                                className="warehouse-inventory__edit-icon"
                                                 src={EditIcon}
                                                 alt="Edit Icon"
                                             />
                                         </div>
                                     </Link>
                                 </section>
+                                </section>
+                                    
+                                
                             </article>
                         );
                      })}
