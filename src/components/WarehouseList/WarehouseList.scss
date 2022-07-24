@@ -237,8 +237,8 @@
 
     @include tablet{
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         background-color: $background-page;
         color: $secondary-header-placeholder;
         font-weight: 600;
@@ -284,6 +284,7 @@
 
     .warehouse-list__container1{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         padding-right: 12vw;
 
@@ -293,6 +294,9 @@
 
         .container1__flex1{
             margin-left: 6vw;
+            width: 12rem;
+            display: flex;
+            flex-direction: column;
 
             @include tablet{
                 display: flex;
@@ -301,6 +305,8 @@
             }
 
             .flex1__warehouse{
+                padding-right: 0;
+
                 @include tablet{
                     width: 7rem;
                     margin-top: 1rem;
@@ -327,6 +333,7 @@
                         .link__text{
                             color: $primary-interactive;
                             font-weight: 600;
+                            font-size: 1rem;
                             margin-top: 0.25rem;
 
                             @include tablet{
@@ -368,6 +375,9 @@
                 .flex1__address-text{
                     width: 75%;
                     margin-top: 0.5rem;
+                    font-size: 1rem;
+                    color: $primary-text;
+                    margin-right: 0;
 
                     @include tablet{
                         font-size: 0.85rem;
@@ -386,12 +396,17 @@
         }
 
         .container1__flex2{
+            display: flex;
+            flex-direction: column;
+
             @include tablet{
                 display: flex;
                 width: 35vw;
             }
 
             .flex2__contact-name{
+                padding-right: 0;
+
                 @include tablet{
                     width: 100%;
                 }
@@ -410,6 +425,7 @@
                 .flex2__contact-name-text{
                     font-size: 1.05rem;
                     margin-top: 0.25rem;
+                    color: $primary-text;
 
                     @include tablet{
                         font-size: 0.85rem;
@@ -427,6 +443,7 @@
             }
 
             .flex2__contact-information{
+                padding-left: 0;
 
                 .contact-information__title{
                     color: $secondary-header-placeholder;
@@ -448,7 +465,8 @@
                     .flex2__contact-information-phone{
                         margin-top: 0.25rem;
                         margin-bottom: 0rem;
-                        font-size: 1.05rem;
+                        font-size: 1rem;
+                        color: $primary-text;
 
                         @include tablet{
                             font-size: 0.85rem;
@@ -468,9 +486,10 @@
                     }
 
                     .flex2__contact-information-email{
-                        margin-top: 0.25rem;
+                        margin-top: -0.1rem;
                         margin-bottom: 0rem;
-                        font-size: 1.05rem;
+                        font-size: 1rem;
+                        color: $primary-text;
 
                         @include tablet{
                             font-size: 0.85rem;
@@ -478,6 +497,7 @@
                             right: 17%;
                             top: 1.5rem;
                             width: 10rem;
+                            margin-top: 0.5rem;
                         }
 
                         @include laptop{

@@ -1,4 +1,4 @@
-/*import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./InventoryList.scss";
 import '../WarehouseList/WarehouseList.scss'
@@ -32,7 +32,7 @@ const InventoryList = (props) => {
     const deleteInventory = (e, inventories) => {
         axios
             .delete(
-                `http://localhost:8080/inventories/inventoryId`, //bug here
+                `http://localhost:8080/inventories/inventoryId`,
                 inventories,
             )
             .then((response) => {
@@ -62,15 +62,15 @@ const InventoryList = (props) => {
                     <article className="inventory-list__title-flex-container">
                         <h1 className="inventory-list__title">Inventory</h1>
 
-                          <section className="inventory-list__search-add-container">
-                                <div className="search-add-container__search-bar">
-                                    <input
-                                        className="search-bar__input"
-                                        type="text"
-                                        name="search-bar__input"
-                                        id="search-bar__input"
-                                        placeholder="Search..."
-                                    ></input>
+                        <section className="inventory-list__search-add-container">
+                            <div className="search-add-container__search-bar">
+                                <input
+                                    className="search-bar__input"
+                                    type="text"
+                                    name="search-bar__input"
+                                    id="search-bar__input"
+                                    placeholder="Search..."
+                                ></input>
 
                                 <div className="search-bar__icon-container">
                                     <img
@@ -82,7 +82,7 @@ const InventoryList = (props) => {
                             </div>
                             
                             <button className="search-add-container__add-button">
-                                <Link to={`/inventory/${inventory.id}`} className="add-button__link">
+                                <Link to="/add-item" className="add-button__link">
                                     <div className="link__text-container">
                                         <p className="link__text">
                                             + Add New Item
@@ -246,7 +246,7 @@ const InventoryList = (props) => {
                                     </section>
                                 </section>
                                     
-                                   <section className="item-details__actions">
+                                <section className="item-details__actions">
                                    <button 
                                         onClick={openModal}
                                         className="deleteIcon">
@@ -281,7 +281,7 @@ const InventoryList = (props) => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={() => deleteInventory(id)} 
+                                                        onClick={() => deleteInventory(id)}
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
@@ -306,4 +306,4 @@ const InventoryList = (props) => {
     }
 
 
-export default InventoryList;*/
+export default InventoryList;
