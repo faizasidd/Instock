@@ -31,7 +31,7 @@ const WarehouseList = () => {
     const deleteWarehouse = (e, warehouseId) => {
         axios
             .delete(
-                `http://localhost:8080/warehouses/${warehouseId}`,
+                `http://localhost:8080/warehouses/${warehouseId}/delete`,
                 
             )
             .then((response) => {
@@ -81,7 +81,9 @@ const WarehouseList = () => {
                             <button className="container2__add-button">
                                 <Link to="/warehouse/add" className="button__link">
                                     <div className="button__text-container">
-                                        <p className="button__text">
+                                        <p 
+                                                
+                                            className="button__text">
                                             + Add New Warehouse
                                         </p>
                                     </div>
@@ -167,7 +169,8 @@ const WarehouseList = () => {
                                                 WAREHOUSE
                                             </p>
                                             {/* to={`/${id}`} */}
-                                            <Link to="" className="warehouse__link">
+                                            
+                                            <Link to={`/warehouse/${id}`} className="warehouse__link">
                                                 <div className="link__container">
                                                     <p className="link__text">
                                                         {warehouse}
@@ -259,12 +262,13 @@ const WarehouseList = () => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={(e) => deleteWarehouse(e, warehouse.id)} 
+                                                        onClick={(e) => deleteWarehouse(e, id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
                                             </Modal>
-                                    <Link to="/editItem" className="container2__link">
+
+                                    <Link to={`/warehouse/edit/${id}`} className="container2__link">
                                         <div className="link__button-container">
                                             <img
                                                 className="button__image"

@@ -49,7 +49,7 @@ const WarehouseInventoryList = (props) => {
                         <p className="warehouse-list__title">{warehouse.name}</p>
                     
                             <button className="container2__add-button">
-                                <Link to="/edit-warehouse" className="button__link">
+                                <Link to={`/warehouse/${warehouse.id}/inventory`} className="button__link">
                                     <div className="warehouse-list__button">
                                         <img
                                                 className="button__image edit-icon"

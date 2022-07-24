@@ -32,7 +32,7 @@ const InventoryList = (props) => {
     const deleteInventory = (e, inventories) => {
         axios
             .delete(
-                `http://localhost:8080/inventories/inventoryId`,
+                `http://localhost:8080/inventories/inventoryId`, //bug here
                 inventories,
             )
             .then((response) => {
@@ -82,7 +82,7 @@ const InventoryList = (props) => {
                             </div>
                             
                             <button className="search-add-container__add-button">
-                                <Link to="/add-item" className="add-button__link">
+                                <Link to={`/inventory/${inventory.id}`} className="add-button__link">
                                     <div className="link__text-container">
                                         <p className="link__text">
                                             + Add New Item
@@ -281,7 +281,7 @@ const InventoryList = (props) => {
                                                         onClick={closeModal} 
                                                         className="cancel-warehouse__button">Cancel</button>
                                                     <button 
-                                                        onClick={() => deleteInventory(inventory.id)} 
+                                                        onClick={() => deleteInventory(id)} 
                                                         className="delete-warehouse__button">Delete</button>
                                                 </div>
                                                 
