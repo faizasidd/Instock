@@ -4,7 +4,7 @@ import "./InventoryItemDetails.scss";
 import ArrowBackIcon from "../../assets/icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import InventoryData from "../../data/inventories.json";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class InventoryItemDetails extends React.Component {
     constructor(props) {
@@ -62,7 +62,7 @@ class InventoryItemDetails extends React.Component {
                 <>
                     <article className="item-details__title-flex-container">
                         <section className="container1__title-icon-container">
-                            <NavLink to="/inventory-details" className="container1__back-link">    
+                            <Link to="/inventory-details" className="container1__back-link">    
                                 <div className="container1__icon-container">
                                     <img
                                         className="container1__icon"
@@ -70,12 +70,12 @@ class InventoryItemDetails extends React.Component {
                                         alt="Arrow Back Icon"
                                     />
                                 </div>
-                            </NavLink>
+                            </Link>
                                 
                             <h1 className="container1__title">{this.state.inventory[0].itemName}</h1>
                         </section>
                                 
-                        <NavLink to="/edit-item" className="container2__button-link">
+                        <Link to="/edit-item" className="container2__button-link">
                             <div className="button-link__image-container">
                                 <img
                                     className="button-link__image"
@@ -89,7 +89,7 @@ class InventoryItemDetails extends React.Component {
                                     Edit
                                 </p>
                             </div>
-                        </NavLink>
+                        </Link>
                     </article>
 
                     <article className="item-details__information-container">
