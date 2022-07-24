@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./InventoryList.scss";
 import '../WarehouseList/WarehouseList.scss'
@@ -8,7 +8,7 @@ import RightIcon from "../../assets/icons/chevron_right-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import InventoryData from "../../data/inventories.json";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Modal from 'react-modal'
 import crossButton from '../../assets/icons/close-24px.svg'
 Modal.setAppElement('#root');
@@ -62,15 +62,15 @@ const InventoryList = (props) => {
                     <article className="inventory-list__title-flex-container">
                         <h1 className="inventory-list__title">Inventory</h1>
 
-//                         <section className="inventory-list__search-add-container">
-//                             <div className="search-add-container__search-bar">
-//                                 <input
-                                    className="search-bar__input"
-                                    type="text"
-                                    name="search-bar__input"
-                                    id="search-bar__input"
-                                    placeholder="Search..."
-                                ></input>
+                          <section className="inventory-list__search-add-container">
+                                <div className="search-add-container__search-bar">
+                                    <input
+                                        className="search-bar__input"
+                                        type="text"
+                                        name="search-bar__input"
+                                        id="search-bar__input"
+                                        placeholder="Search..."
+                                    ></input>
 
                                 <div className="search-bar__icon-container">
                                     <img
@@ -82,13 +82,13 @@ const InventoryList = (props) => {
                             </div>
                             
                             <button className="search-add-container__add-button">
-                                <NavLink to="/add-item" className="add-button__link">
+                                <Link to="/add-item" className="add-button__link">
                                     <div className="link__text-container">
                                         <p className="link__text">
                                             + Add New Item
                                         </p>
                                     </div>
-                                </NavLink>
+                                </Link>
                             </button>
                         </section>
                     </article>
@@ -183,7 +183,7 @@ const InventoryList = (props) => {
                                                 INVENTORY ITEM
                                             </p>
                                                 
-                                            <NavLink to="/item" className="item-container__search-link">
+                                            <Link to="/item" className="item-container__search-link">
                                                 <div className="search-link__text-container">
                                                     <p className="search-link__text">
                                                         {itemName}
@@ -197,7 +197,7 @@ const InventoryList = (props) => {
                                                         alt="Right Icon"
                                                     />
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </div>
                                             
                                         <div className="item-container__category-container">
@@ -246,8 +246,8 @@ const InventoryList = (props) => {
                                     </section>
                                 </section>
                                     
-//                                 <section className="item-details__actions">
-//                                 <button 
+                                   <section className="item-details__actions">
+                                   <button 
                                         onClick={openModal}
                                         className="deleteIcon">
                                         <div className="link__button-container">
@@ -287,7 +287,7 @@ const InventoryList = (props) => {
                                                 
                                             </Modal>
 
-                                    <NavLink to="/edit-item" className="actions__link">
+                                    <Link to="/edit-item" className="actions__link">
                                         <div className="actions-link__icon-container">
                                             <img
                                                 className="actions-link__icon"
@@ -295,7 +295,7 @@ const InventoryList = (props) => {
                                                 alt="Edit Icon"
                                             />
                                         </div>
-                                    </NavLink>
+                                    </Link>
                                 </section>
                             </article>
                         );
@@ -306,4 +306,4 @@ const InventoryList = (props) => {
     }
 
 
-export default InventoryList;
+export default InventoryList;*/

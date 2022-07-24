@@ -8,7 +8,7 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import ArrowBackIcon from "../../assets/icons/arrow_back-24px.svg";
 import WarehouseData from "../../data/warehouses.json";
 import InventoryData from "../../data/inventories.json";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class WarehouseDetails extends React.Component {
     constructor(props) {
@@ -79,7 +79,7 @@ class WarehouseDetails extends React.Component {
                             <h1 className="warehouse-details__title">{this.state.details[0].name}</h1>
                         </section>
                                 
-                        <NavLink to="/edit" className="warehouse-details__button-link">
+                        <Link to="/edit" className="warehouse-details__button-link">
                             <div className="button-link__icon-container">
                                 <img
                                     className="button-link__icon"
@@ -93,7 +93,7 @@ class WarehouseDetails extends React.Component {
                                     Edit
                                 </p>
                             </div>
-                        </NavLink>
+                        </Link>
                     </article>
 
                     <article className="warehouse-details__contact-flex-container">
@@ -217,7 +217,7 @@ class WarehouseDetails extends React.Component {
                                             </p>
                                             
                                             {/* to={`/${id}`} */}
-                                            <NavLink to="" className="item-container__search-link">
+                                            <Link to="" className="item-container__search-link">
                                                 <div className="search-link__text-container">
                                                     <p className="search-link__text">
                                                         {itemName}
@@ -231,7 +231,7 @@ class WarehouseDetails extends React.Component {
                                                         alt="Right Icon"
                                                     />
                                                 </div>
-                                            </NavLink>
+                                            </Link>
                                         </div>
                                             
                                         <div className="item-container__category-container">
@@ -271,7 +271,7 @@ class WarehouseDetails extends React.Component {
                                 </section>
                                     
                                 <section className="info-flex__actions">
-                                    <NavLink to="/delete-item" className="actions__link">
+                                    <Link to="/delete-item" className="actions__link">
                                         <div className="actions-link__icon-container">
                                             <img
                                                 className="actions-link__icon"
@@ -279,9 +279,9 @@ class WarehouseDetails extends React.Component {
                                                 alt="Delete Icon"
                                             />
                                         </div>
-                                    </NavLink>
+                                    </Link>
 
-                                    <NavLink to="/edit-item" className="actions__link">
+                                    <Link to="/edit-item" className="actions__link">
                                         <div className="actions-link__icon-container">
                                             <img
                                                 className="actions-link__icon"
@@ -289,7 +289,7 @@ class WarehouseDetails extends React.Component {
                                                 alt="Edit Icon"
                                             />
                                         </div>
-                                    </NavLink>
+                                    </Link>
                                 </section>
                             </article>
                         );
