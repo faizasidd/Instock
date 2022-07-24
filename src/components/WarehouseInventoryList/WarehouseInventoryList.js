@@ -31,9 +31,15 @@ const WarehouseInventoryList = (props) => {
           .catch(error => console.log(error))
     }
 
+    
+
    
         if (warehouse && warehouse.contact) {
+
+        
             return (
+
+                
                 <>
                 <div className="warehouse-inventory__links">
                    
@@ -191,8 +197,8 @@ const WarehouseInventoryList = (props) => {
                                         <p className="warehouse-inventory__mobile-header">
                                         STATUS
                                         </p>  
-                                        <p className="warehouse-inventory__status-text">
-                                                {status}
+                                        <p className={status === "In Stock" ? "warehouse-inventory__status-text--active" : "warehouse-inventory__status-text--inactive"}>
+                                            {status? status.toUpperCase(): "loading ..."}
                                         </p>
                                         
                                         </div>
@@ -210,8 +216,8 @@ const WarehouseInventoryList = (props) => {
                                             <p className="warehouse-inventory__category-text">
                                                 {category}
                                             </p>
-                                            <p className="warehouse-inventory__status-text-tablet">
-                                                {status}
+                                            <p className={status === "In Stock" ? "warehouse-inventory__status-text-tablet--active" : "warehouse-inventory__status-text-tablet--inactive"}>
+                                                {status? status.toUpperCase(): "loading ..."}
                                             </p>
                                         </div>
                                            
@@ -228,7 +234,7 @@ const WarehouseInventoryList = (props) => {
                                             </div>
                                         </div>
                                     </section>
-                                    <p  className="warehouse-inventory__category-text-tablet">
+                                    <p  className="warehouse-inventory__quantity-text-tablet">
                                                     {quantity}
                                     </p>
                                     <section className="warehouse-inventory__edit-delete-container">

@@ -127,9 +127,24 @@
         font-size: 0.8rem;
     }
 
-    &__status-text {
+    &__status-text--active {
         margin: 0;
         font-size: 0.8rem;
+        text-align: center;
+        border-radius: 1.25rem;
+        color: #158463;
+        background-color: rgba(21, 132, 99, 0.07);
+        padding:0.1rem 0.5rem;
+    }
+
+    &__status-text--inactive {
+        margin: 0;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 1.25rem;
+        color: #C94515;
+        background-color: rgba(201, 69, 21, 0.07);
+        padding:0.1rem 0.5rem;
     }
 
     &__category-text {
@@ -184,7 +199,55 @@
         display: none;
     }
 
+    &__status-text-tablet--active {
+        display: none;
+    }
+
+    &__status-text-tablet--inactive {
+        display: none;
+    }
+
+    &__quantity-text-tablet {
+        display: none;
+    }
+
     @include tablet {
+
+        &__status-text--inactive {
+            display: none;
+        }
+        &__status-text--active {
+            display: none;
+        }
+
+        &__status-text-tablet--active {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            text-align: center;
+            width: 3.5rem;
+            border-radius: 1.25rem;
+            color: #158463;
+            border: solid 0.01px white;
+            background-color: rgba(21, 132, 99, 0.07);
+            padding:0.1rem 0.5rem;
+        }
+
+        &__status-text-tablet--inactive {
+            display: flex;
+            justify-content: space-around;
+            width: 5.4rem;
+            align-items: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 1.25rem;
+            color: #C94515;
+            background-color: rgba(201, 69, 21, 0.07);
+            padding:0.1rem 0.5rem;
+        }
+
         &__edit {
             margin-left: 33rem;
             width: 81px;
@@ -290,7 +353,8 @@
         &__category-text-tablet {
             display: flex;
             align-items: center;
-            width: 12rem;
+            width: 18rem;
+            padding-left: 4rem;
         }
         &__link-text-tablet {
             display: flex;
@@ -321,11 +385,52 @@
             display: flex;
             justify-content: space-around;
         }
+        &__quantity-text-tablet {
+            display: flex;
+            align-items: center;
+            width: 18rem;
+            padding-left: 4rem;
+        }
     }
 
     @include desktop {
+        &__status-text-tablet--active {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            text-align: center;
+            width: 3.5rem;
+            border-radius: 1.25rem;
+            color: #158463;
+            border: solid 0.01px white;
+            background-color: rgba(21, 132, 99, 0.07);
+            padding:0.1rem 0.5rem;
+            margin-left: 5rem;
+        }
+
+        &__status-text-tablet--inactive {
+            display: flex;
+            justify-content: space-around;
+            width: 5.4rem;
+            align-items: center;
+            margin-top: 2rem;
+            margin-left: 5rem;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 1.25rem;
+            color: #C94515;
+            background-color: rgba(201, 69, 21, 0.07);
+            padding:0.1rem 0.5rem;
+        }
         &__edit {
             margin-left: 60rem;
+        }
+        &__status-text--inactive {
+            display: none;
+        }
+        &__status-text--active {
+            display: none;
         }
 
         &__address-container {
@@ -340,15 +445,22 @@
 
         &__item-status-container {
             padding-left: 5.5rem;
-            width: 19rem;
+            width: 13rem;
         }
 
         &__category-text-tablet {
-            width: 18rem;
+            width: 6rem;
+        }
+        &__quantity-text-tablet {
+            width: 14.5rem;
+            padding-left: 12rem;
         }
 
         &__status-text-tablet {
             width: 16rem;
+        }
+        &__list-section {
+            justify-content: space-around;
         }
     }
 }
