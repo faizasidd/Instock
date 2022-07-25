@@ -4,6 +4,7 @@ import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import useForm from "../../utils/useForm";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const AddWarehouse = (props) => {
   const [warehouse, setWarehouse] = useState({
@@ -47,7 +48,9 @@ const AddWarehouse = (props) => {
         />
       </div>
       <div className="add-warehouse__button-container">
+        <Link to='/'>
         <button className="add-warehouse__button">Cancel</button>
+        </Link>
         <button
           onClick={addWarehouse}
           type="submit"

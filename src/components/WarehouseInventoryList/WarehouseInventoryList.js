@@ -178,8 +178,8 @@ const WarehouseInventoryList = (props) => {
                     </section>
                         
                     {inventories.map((detail) => {
-                        const { name, address, city, country, id } = warehouse;
-                        const {category, description, itemName, quantity, status, warehouseName} = detail;
+                        const { name, address, city, country} = warehouse;
+                        const {category, description, itemName, quantity, status, warehouseName, id} = detail;
 
 
                         return (
@@ -192,7 +192,7 @@ const WarehouseInventoryList = (props) => {
                                         <p className="warehouse-inventory__mobile-header">
                                         INVENTORY ITEM
                                         </p>
-                                            <Link to="" className="warehouse-inventory__link">
+                                            <Link to={`/inventory/${id}`} className="warehouse-inventory__link">
                                             <div className="warehouse-inventory__inventory-container">
                                                 <div className="warehouse-inventory__item-container">
                                                     <p className="warehouse-inventory__link-text" >
