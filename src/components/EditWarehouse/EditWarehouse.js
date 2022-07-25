@@ -4,6 +4,7 @@ import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import WarehouseForm from "../WarehouseForm/WarehouseForm";
 import useForm from "../../utils/useForm";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const EditWarehouse = (props) => {
   const [warehouse, setWarehouse] = useState({});
@@ -20,12 +21,13 @@ const EditWarehouse = (props) => {
     fetchWarehouse();
   }, []);
 
+
   const updateFetchedWarehouse = (e) => {
     e.preventDefault();
     if (handleSubmit(e, warehouse)) {
       axios
         .put(
-          `http://localhost:8080/warehouses/${props.match.params.warehouseId}`,
+          `http://localhost:8080/warehouses/${props.match.params.warehouseId}/edit`,
           warehouse,
           {
             "Content-Type": "application/json",
@@ -60,7 +62,9 @@ const EditWarehouse = (props) => {
         />
       </div>
       <div className="edit-warehouse__button-container">
+        <Link to='/'>
         <button className="edit-warehouse__button">Cancel</button>
+        </Link>
         <button
           onClick={updateFetchedWarehouse}
           type="submit"
