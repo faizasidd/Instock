@@ -26,7 +26,7 @@ const EditInventoryItem = (props) => {
     if (handleSubmit(e, inventory)) {
       axios
         .put(
-          `http://localhost:8080/warehouses/${props.match.params.inventoryId}/edit`,
+          `http://localhost:8080/inventories/${props.match.params.inventoryId}`,
           inventory,
           {
             "Content-Type": "application/json",

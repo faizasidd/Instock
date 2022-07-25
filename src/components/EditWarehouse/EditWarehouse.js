@@ -27,7 +27,7 @@ const EditWarehouse = (props) => {
     if (handleSubmit(e, warehouse)) {
       axios
         .put(
-          `http://localhost:8080/warehouses/${props.match.params.warehouseId}/edit`,
+          `http://localhost:8080/warehouses/${props.match.params.warehouseId}`,
           warehouse,
           {
             "Content-Type": "application/json",
