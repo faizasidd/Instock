@@ -4,9 +4,9 @@ import errorIcon from "../../assets/icons/error-24px.svg";
 import dropdownIcon from "../../assets/icons/arrow_drop_down-24px.svg";
 
 const InventoryForm = (props) => {
-  const [hidden, setHidden] = useState(false);
-  const [disabled, setDisabled] = useState(false);
-
+    const [hidden, setHidden] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+    
   return (
     <div>
       <form
@@ -16,14 +16,14 @@ const InventoryForm = (props) => {
         <div className="inventory-form__container">
           <h2 className="inventory-form__title">Item Details</h2>
           <label className="inventory-form__label">Item Name</label>
-          <input
+          <textarea
             type="text"
             name="itemName"
             className="inventory-form__input-field"
-            value={props.inventory.itemName}
+            value={props.itemName}
             placeholder="Item Name"
             onChange={props.handleInputChange}
-          ></input>
+          ></textarea>
           {props.errors.itemName && (
             <div className="inventory-form__error">
               <img src={errorIcon} className="inventory-form__error-icon" />
@@ -31,13 +31,13 @@ const InventoryForm = (props) => {
             </div>
           )}
           <label className="inventory-form__label">Description</label>
-          <textarea
+          <input
             className="inventory-form__textfield"
             name="description"
-            value={props.inventory.description}
+            value={props.description}
             placeholder="Please enter a brief item description..."
             onChange={props.handleInputChange}
-          ></textarea>
+          ></input>
           {props.errors.description && (
             <div className="inventory-form__error">
               <img src={errorIcon} className="inventory-form__error-icon" />
@@ -91,7 +91,7 @@ const InventoryForm = (props) => {
               <label className="inventory-form__label">Quantity</label>
               <input
                 type="number"
-                value={props.inventory.quantity}
+                value={props.quantity}
                 name="quantity"
                 className="inventory-form__input-field"
                 onChange={props.handleInputChange}
