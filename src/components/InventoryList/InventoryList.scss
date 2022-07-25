@@ -1,0 +1,408 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.inventory-list__title-flex-container{
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid $secondary-borders;
+
+    @include tablet{
+        display: flex;
+        height: 4.5rem;
+        justify-content: space-between;
+        width: 99.75%;
+        border: none;
+    }
+
+    .inventory-list__title{
+        margin-left: 6vw;
+        font-size: 2.25rem;
+
+        @include tablet{
+            margin-left: 4vw;
+        }
+    }
+
+    .inventory-list__search-add-container{
+        width: 94%;
+
+        @include tablet{
+            display: flex;
+            margin-top: 2.25rem;
+            margin-right: 4vw;
+            width: 23rem;
+            height: 2.25rem;
+        }
+
+        @include desktop{
+            width: 27rem;
+        }
+
+        .search-add-container__search-bar{
+            width: 100%;
+            display: flex;
+            margin-bottom: 1.25rem;
+
+            @include tablet{
+                width: 20rem;
+            }
+
+            .search-bar__input{
+                border: 2px solid $secondary-borders;
+                margin-left: 6vw;
+                width: 90%;
+                border-top-left-radius: 1.5rem;
+                border-bottom-left-radius: 1.5rem;
+                border-right: none;
+                padding: 0.5rem 0 0.5rem 1rem;
+
+                @include tablet{
+                    margin-left: 0;
+                    height: 100%;
+                    padding-top: 0.6rem;
+                    padding-bottom: 0.4rem;
+                }
+            }
+
+            .search-bar__icon-container{
+                border: 2px solid $secondary-borders;
+                border-top-right-radius: 1.5rem;
+                border-bottom-right-radius: 1.5rem;
+                border-left: none;
+                padding: 0.5rem 1.5rem 0.5rem 0;
+
+                @include tablet{
+                    height: 1.5rem;
+                    padding: 0.25rem 0.75rem;
+                }
+
+                .search-bar__icon{
+                    height: 100%;
+
+                    @include tablet{
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .search-add-container__add-button{
+            border: none;
+            background-color: $primary-interactive;
+            width: 93%;
+            border-radius: 1.5rem;
+            margin-left: 6vw;
+
+            @include tablet{
+                width: 18rem;
+                margin-left: 1rem;
+            }
+
+            @include desktop{
+                width: 12rem;
+            }
+
+            .add-button__link{
+                text-decoration: none;
+
+                .link__text-container{
+
+                    .link__text{
+                        color: $primary-white;
+                        font-size: 1rem;
+
+                        @include tablet{
+                            font-size: 0.8rem;
+                            margin-top: 0.65rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.inventory-list__title-bar{
+    display: none;
+
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $background-page;
+        color: $secondary-header-placeholder;
+        font-weight: 600;
+        font-size: 0.75rem;
+        height: 2.5rem;
+        padding: 0 5vw 0 4vw;
+    }
+
+    .title-bar__title-sort-container{
+        @include tablet{
+            display: flex;
+        }
+
+        .title-bar__title{
+            @include tablet{
+                margin: 0;
+            }
+        }
+
+        .sort-button__icon-container{
+
+            .sort-button__icon{
+                @include tablet{
+                    height: 1rem;
+                    margin: 0.1rem 0 0 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+.inventory-list__item-details{
+    width: 93.5%;
+    padding-left: 6vw;
+    border-bottom: 2px solid $secondary-borders;
+    padding-top: 0.9rem;
+
+    @include tablet{
+        display: flex;
+        width: 95.5%;
+        padding-left: 4vw;
+        position: relative;
+    }
+
+    .item-details__flex-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .flex-container1__item-category-container{
+
+            .item-container__title-search{
+
+                .item-container__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .item-container__search-link{
+                    display: flex;
+                    text-decoration: none;
+
+                    @include tablet{
+                        margin-top: 0;
+                        margin-bottom: 1rem;
+                    }
+
+                    .search-link__text-container{
+
+                        .search-link__text{
+                            color: $primary-interactive;
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                            margin: 0;
+
+                            @include tablet{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+
+                    .search-link__icon-container{
+                        padding-top: 0.15rem;
+                        padding-left: 0.5rem;
+
+                        .search-link__icon{
+                            @include tablet{
+                                height: 1.25rem;
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .item-container__category-container{
+                @include tablet{
+                    position: absolute;
+                    left: 25.5%;
+                    top: 1.5rem;
+                }
+
+                @include laptop{
+                    left: 25%;
+                }
+
+                @include desktop{
+                    left: 24%;
+                }
+
+                .category__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .category__text{
+                    margin-top: 0;
+
+                    @include tablet{
+                        margin-top: -0.5rem;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .flex-container2__status-qty-warehouse-container{
+            margin-right: 9rem;
+
+            .flex-container2__status-container{
+
+                .status__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .status__text-container{
+                    background-color: rgba($color: $supporting-instock, $alpha: 0.1);
+                    padding: 0 0.75rem;
+                    border-radius: 1rem;
+
+                    @include tablet{
+                        position: absolute;
+                        left: 42%;
+                        margin-top: 0.2rem;
+                    }
+
+                    @include laptop{
+                        left: 41.5%;
+                    }
+
+                    .status__text{
+                        font-weight: 600;
+                        color: $supporting-instock;
+
+                        @include tablet{
+                            margin: 0;
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+            }
+
+            .flex-container2__qty-container{
+
+                .qty__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .qty__text{
+                    @include tablet{
+                        position: absolute;
+                        top: 0;
+                        left: 58%;
+                        font-size: 0.9rem;
+                    }
+
+                    @include desktop{
+                        left: 58.25%;
+                    }
+                }
+            }
+
+            .flex-container2__warehouse-container{
+
+                .warehouse__title{
+                    color: $secondary-header-placeholder;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .warehouse__text{
+                    @include tablet{
+                        position: absolute;
+                        top: 0;
+                        left: 71%;
+                        font-size: 0.9rem;
+                    }
+
+                    @include laptop{
+                        left: 72.5%;
+                    }
+
+                    @include desktop{
+                        left: 74%;
+                    }
+                }
+            }
+        }
+    }
+
+    .item-details__actions{
+        display: flex;
+        justify-content: space-between;
+        width: 88%;
+        margin-bottom: 2rem;
+
+        @include tablet{
+            width: 4rem;
+            height: 2rem;
+            margin-left: 0;
+            position: absolute;
+            right: 3vw;
+        }
+
+        @include laptop{
+            right: 4vw;
+        }
+
+        .actions__link{
+            height: 2rem;
+
+            .actions-link__icon-container{
+                height: 100%;
+
+                .actions-link__icon{
+                    height: 100%;
+
+                    @include tablet{
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "TitilliumWeb";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../../assets/fonts/TitilliumWeb-Regular.woff) format("woff"), url(../../assets/fonts/TitilliumWeb-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "TitilliumWeb";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/TitilliumWeb-SemiBold.woff) format("woff"), url(../../assets/fonts/TitilliumWeb-SemiBold.woff2) format("woff2");
+}
+.warehouse-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -1.2rem;
+  padding-bottom: 1rem;
+}
+.warehouse-form__title {
+  font-size: 1.25rem;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  border-top: 1px solid #BDC5D5;
+}
+.warehouse-form__container {
+  display: flex;
+  flex-direction: column;
+}
+.warehouse-form__label {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: 0 1.2rem;
+}
+.warehouse-form__input-field {
+  margin: 0.2rem 1.2rem;
+  padding: 0 0.8rem;
+  width: 16rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid #BDC5D5;
+  font-family: inherit;
+}
+.warehouse-form__error {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  color: #C94515;
+}
+.warehouse-form__error-icon {
+  width: 1rem;
+  padding-right: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .warehouse-form__content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+    gap: 2.5rem;
+  }
+  .warehouse-form__title {
+    border-top: none;
+  }
+}/*# sourceMappingURL=WarehouseForm.css.map */

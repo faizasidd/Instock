@@ -1,0 +1,466 @@
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins' as *;
+
+.warehouse-inventory {
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid colors.$secondary-borders;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: colors.$primary-interactive;
+        font-weight: 600;
+    }
+
+    &__edit {
+        margin-left: 7.5rem;
+        border-radius: 20px;
+        height: 36px;
+        width: 36px;
+    }
+
+    &__back {
+        padding-top: 0.3rem;
+    }
+    &__title {
+        font-family: "TitilliumWeb";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    &__edit-text {
+        display: none;
+    }
+
+    &__right-icon {
+        padding-top: 0.5rem;
+    }
+
+    &__contact-container {
+        display: flex;
+        justify-content: center;
+        padding-right: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    &__address-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 7rem;
+    }
+
+    &__address-header {
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-bottom: 0rem;
+        padding-right: 2rem;
+    }
+
+    &__address {
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__contact2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 1rem;
+    }
+
+    &__contact-header {
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-bottom: 0rem;
+    }
+
+    &__contact-name {
+        padding-right: 1.2rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    &__contact-position {
+        padding-left: 1.5rem;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    &__contact-phone {
+        font-size: 0.8rem;
+        padding-right: 1.6rem;
+        margin: 0;
+    }
+    &__contact-email {
+        font-size: 0.8rem;
+        padding-right: 1.6rem;
+        margin: 0;
+    }
+
+    &__section-titles {
+        display: none;
+    }
+
+    &__list {
+        border-top: 1px solid colors.$secondary-borders;
+    }
+
+    &__inventory-container {
+        display: flex;
+        align-items: center;
+        padding-right: 25vh;
+    }
+
+    &__link-text {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    &__status-text--active {
+        margin: 0;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 1.25rem;
+        color: #158463;
+        background-color: rgba(21, 132, 99, 0.07);
+        padding:0.1rem 0.5rem;
+    }
+
+    &__status-text--inactive {
+        margin: 0;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 1.25rem;
+        color: #C94515;
+        background-color: rgba(201, 69, 21, 0.07);
+        padding:0.1rem 0.5rem;
+    }
+
+    &__category-text {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    &__mobile-header {
+        margin: 0;
+        color: #5C667E;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    &__item-status-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    &__category-quantity-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__category-container {
+        padding-right: 25vh;
+    }
+
+    &__edit-delete-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+    &__delete-button {
+        padding-right: 16rem;
+    }
+
+    &__category-text-tablet {
+        display: none;
+    }
+    &__link-text-tablet {
+        display: none;
+    }
+
+    &__status-text-tablet {
+        display: none;
+    }
+
+    &__right-icon-tablet {
+        display: none;
+    }
+
+    &__status-text-tablet--active {
+        display: none;
+    }
+
+    &__status-text-tablet--inactive {
+        display: none;
+    }
+
+    &__quantity-text-tablet {
+        display: none;
+    }
+
+    @include tablet {
+
+        &__status-text--inactive {
+            display: none;
+        }
+        &__status-text--active {
+            display: none;
+        }
+
+        &__status-text-tablet--active {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            text-align: center;
+            width: 3.5rem;
+            border-radius: 1.25rem;
+            color: #158463;
+            border: solid 0.01px white;
+            background-color: rgba(21, 132, 99, 0.07);
+            padding:0.1rem 0.5rem;
+        }
+
+        &__status-text-tablet--inactive {
+            display: flex;
+            justify-content: space-around;
+            width: 5.4rem;
+            align-items: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 1.25rem;
+            color: #C94515;
+            background-color: rgba(201, 69, 21, 0.07);
+            padding:0.1rem 0.5rem;
+        }
+
+        &__edit {
+            margin-left: 33rem;
+            width: 81px;
+            height: 38px;
+        }
+
+        &__edit-text {
+            display: flex;
+        }
+
+        &__item-status-container {
+            display: flex;
+            width: 14.5rem;
+            padding-left: 2.3rem;
+            justify-content: flex-start;
+        }
+
+        &__button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__button {
+            text-decoration: none;
+            color: colors.$primary-interactive
+        }
+
+        &__contact-section {
+            display: flex;
+        }
+
+        &__address-container {
+            border-right: 1px solid colors.$secondary-borders;
+            margin: 1rem 0 1rem 1rem;
+        }
+
+        &__contact-container {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        &__contact {
+            padding-right: 2rem;
+        }
+
+        &__section-titles {
+            display: flex;
+            justify-content: space-around;
+            font-family: "TitilliumWeb";
+            font-weight: 600;
+            color: colors.$secondary-header-placeholder;
+            font-size: 0.8rem;
+            background-color: #F7F8F9;
+        }
+
+        &__title-header {
+            display: flex;
+            align-items: center;
+        }
+
+        &__mobile-header {
+            display: none;
+        }
+
+        &__link-text {
+            display: none;
+        }
+
+        &__right-icon {
+            display: none;
+        }
+
+        &__right-icon-tablet {
+            padding-top: 0.5rem;
+        }
+
+        &__status-text {
+            display: none;
+        }
+
+        &__category-text {
+            display: none;
+        }
+
+        &__list-section {
+            display: flex;
+        }
+
+        &__inventory-container {
+            padding-left: 0rem;
+            padding-right: 0;
+        }
+        &__category-container {
+            padding-right: 0;
+        }
+
+        &__delete-button {
+            padding-right:0;
+            padding-top: 1rem;
+        }
+
+        &__category-text-tablet {
+            display: flex;
+            align-items: center;
+            width: 18rem;
+            padding-left: 4rem;
+        }
+        &__link-text-tablet {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__status-text-tablet {
+            display: flex;
+            align-items: center;
+            padding-top: 1rem;
+            width: 9rem;
+        }
+    
+        &__right-icon-tablet {
+            display: flex;
+            align-items: center;
+        }
+
+        &__edit-button {
+            padding-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        &__edit-delete-container {
+            padding-right: 1.5rem;
+        }
+        &__list-section {
+            display: flex;
+            justify-content: space-around;
+        }
+        &__quantity-text-tablet {
+            display: flex;
+            align-items: center;
+            width: 18rem;
+            padding-left: 4rem;
+        }
+    }
+
+    @include desktop {
+        &__status-text-tablet--active {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            text-align: center;
+            width: 3.5rem;
+            border-radius: 1.25rem;
+            color: #158463;
+            border: solid 0.01px white;
+            background-color: rgba(21, 132, 99, 0.07);
+            padding:0.1rem 0.5rem;
+            margin-left: 5rem;
+        }
+
+        &__status-text-tablet--inactive {
+            display: flex;
+            justify-content: space-around;
+            width: 5.4rem;
+            align-items: center;
+            margin-top: 2rem;
+            margin-left: 5rem;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 1.25rem;
+            color: #C94515;
+            background-color: rgba(201, 69, 21, 0.07);
+            padding:0.1rem 0.5rem;
+        }
+        &__edit {
+            margin-left: 60rem;
+        }
+        &__status-text--inactive {
+            display: none;
+        }
+        &__status-text--active {
+            display: none;
+        }
+
+        &__address-container {
+            padding-right: 20rem;
+            padding-left: 4rem;
+        }
+
+        &__contact {
+            padding-right: 10rem;
+            padding-left: 5rem;
+        }
+
+        &__item-status-container {
+            padding-left: 5.5rem;
+            width: 13rem;
+        }
+
+        &__category-text-tablet {
+            width: 6rem;
+        }
+        &__quantity-text-tablet {
+            width: 14.5rem;
+            padding-left: 12rem;
+        }
+
+        &__status-text-tablet {
+            width: 16rem;
+        }
+        &__list-section {
+            justify-content: space-around;
+        }
+    }
+}

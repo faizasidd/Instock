@@ -1,0 +1,18 @@
+@use '../../styles/partials/colors' ;
+@use '../../styles/partials/mixins' as *;
+
+
+.footer {
+    padding: 2rem 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    @include tablet {
+        padding-top: 4rem;
+    }
+
+    @include desktop {
+        padding-top: 8rem;
+    }
+}

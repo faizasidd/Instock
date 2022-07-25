@@ -1,0 +1,36 @@
+@use './fonts' as *;
+@use './colors' as *;
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+  }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 950px) {
+        @content;
+  }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+        @content;
+  }
+}
+
+@mixin textRegular($fontSize, $lineHeight) {
+    font-family: 'Titillium Web';
+    font-weight: 400;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $primary-text;    
+}
+
+@mixin textBold($fontSize, $lineHeight) {
+    font-family: 'Titillium Web';
+    font-weight: 600;
+    font-size: $fontSize;
+    line-height: $lineHeight;   
+    color: $primary-text;   
+}
