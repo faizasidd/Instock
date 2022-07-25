@@ -31,7 +31,7 @@ const WarehouseList = () => {
     const deleteWarehouse = (e, warehouseId) => {
         axios
             .delete(
-                `http://localhost:8080/warehouses/${warehouseId}/delete`,
+                `http://localhost:8080/warehouses/${warehouseId}`,
                 
             )
             .then((response) => {
@@ -39,6 +39,7 @@ const WarehouseList = () => {
                 console.log(response);
             })
             .catch(error => console.log(error))
+            closeModal()
     }
 
 

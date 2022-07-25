@@ -32,7 +32,7 @@ const InventoryList = (props) => {
     const deleteInventory = (e, inventories) => {
         axios
             .delete(
-                `http://localhost:8080/inventories/inventoryId`,
+                `http://localhost:8080/inventories/{inventoryId}`,
                 inventories,
             )
             .then((response) => {
@@ -40,6 +40,7 @@ const InventoryList = (props) => {
                 console.log(response);
             })
             .catch(error => console.log(error))
+            closeModal()
     }
 
  // Modal code
@@ -287,7 +288,7 @@ const InventoryList = (props) => {
                                                 
                                             </Modal>
 
-                                    <Link to="/edit-item" className="actions__link">
+                                    <Link to={`/inventory/edit/${id}`} className="actions__link">
                                         <div className="actions-link__icon-container">
                                             <img
                                                 className="actions-link__icon"
