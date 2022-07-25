@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./InventoryItemDetails.scss";
 import ArrowBackIcon from "../../assets/icons/arrow_back-24px.svg";
@@ -6,58 +6,24 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import InventoryData from "../../data/inventories.json";
 import { Link } from "react-router-dom";
 
-class InventoryItemDetails extends React.Component {
-    constructor(props) {
-        super(props);
+const InventoryItemDetails = (props) => {
+    const [inventory, setInventory] = useState([])
 
-        this.state = {
-            inventory: [],
-            loaded: false,
-        };
+    useEffect(() => {
+        getItemDetails()
+    }, [])
+
+    const getItemDetails = (e, inventoryId) => {
+        axios
+            .get(`http://localhost:8080/inventories/${inventoryId}`)
+            .then(response => {
+                setInventory(response.data)
+                console.log("Inventory stuff",response.data);
+            })
+            .catch(error => console.log(error))
     }
-
-    componentDidMount() {
-        this.setState({
-            inventory: InventoryData.filter((item) => item.warehouseName === "Manhattan" && item.itemName === "Television"),
-            loaded: true
-        });
-    }
-
-    /*
-    componentDidUpdate(prevProps) {
-
-        if (prevProps.match.params.id !== this.props.match.params.id) {
-       
-            let VideoId;
-            axios
-                .get(`https://project-2-api.herokuapp.com/videos/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                .then((response) => {
-                    VideoId = this.props.match.params.id;
-                    const filteredVideosArray = response.data.filter((video) => VideoId !== video.id);
-            
-                    this.setState({
-                        videos: response.data,
-                        filteredVideosArray: filteredVideosArray,
-                    });
-
-                    axios
-                        .get(`https://project-2-api.herokuapp.com/videos/${VideoId}/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                        .then((responseTwo) => {
-                        
-                            this.setState({
-                                details: responseTwo.data,
-                                loaded: true,
-                            });
-                        })
-                        .catch((error) => { console.error(error.responseTwo); });
-                })
-                .catch((error) => { console.error(error.responseTwo); });
-        }
-    }
-    */
-
-    render() {
-        if (this.state.loaded) {
+   
+        if (inventory !=='') {
             return (
                 <>
                     <article className="item-details__title-flex-container">
@@ -154,7 +120,6 @@ class InventoryItemDetails extends React.Component {
                 </>
             );
         }   return <h1>Loading...</h1>;
-    }
 }
 
 export default InventoryItemDetails;
