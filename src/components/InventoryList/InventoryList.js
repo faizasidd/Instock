@@ -83,7 +83,7 @@ const InventoryList = (props) => {
                             </div>
                             
                             <button className="search-add-container__add-button">
-                                <Link to="/add-item" className="add-button__link">
+                                <Link to="/inventory/add" className="add-button__link">
                                     <div className="link__text-container">
                                         <p className="link__text">
                                             + Add New Item
@@ -184,7 +184,7 @@ const InventoryList = (props) => {
                                                 INVENTORY ITEM
                                             </p>
                                                 
-                                            <Link to="/item" className="item-container__search-link">
+                                            <Link to="/inventory/:inventoryId" className="item-container__search-link">
                                                 <div className="search-link__text-container">
                                                     <p className="search-link__text">
                                                         {itemName}
