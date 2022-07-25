@@ -62,10 +62,7 @@ const WarehouseInventoryList = (props) => {
    
         if (warehouse && warehouse.contact) {
 
-        
-            return (
-
-                
+            return (                
                 <>
                 <div className="warehouse-inventory__links">
                    
@@ -79,21 +76,7 @@ const WarehouseInventoryList = (props) => {
                             </div>
                         </Link>
                         <p className="warehouse-inventory__title">{warehouse.name}</p>
-                    
-                            <button className="warehouse-inventory__edit">
-                                <Link to={`/warehouse/${warehouse.id}/inventory`} className="warehouse-inventory__button">
-                                    <div className="warehouse-inventory__button-container">
-                                        <img
-                                                className="warehouse-inventory__edit-icon"
-                                                src={EditIcon}
-                                                alt="Edit Icon"
-                                        />
-                                        <p className="warehouse-inventory__edit-text">
-                                            Edit
-                                        </p>
-                                    </div>
-                                </Link>
-                            </button>
+                        
                 </div>
                         <section className="warehouse-inventory__contact-section">
                             <div className="warehouse-inventory__address-container">
@@ -176,16 +159,28 @@ const WarehouseInventoryList = (props) => {
                             </p>
                         </div>
                     </section>
-                        
-                    {inventories.map((detail) => {
-                        const { name, address, city, country} = warehouse;
-                        const {category, description, itemName, quantity, status, warehouseName, id} = detail;
-
-
-                        return (
-                            <article className="warehouse-inventory__list">
-                        
-                                <section className="warehouse-inventory__list-section" key={inventories.id}>
+                        {inventories.map((itemDetail) => {
+                            const { category, itemName, quantity, status, id  } = itemDetail;
+                            return (
+                                <>
+                                <button className="warehouse-inventory__edit" >
+                                {/* <Link to={`/warehouse/${warehouse.id}/inventory`} className="warehouse-inventory__button"> */}
+                                <Link to={`/inventory/${id}`} className="warehouse-inventory__button">
+                                    <div className="warehouse-inventory__button-container">
+                                        <img
+                                                className="warehouse-inventory__edit-icon"
+                                                src={EditIcon}
+                                                alt="Edit Icon"
+                                        />
+                                        <p className="warehouse-inventory__edit-text">
+                                            Edit
+                                        </p>
+                                    </div>
+                                </Link>
+                                </button>
+                                <article className="warehouse-inventory__list">
+                            
+                                <section className="warehouse-inventory__list-section" key={id}>
                                     <section className="warehouse-inventory__item-status-container">
                                         
                                         <div className="warehouse-inventory__container">
@@ -193,6 +188,7 @@ const WarehouseInventoryList = (props) => {
                                         INVENTORY ITEM
                                         </p>
                                             <Link to={`/inventory/${id}`} className="warehouse-inventory__link">
+                                                
                                             <div className="warehouse-inventory__inventory-container">
                                                 <div className="warehouse-inventory__item-container">
                                                     <p className="warehouse-inventory__link-text" >
@@ -264,15 +260,6 @@ const WarehouseInventoryList = (props) => {
                                                     {quantity}
                                     </p>
                                     <section className="warehouse-inventory__edit-delete-container">
-                                    {/* <Link to="/deleteItem" className="warehouse-inventory__delete-button">
-                                        <div className="warehouse-inventory__delete-button-container">
-                                            <img
-                                                className="warehouse-inventory__delete-icon"
-                                                src={DeleteIcon}
-                                                alt="Delete Icon"
-                                            />
-                                        </div>
-                                    </Link> */}
                                      <button 
                                         onClick={openModal}
                                         className="deleteIcon">
@@ -327,8 +314,22 @@ const WarehouseInventoryList = (props) => {
                                     
                                 
                             </article>
-                        );
-                     })}
+                            </>
+                            )
+                        
+
+                        })}
+                        
+                        
+                    {/* {inventories.map((detail) => {
+                        const { name, address, city, country} = warehouse;
+                        const {category, description, itemName, quantity, status, warehouseName, id} = detail;
+                        // console.log("Item ID: ", {id}); //logs all IDs
+
+                        return (
+                            
+                        ); */}
+                     {/* })} */}
                 </>
             );
         } else {

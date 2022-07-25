@@ -42,7 +42,6 @@ const WarehouseList = () => {
             closeModal()
     }
 
-
     // Modal code
     
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -284,8 +283,8 @@ const WarehouseList = () => {
                     })}
                 </>
             );
-        } else {
-            return <h1>Loading...</h1>;
+            } else {
+                return <h1>Loading...</h1>;
         } 
     }
 
