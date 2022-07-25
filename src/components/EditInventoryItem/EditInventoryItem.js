@@ -1,46 +1,33 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React , { useState, useEffect }from "react";
 import axios from "axios";
 import useForm from "../../utils/useForm";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
-
 import "./EditInventoryItem.scss";
 import InventoryForm from "../InventoryForm/InventoryForm";
+import { Link } from "react-router-dom";
 
-const EditInventoryItem = () => {
-  const [inventory, setInventory] = useState({
-    warehouseName: "",
-    itemName: "",
-    description: "",
-    category: "",
-    status: "",
-    quantity: "",
-  });
+const EditInventoryItem = (props) => {
+  const [inventory, setInventory] = useState({});
 
-  const { handleChange, errors, handleSubmit } = useForm();
-
-  const handleInputChange = (e) => {
-    e.preventDefault();
-    handleChange(e);
-    setInventory({ ...inventory, [e.target.name]: e.target.value });
-    console.log(inventory);
+  const fetchInventory = () => {
+    axios
+      .get(`http://localhost:8080/inventories/${props.match.params.inventoryId}`)
+      .then((response) => {
+        setInventory(response.data.inventory);
+      });
   };
 
-  const submitEditedItem = (e) => {
+  useEffect(() => {
+    fetchInventory();
+  }, []);
+
+  const updateFetchedInventory = (e) => {
     e.preventDefault();
     if (handleSubmit(e, inventory)) {
       axios
-        .post(
-          "http://localhost:8080/inventories",
-          {
-            warehouseName: inventory.warehouseName,
-            // warehouseID: inventory.warehouseID,
-            itemName: inventory.itemName,
-            description: inventory.description,
-            category: inventory.category,
-            status: inventory.status,
-            quantity: inventory.quantity,
-          },
+        .put(
+          `http://localhost:8080/warehouses/${props.match.params.inventoryId}/edit`,
+          inventory,
           {
             "Content-Type": "application/json",
           }
@@ -49,6 +36,13 @@ const EditInventoryItem = () => {
           console.log(response);
         });
     }
+  };
+
+  const { handleChange, values, errors, handleSubmit } = useForm();
+
+  const handleInputChange = (e) => {
+    handleChange(e);
+    setInventory({ ...inventory, [e.target.name]: e.target.value });
   };
 
   return (
@@ -69,9 +63,11 @@ const EditInventoryItem = () => {
         </div>
       </div>
       <div className="add-inventory__button-container">
+      <Link to='/'>
         <button className="add-inventory__button">Cancel</button>
+        </Link>
         <button
-          onClick={submitEditedItem}
+          onClick={updateFetchedInventory}
           type="submit"
           value="submit"
           className="add-inventory__button--save"
