@@ -8,6 +8,7 @@ import WarehouseList from "./components/WarehouseList/WarehouseList";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import InventoryList from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
@@ -25,7 +26,7 @@ function App() {
         <Route path="/warehouse/add" component={AddWarehouse} />
         <Route path="/warehouse/:warehouseId/inventory" component={InventoryList} />
         <Route path="/warehouse/:warehouseId" component={WarehouseInventoryList} />
-        <Route path="/inventory/edit/:inventoryId" component={Placeholder} />
+        <Route path="/inventory/edit/:inventoryId" component={EditInventoryItem} />
         <Route path="/inventory/add" component={AddInventoryItem} />
         <Route path="/inventory/:inventoryId" component={Placeholder} />
         

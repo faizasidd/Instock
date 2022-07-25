@@ -30,7 +30,33 @@ const WarehouseInventoryList = (props) => {
             })
           .catch(error => console.log(error))
     }
+    const deleteItem = (e, inventoryId) => {
+        axios
+            .delete(
+                `http://localhost:8080/inventories/${inventoryId}`,
+                
+            )
+            .then((response) => {
+                setWarehouse(response.data)
+                console.log(response);
+                
+            })
+            .catch(error => console.log(error))
+            closeModal()
+    }
 
+
+    // Modal code
+    
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    
+    function openModal () {
+        setIsOpen(true);
+        console.log("Working")
+    }
+    function closeModal () {
+        setIsOpen(false);
+    }
     
 
    
@@ -43,7 +69,7 @@ const WarehouseInventoryList = (props) => {
                 <>
                 <div className="warehouse-inventory__links">
                    
-                    <Link to="/" className="warehous-inventory__button">
+                    <Link to={"/"} className="warehous-inventory__button">
                             <div>
                                 <img
                                     className="warehouse-inventory__back"
@@ -238,7 +264,7 @@ const WarehouseInventoryList = (props) => {
                                                     {quantity}
                                     </p>
                                     <section className="warehouse-inventory__edit-delete-container">
-                                    <Link to="/deleteItem" className="warehouse-inventory__delete-button">
+                                    {/* <Link to="/deleteItem" className="warehouse-inventory__delete-button">
                                         <div className="warehouse-inventory__delete-button-container">
                                             <img
                                                 className="warehouse-inventory__delete-icon"
@@ -246,9 +272,48 @@ const WarehouseInventoryList = (props) => {
                                                 alt="Delete Icon"
                                             />
                                         </div>
-                                    </Link>
+                                    </Link> */}
+                                     <button 
+                                        onClick={openModal}
+                                        className="deleteIcon">
+                                        <div className="link__button-container">
+                                            <img
+                                                className="button__image"
+                                                src={DeleteIcon}
+                                                alt="Delete Icon"
+                                            />
+                                        </div>
+                                    </button>
+                                            <Modal
+                                                isOpen={modalIsOpen}
+                                                onRequestClose={closeModal}
+                                                className="modal"
+                                                overlayClassName="overlay"
+                                                contentLabel="Delete Modal"
+                                                ariaHideApp={false}
+                                                >
+                                                <div className="cross-wrapper">
+                                                    <button onClick={closeModal} className="cross">
+                                                        <img 
+                                                            className="cross__button"
+                                                            src={crossButton}
+                                                        />
+                                                    </button>
+                                                </div>
+                                                <h2>Delete Washington warehouse?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <div className="twoBtnContainer">
+                                                    <button 
+                                                        onClick={closeModal} 
+                                                        className="cancel-warehouse__button">Cancel</button>
+                                                    <button 
+                                                        onClick={(e) => deleteItem(e, id)} 
+                                                        className="delete-warehouse__button">Delete</button>
+                                                </div>
+                                                
+                                            </Modal>
 
-                                    <Link to="/editItem" className="warehouse-inventory__edit-button">
+                                    <Link to={`/inventory/edit/${id}`} className="warehouse-inventory__edit-button">
                                         <div className="warehouse-inventory__edit-button-container">
                                             <img
                                                 className="warehouse-inventory__edit-icon"
