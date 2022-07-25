@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import useForm from "../../utils/useForm";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
-
+import { Link } from "react-router-dom";
 import "./AddInventoryItem.scss";
 import InventoryForm from "../InventoryForm/InventoryForm";
 
@@ -54,7 +54,9 @@ const AddInventoryItem = () => {
   return (
     <div className="add-inventory">
       <div className="add-inventory__title-container">
-        <img src={arrowBack} />
+        <Link to="/warehouse/:warehouseId/inventory">
+        <img className="add-inventory__back-button" src={arrowBack} />
+        </Link>
         <h1 className="add-inventory__title">Add New Inventory Item</h1>
       </div>
       <div className="add-inventory__form-container">
@@ -69,7 +71,9 @@ const AddInventoryItem = () => {
         </div>
       </div>
       <div className="add-inventory__button-container">
+        <Link to="/warehouse/:warehouseId/inventory">
         <button className="add-inventory__button">Cancel</button>
+        </Link>
         <button
           onClick={submitAddedItem}
           type="submit"

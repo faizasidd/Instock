@@ -62,7 +62,6 @@ const WarehouseInventoryList = (props) => {
    
         if (warehouse && warehouse.contact) {
 
-        
             return (
 
                 
@@ -331,9 +330,7 @@ const WarehouseInventoryList = (props) => {
                      })}
                 </>
             );
-        } else {
-            return <h1>Loading...</h1>;
-        } 
+        }
     }
 
 export default WarehouseInventoryList;

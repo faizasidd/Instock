@@ -14,6 +14,7 @@ class InventoryItemDetails extends React.Component {
             inventory: [],
             loaded: false,
         };
+        console.log(InventoryData[0].itemName);
     }
 
     componentDidMount() {
@@ -62,7 +63,7 @@ class InventoryItemDetails extends React.Component {
                 <>
                     <article className="item-details__title-flex-container">
                         <section className="container1__title-icon-container">
-                            <Link to="/inventory-details" className="container1__back-link">    
+                            <Link to="/warehouse/:warehouseId" className="container1__back-link">    
                                 <div className="container1__icon-container">
                                     <img
                                         className="container1__icon"

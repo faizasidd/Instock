@@ -32,7 +32,7 @@ const InventoryList = (props) => {
     const deleteInventory = (e, inventories) => {
         axios
             .delete(
-                `http://localhost:8080/inventories/{inventoryId}`,
+                `http://localhost:8080/inventories/${inventories}/`,
                 inventories,
             )
             .then((response) => {
@@ -303,7 +303,7 @@ const InventoryList = (props) => {
                     })}
                 </>
             );
-        }   return <h1>Loading...</h1>;
+        }
     }
 
 

@@ -17,6 +17,8 @@ const WarehouseList = () => {
       getAllWarehouses()
     }, [])
   
+    // const warehouseFilter = warehouses.filter((warehouses) => warehouses.id === ) 
+
     const getAllWarehouses = () => {
         axios
             .get('http://localhost:8080/warehouses')
@@ -284,9 +286,7 @@ const WarehouseList = () => {
                     })}
                 </>
             );
-        } else {
-            return <h1>Loading...</h1>;
-        } 
+        }
     }
 
 export default WarehouseList;
