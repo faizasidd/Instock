@@ -60,7 +60,7 @@ const WarehouseInventoryList = (props) => {
     
 
    
-        if (warehouse && warehouse.contact) {
+        if (warehouse && warehouse.contact && inventories) {
 
         
             return (
@@ -291,8 +291,8 @@ const WarehouseInventoryList = (props) => {
                                                         />
                                                     </button>
                                                 </div>
-                                                <h2>Delete {itemName} warehouse?</h2>
-                                                <div className="p1">Please confirm that you’d like to delete {itemName} from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <h2>Delete {itemName} item?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete {itemName}? You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
                                                     <button 
                                                         onClick={closeModal} 
@@ -322,6 +322,8 @@ const WarehouseInventoryList = (props) => {
                      })}
                 </>
             );
+        } else { 
+            return "Please kindly refresh the page :) It's not a bug, it's a feature!"
         }
     }
 

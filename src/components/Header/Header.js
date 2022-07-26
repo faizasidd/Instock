@@ -18,7 +18,9 @@ function Header() {
                 <div>Warehouses</div>
                 </NavLink>
                 
-                <div className="header__inventory">Inventory</div>
+                <NavLink className="header__link" to='/warehouse/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9/inventory'>
+                    <div className="header__inventory">Inventory</div>
+                </NavLink>
             </div>
         </div>
         </>
