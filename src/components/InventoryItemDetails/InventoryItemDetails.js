@@ -9,23 +9,21 @@ import { Link } from "react-router-dom";
 class InventoryItemDetails extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            inventory: [],
-            loaded: false,
+            inventory: {},
         };
     }
 
     componentDidMount() {
-        this.setState({
-            inventory: InventoryData.filter((item) => item.warehouseName === "Manhattan" && item.itemName === "Television"),
-            loaded: true
-        });
-    }
-
+        axios
+            .get(`http://localhost:8080/inventories/${this.props.match.params.inventoryId}`)
+            .then(response => {
+                const inventory = response.data[0];
+                this.setState({ inventory })
+            })    
+        };
 
     render() {
-        if (this.state.loaded) {
             return (
                 <>
                     <article className="item-details__title-flex-container">
@@ -40,7 +38,7 @@ class InventoryItemDetails extends React.Component {
                                 </div>
                             </Link>
                                 
-                            <h1 className="container1__title">{this.state.inventory[0].itemName}</h1>
+                            <h1 className="container1__title">{this.state.inventory.itemName}</h1>
                         </section>
                                 
                         <Link to="/edit-item" className="container2__button-link">
@@ -68,7 +66,7 @@ class InventoryItemDetails extends React.Component {
                                 </p>
 
                                 <p className="description__text">
-                                    {this.state.inventory[0].description}
+                                    {this.state.inventory.description}
                                 </p>
                             </div>
 
@@ -78,7 +76,7 @@ class InventoryItemDetails extends React.Component {
                                 </p>
 
                                 <p className="category__text">
-                                    {this.state.inventory[0].category}
+                                    {this.state.inventory.category}
                                 </p>
                             </div>
                         </section>
@@ -92,7 +90,7 @@ class InventoryItemDetails extends React.Component {
 
                                     <div className="status__text-container">
                                         <p className="status__text">
-                                            {this.state.inventory[0].status}
+                                            {this.state.inventory.status}
                                         </p>
                                     </div>
                                 </div>
@@ -103,7 +101,7 @@ class InventoryItemDetails extends React.Component {
                                     </p>
 
                                     <p className="warehouse__text">
-                                        {this.state.inventory[0].warehouseName}
+                                        {this.state.inventory.warehouseName}
                                     </p>
                                 </div>
                             </div>
@@ -121,7 +119,7 @@ class InventoryItemDetails extends React.Component {
                     </article>
                 </>
             );
-        }   return <h1>Loading...</h1>;
+
     }
 }
 
