@@ -29,39 +29,6 @@ class WarehouseDetails extends React.Component {
         });
     }
 
-    /*
-    componentDidUpdate(prevProps) {
-
-        if (prevProps.match.params.id !== this.props.match.params.id) {
-       
-            let VideoId;
-            axios
-                .get(`https://project-2-api.herokuapp.com/videos/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                .then((response) => {
-                    VideoId = this.props.match.params.id;
-                    const filteredVideosArray = response.data.filter((video) => VideoId !== video.id);
-            
-                    this.setState({
-                        videos: response.data,
-                        filteredVideosArray: filteredVideosArray,
-                    });
-
-                    axios
-                        .get(`https://project-2-api.herokuapp.com/videos/${VideoId}/?api_key=6eb81f40-ff68-4c0b-aa13-b2b7e9a62bf1`)
-                        .then((responseTwo) => {
-                        
-                            this.setState({
-                                details: responseTwo.data,
-                                loaded: true,
-                            });
-                        })
-                        .catch((error) => { console.error(error.responseTwo); });
-                })
-                .catch((error) => { console.error(error.responseTwo); });
-        }
-    }
-    */
-
     render() {
         if (this.state.loaded) {
             return (

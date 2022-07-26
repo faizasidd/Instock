@@ -26,7 +26,8 @@ const EditInventoryItem = (props) => {
     if (handleSubmit(e, inventory)) {
       axios
         .put(
-          `http://localhost:8080/warehouses/${props.match.params.inventoryId}/edit`,
+          `http://localhost:8080/inventories/${props.match.params.inventoryId}`
+          ,
           inventory,
           {
             "Content-Type": "application/json",
@@ -47,10 +48,14 @@ const EditInventoryItem = (props) => {
 
   return (
     <div className="add-inventory">
+      
       <div className="add-inventory__title-container">
+      <Link className="add-inventory__back-icon" to='/warehouse/2922c286-16cd-4d43-ab98-c79f698aeab0/inventory'>
         <img src={arrowBack} />
+      </Link>
         <h1 className="add-inventory__title">Edit New Inventory Item</h1>
       </div>
+      
       <div className="add-inventory__form-container">
         <div>
           <InventoryForm
@@ -63,7 +68,7 @@ const EditInventoryItem = (props) => {
         </div>
       </div>
       <div className="add-inventory__button-container">
-      <Link to='/'>
+      <Link to='/warehouse/2922c286-16cd-4d43-ab98-c79f698aeab0/inventory'>
         <button className="add-inventory__button">Cancel</button>
         </Link>
         <button

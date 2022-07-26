@@ -44,11 +44,7 @@
             padding-left: 1rem;
         }
     }
-    @include desktop {
-        &__inventory {
-            padding-right: 6rem;
-        }
-    }
+
 }
 
 .active {

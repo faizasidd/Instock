@@ -60,7 +60,7 @@ const WarehouseInventoryList = (props) => {
     
 
    
-        if (warehouse && warehouse.contact) {
+        if (warehouse && warehouse.contact && inventories) {
 
         
             return (
@@ -264,15 +264,6 @@ const WarehouseInventoryList = (props) => {
                                                     {quantity}
                                     </p>
                                     <section className="warehouse-inventory__edit-delete-container">
-                                    {/* <Link to="/deleteItem" className="warehouse-inventory__delete-button">
-                                        <div className="warehouse-inventory__delete-button-container">
-                                            <img
-                                                className="warehouse-inventory__delete-icon"
-                                                src={DeleteIcon}
-                                                alt="Delete Icon"
-                                            />
-                                        </div>
-                                    </Link> */}
                                      <button 
                                         onClick={openModal}
                                         className="deleteIcon">
@@ -300,8 +291,8 @@ const WarehouseInventoryList = (props) => {
                                                         />
                                                     </button>
                                                 </div>
-                                                <h2>Delete Washington warehouse?</h2>
-                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <h2>Delete {itemName} item?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete {itemName}? You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
                                                     <button 
                                                         onClick={closeModal} 
@@ -331,9 +322,9 @@ const WarehouseInventoryList = (props) => {
                      })}
                 </>
             );
-        } else {
-            return <h1>Loading...</h1>;
-        } 
+        } else { 
+            return "Please kindly refresh the page :) It's not a bug, it's a feature!"
+        }
     }
 
 export default WarehouseInventoryList;
