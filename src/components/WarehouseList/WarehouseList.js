@@ -22,7 +22,6 @@ const WarehouseList = () => {
             .get('http://localhost:8080/warehouses')
             .then(response => {
                 setWarehouses(response.data)
-                console.log(response.data)
               
             })
             .catch(error => console.log(error))
@@ -162,14 +161,13 @@ const WarehouseList = () => {
                         const { name, phone, email } = detail.contact;
 
                         return (
-                            <article className="warehouse-list" key={id}>
+                            <article className="warehouse-list"  key={id}>
                                 <section className="warehouse-list__container1">
                                     <section className="container1__flex1">
                                         <div className="flex1__warehouse">
                                             <p className="warehouse__title">
                                                 WAREHOUSE
                                             </p>
-                                            {/* to={`/${id}`} */}
                                             
                                             <Link to={`/warehouse/${id}`} className="warehouse__link">
                                                 <div className="link__container">
@@ -256,8 +254,8 @@ const WarehouseList = () => {
                                                         />
                                                     </button>
                                                 </div>
-                                                <h2>Delete Washington warehouse?</h2>
-                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <h2>Delete {warehouse} warehouse?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete the {warehouse} from the list of warehouses. You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
                                                     <button 
                                                         onClick={closeModal} 

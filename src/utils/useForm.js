@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Placeholder from "../components/Placeholder/Placeholder";
 
 const useForm = (callback) => {
   const [values, setValues] = useState({});
