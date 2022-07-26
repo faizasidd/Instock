@@ -17,10 +17,8 @@ function Header() {
                 <NavLink className="header__warehouses" to="/">
                 <div>Warehouses</div>
                 </NavLink>
-
                 
                 <div className="header__inventory">Inventory</div>
-                
             </div>
         </div>
         </>

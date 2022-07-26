@@ -35,7 +35,9 @@ const AddWarehouse = (props) => {
   return (
     <div className="add-warehouse">
       <div className="add-warehouse__title-container">
-        <img src={arrowBack} />
+        <Link to="/">
+        <img className="add-warehouse__back-icon"src={arrowBack} />
+        </Link>
         <h1 className="add-warehouse__title">Add Warehouse</h1>
       </div>
       <div className="add-warehouse__form-container">

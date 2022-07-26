@@ -49,7 +49,9 @@ const EditWarehouse = (props) => {
   return (
     <div className="edit-warehouse">
       <div className="edit-warehouse__title-container">
+        <Link className="edit-warehouse__back-icon" to='/'>
         <img src={arrowBack} />
+        </Link>
         <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
       <div className="edit-warehouse__form-container">
