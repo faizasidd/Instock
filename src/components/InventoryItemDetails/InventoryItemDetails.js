@@ -20,15 +20,19 @@ class InventoryItemDetails extends React.Component {
             .then(response => {
                 const inventory = response.data[0];
                 this.setState({ inventory })
+                const inventoryIdNumber = inventory.id;
+                console.log(inventory.id)
             })    
         };
+    
+        
 
     render() {
             return (
                 <>
                     <article className="item-details__title-flex-container">
                         <section className="container1__title-icon-container">
-                            <Link to="/inventory-details" className="container1__back-link">    
+                            <Link to="/" className="container1__back-link">    
                                 <div className="container1__icon-container">
                                     <img
                                         className="container1__icon"
@@ -41,7 +45,7 @@ class InventoryItemDetails extends React.Component {
                             <h1 className="container1__title">{this.state.inventory.itemName}</h1>
                         </section>
                                 
-                        <Link to="/edit-item" className="container2__button-link">
+                        <Link to={`/inventory/edit/${this.state.inventory.id}`} className="container2__button-link">
                             <div className="button-link__image-container">
                                 <img
                                     className="button-link__image"

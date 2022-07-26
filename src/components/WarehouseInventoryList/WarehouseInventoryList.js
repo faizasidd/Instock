@@ -291,8 +291,8 @@ const WarehouseInventoryList = (props) => {
                                                         />
                                                     </button>
                                                 </div>
-                                                <h2>Delete {itemName} warehouse?</h2>
-                                                <div className="p1">Please confirm that you’d like to delete {itemName} from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <h2>Delete {itemName} ?</h2>
+                                                <div className="p1">Please confirm that you’d like to delete {itemName} from item list. You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
                                                     <button 
                                                         onClick={closeModal} 

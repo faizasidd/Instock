@@ -12,7 +12,10 @@
     &__inventory {
         color: $secondary-borders;
         text-decoration: none;
-        padding-left: 5rem;
+    }
+
+    &__header-link {
+        text-decoration: none;
     }
 
     &__logo-wrapper {
@@ -39,15 +42,6 @@
         &__logo-wrapper {
             padding-left: 2rem;
         }
-        &__inventory {
-            padding-right: 2rem;
-            padding-left: 1rem;
-        }
-    }
-    @include desktop {
-        &__inventory {
-            padding-right: 6rem;
-        }
     }
 }
 
@@ -58,4 +52,5 @@
     border-radius: 20px;
     padding: 0.5rem 1rem 0.5rem 1rem;
     background-color: #13182C;
+    margin-right: 1rem
 }

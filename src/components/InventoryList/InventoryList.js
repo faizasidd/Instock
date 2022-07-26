@@ -184,7 +184,7 @@ const InventoryList = (props) => {
                                                 INVENTORY ITEM
                                             </p>
                                                 
-                                            <Link to="/inventory/:inventoryId" className="item-container__search-link">
+                                            <Link to={`/inventory/${id}`} className="item-container__search-link">
                                                 <div className="search-link__text-container">
                                                     <p className="search-link__text">
                                                         {itemName}
@@ -276,7 +276,7 @@ const InventoryList = (props) => {
                                                     </button>
                                                 </div>
                                                 <h2>Delete inventory?</h2>
-                                                <div className="p1">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</div>
+                                                <div className="p1">Please confirm that you’d like to delete {itemName} from the inventory list. You won’t be able to undo this action.</div>
                                                 <div className="twoBtnContainer">
                                                     <button 
                                                         onClick={closeModal} 
